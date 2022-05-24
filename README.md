@@ -1,37 +1,20 @@
-## Welcome to GitHub Pages
+## Overview
 
-You can use the [editor on GitHub](https://github.com/webbtheosim/ml-workshop-acsmarm2022/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+The materials provided here were prepared for a trio of ~three-hour workshops that provide a "crash course" on machine learning in the context of chemistry. The content of the workshops is briefly described below.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Day 1: Deep Learning in Chemistry
+We cover essential elements of machine learning (in general) as well as practical elements on working with deep learning/neural networks and chemical data. Python environments are also set up on this day.
 
-### Markdown
+### Day 2: Chemical Representations and Modern Architectures
+We cover XXX
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Day 3: Applied Machine Learning in Chemistry and Materials Design
+We cover XXX 
 
-```markdown
-Syntax highlighted code block
+### Organizers
+The workshops were organized by Michael A. Webb (Princeton University) and Andrew D. White (University of Rochester).
 
-# Header 1
-## Header 2
-### Header 3
+### Additional References
+Workshop content heavily draws upon Andrew's book "Deep Learning for Molecules and Materials" (https://dmol.pub/intro.html)
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/webbtheosim/ml-workshop-acsmarm2022/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
