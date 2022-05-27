@@ -7,6 +7,6 @@ acsmarm 2022
 
     index.md
     20220601-intro/day1.md
-    20220601-intro/testing.ipynb
+    20220601-intro/notebook.ipynb
     20220602-crma/day2.md
     20220603-applied/day3.md

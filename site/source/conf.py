@@ -31,6 +31,7 @@ extensions = [
     "myst_nb",
     "sphinx.ext.intersphinx",
     "sphinx.ext.githubpages",
+    "nbsphinx",
 ]
 
 # Prefix document path to section labels, to use:
