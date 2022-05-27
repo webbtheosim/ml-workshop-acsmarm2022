@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Day 1 Notebook &mdash; acsmarm  documentation</title>
+  <title>Activity 0: Coneptualization with Linear Regression &mdash; acsmarm  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
@@ -26,7 +26,9 @@
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Agenda for Day 2" href="../20220602-crma/day2.html" />
+    <link rel="prev" title="Day 1" href="day1.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -44,11 +46,34 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Materials for ML Workshops at ACS MARM: June 1-4, 2022</a></li>
-<li class="toctree-l1"><a class="reference internal" href="day1.html">Agenda for Day 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="day1.html">Day 1</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Activity 0: Coneptualization with Linear Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#examining-a-human-hypothesis">Examining a human hypothesis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#approach-by-more-formal-optimization">Approach by more formal optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#gradient-descent">Gradient Descent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#check-against-linear-algebra">Check against linear algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#incorporating-train-test-splits">Incorporating train/test splits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#cross-validation">Cross-validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#activity-1-chemical-data-basics">Activity 1: Chemical Data Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#dataset-exploration">Dataset Exploration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#summary-of-tasks">Summary of Tasks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#task-b">Task B</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#task-c">Task C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#feature-scaling">Feature scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#task-d">Task D:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#impact-of-regularization">Impact of regularization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#feature-selection">Feature Selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#activity-2-fun-with-neural-networks">Activity 2: Fun with Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#how-to-build-sequential-models-simple-example">How to build Sequential models (simple example)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#how-to-build-models-with-functional-api-simple-example">How to build models with Functional API (simple example)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#return-of-the-solubility-dataset">Return of the Solubility Dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#data-preprocessing">Data Preprocessing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../20220602-crma/day2.html">Agenda for Day 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../20220603-applied/day3.html">Agenda for Day 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../20220603-applied/day3.html">Day 3</a></li>
 </ul>
 
         </div>
@@ -65,9 +90,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../toc.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Day 1 Notebook</li>
+      <li>Activity 0: Coneptualization with Linear Regression</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/ur-whitelab/exmol/blob/main/docs/source/20220601-intro/notebook.ipynb" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/webbtheosim/ml-workshop-acsmarm2022/blob/main/site/source/20220601-intro/notebook.ipynb" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -75,8 +100,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section class="tex2jax_ignore mathjax_ignore" id="day-1-notebook">
-<h1>Day 1 Notebook<a class="headerlink" href="#day-1-notebook" title="Permalink to this headline"></a></h1>
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Day 1 Notebook</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>#Initial Setup of Python Environment
 Over the course of the next few days, we will rely on a number of python modules. Google Colaboratory comes equipped with a large number of these modules, but there are a few that we need that are not provided by default. Run the cells below to install these modules. You can optionally comment out modules that are only necessary for specific days that you will not be attending.</p>
 <div class="cell docutils container">
@@ -99,25 +129,28 @@ Over the course of the next few days, we will rely on a number of python modules
 ?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/22.9 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.0/22.9 MB</span> <span class=" -Color -Color-Red">56.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6.0/22.9 MB</span> <span class=" -Color -Color-Red">82.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.1/22.9 MB</span> <span class=" -Color -Color-Red">2.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:10</span>
+     ╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.3/22.9 MB</span> <span class=" -Color -Color-Red">5.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:05</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">10.1/22.9 MB</span> <span class=" -Color -Color-Red">92.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.1/22.9 MB</span> <span class=" -Color -Color-Red">10.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">13.9/22.9 MB</span> <span class=" -Color -Color-Red">109.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.4/22.9 MB</span> <span class=" -Color -Color-Red">24.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">8.0/22.9 MB</span> <span class=" -Color -Color-Red">45.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━ <span class=" -Color -Color-Green">18.0/22.9 MB</span> <span class=" -Color -Color-Red">109.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━ <span class=" -Color -Color-Green">21.9/22.9 MB</span> <span class=" -Color -Color-Red">108.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">13.3/22.9 MB</span> <span class=" -Color -Color-Red">141.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">22.9/22.9 MB</span> <span class=" -Color -Color-Red">105.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━ <span class=" -Color -Color-Green">17.9/22.9 MB</span> <span class=" -Color -Color-Red">141.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">22.9/22.9 MB</span> <span class=" -Color -Color-Red">105.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">22.9/22.9 MB</span> <span class=" -Color -Color-Red">52.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">22.9/22.9 MB</span> <span class=" -Color -Color-Red">139.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">22.9/22.9 MB</span> <span class=" -Color -Color-Red">139.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">22.9/22.9 MB</span> <span class=" -Color -Color-Red">73.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
@@ -126,31 +159,26 @@ Over the course of the next few days, we will rely on a number of python modules
 ?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/3.1 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">3.1/3.1 MB</span> <span class=" -Color -Color-Red">113.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.1/3.1 MB</span> <span class=" -Color -Color-Red">70.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.1/3.1 MB</span> <span class=" -Color -Color-Red">107.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting numpy
-  Downloading numpy-1.22.4-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.9 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading numpy-1.22.4-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.9 MB)
 ?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/16.9 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.1/16.9 MB</span> <span class=" -Color -Color-Red">92.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">5.4/16.9 MB</span> <span class=" -Color -Color-Red">167.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">9.9/16.9 MB</span> <span class=" -Color -Color-Red">144.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6.4/16.9 MB</span> <span class=" -Color -Color-Red">91.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">10.2/16.9 MB</span> <span class=" -Color -Color-Red">95.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━ <span class=" -Color -Color-Green">14.2/16.9 MB</span> <span class=" -Color -Color-Red">137.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━ <span class=" -Color -Color-Green">13.8/16.9 MB</span> <span class=" -Color -Color-Red">103.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">16.8/16.9 MB</span> <span class=" -Color -Color-Red">108.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">16.8/16.9 MB</span> <span class=" -Color -Color-Red">108.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.9/16.9 MB</span> <span class=" -Color -Color-Red">60.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">16.8/16.9 MB</span> <span class=" -Color -Color-Red">138.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.9/16.9 MB</span> <span class=" -Color -Color-Red">86.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
@@ -165,7 +193,6 @@ Over the course of the next few days, we will rely on a number of python modules
 </div>
 </div>
 </div>
-</section>
 <section class="tex2jax_ignore mathjax_ignore" id="activity-0-coneptualization-with-linear-regression">
 <h1>Activity 0: Coneptualization with Linear Regression<a class="headerlink" href="#activity-0-coneptualization-with-linear-regression" title="Permalink to this headline"></a></h1>
 <p>Many of the important concepts in supervised machine learning can be appreciated by a solid understanding of linear regression, which we all probably encountered early on – like elementary school. We are going to work through a linear regression task in a fashion  to appreciate many of the basic mechanics that underlie deep learning.</p>
@@ -187,7 +214,7 @@ Over the course of the next few days, we will rely on a number of python modules
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="nn">Input In [3],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># modules for this activity</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -2077,7 +2104,10 @@ r2 =  0.80, mae =  0.77, mse =  1.12
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="day1.html" class="btn btn-neutral float-left" title="Day 1" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../20220602-crma/day2.html" class="btn btn-neutral float-right" title="Agenda for Day 2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

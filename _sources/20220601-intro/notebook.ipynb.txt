@@ -17,13 +17,15 @@
   },
   "cells": [
     {
-      "cell_type": "markdown",
+      "cell_type": "code",
       "source": [
         "# Day 1 Notebook"
       ],
       "metadata": {
-        "id": "dyT2kHMwyXa3"
-      }
+        "id": "x19MRvySCk11"
+      },
+      "execution_count": 1,
+      "outputs": []
     },
     {
       "cell_type": "markdown",
@@ -49,7 +51,7 @@
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/",
-          "height": 178
+          "height": 174
         },
         "id": "ujKMirGbac6S",
         "outputId": "303776ab-229e-4aab-b62c-6dbca1adb4e8"
@@ -216,7 +218,7 @@
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/",
-          "height": 301
+          "height": 300
         },
         "id": "7_SNDdhf-7De",
         "outputId": "81aa0c10-b8ea-4a11-fe85-063cc3bdf350"
@@ -435,7 +437,7 @@
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/",
-          "height": 602
+          "height": 601
         },
         "id": "16NRjWb59PyN",
         "outputId": "e27d8ddd-b361-4a25-869e-bf6854de419d"
@@ -577,7 +579,7 @@
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/",
-          "height": 602
+          "height": 601
         },
         "id": "3OETq-SGrdDc",
         "outputId": "f1dfa8d7-102e-44e3-9ad8-652507fc95d0"
@@ -917,7 +919,7 @@
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/",
-          "height": 662
+          "height": 651
         },
         "id": "JWS2Uixo2FqP",
         "outputId": "0f6eaa3f-0e22-4ef6-ceb7-dd06baec13a2"
@@ -1212,7 +1214,7 @@
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/",
-          "height": 725
+          "height": 717
         },
         "id": "7bTV7scxJwHp",
         "outputId": "9ee6d8f8-1fdd-451a-8c07-14e73e3360df"
