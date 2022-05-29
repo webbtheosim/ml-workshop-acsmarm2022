@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Activity 0: Coneptualization with Linear Regression &mdash; acsmarm  documentation</title>
+  <title>Day 1 Notebook &mdash; acsmarm  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
@@ -49,29 +49,34 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Materials for ML Workshops at ACS MARM: June 1-4, 2022</a></li>
 <li class="toctree-l1"><a class="reference internal" href="day1.html">Day 1</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Activity 0: Coneptualization with Linear Regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#examining-a-human-hypothesis">Examining a human hypothesis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#approach-by-more-formal-optimization">Approach by more formal optimization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#gradient-descent">Gradient Descent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#check-against-linear-algebra">Check against linear algebra</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#incorporating-train-test-splits">Incorporating train/test splits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#cross-validation">Cross-validation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#activity-1-chemical-data-basics">Activity 1: Chemical Data Basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#dataset-exploration">Dataset Exploration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#summary-of-tasks">Summary of Tasks</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Day 1 Notebook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#initial-setup-of-python-environment">Initial Setup of Python Environment</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#task-b">Task B</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#task-c">Task C</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#feature-scaling">Feature scaling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#task-d">Task D:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#impact-of-regularization">Impact of regularization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#feature-selection">Feature Selection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#activity-2-fun-with-neural-networks">Activity 2: Fun with Neural Networks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#how-to-build-sequential-models-simple-example">How to build Sequential models (simple example)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#how-to-build-models-with-functional-api-simple-example">How to build models with Functional API (simple example)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#return-of-the-solubility-dataset">Return of the Solubility Dataset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#data-preprocessing">Data Preprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#activity-0-concepts-with-linear-regression">Activity 0: Concepts with Linear Regression</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#examining-a-human-hypothesis">Examining a human hypothesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#more-formal-optimization">More formal optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gradient-descent">Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#linear-algebraic-solution">Linear algebraic solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-train-test-splits">Using train/test splits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cross-validation">Cross-validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#activity-1-chemical-data-basics">Activity 1: Chemical Data Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dataset-exploration">Dataset Exploration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#summary-of-tasks">Summary of Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-does-the-data-look-like">What does the data look like?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#feature-scaling">Feature scaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-good-is-the-model">How good is the model?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#regularization">Regularization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#feature-selection">Feature Selection</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#activity-2-fun-with-neural-networks">Activity 2: Fun with Neural Networks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#building-models-with-the-sequential-api">Building models with the Sequential API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-models-with-functional-api">Building models with Functional API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#return-of-the-solubility-dataset">Return of the Solubility Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-preprocessing">Data Preprocessing</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../20220602-crma/day2.html">Agenda for Day 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../20220603-applied/day3.html">Day 3</a></li>
 </ul>
@@ -90,7 +95,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../toc.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Activity 0: Coneptualization with Linear Regression</li>
+      <li>Day 1 Notebook</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/webbtheosim/ml-workshop-acsmarm2022/blob/main/site/source/20220601-intro/notebook.ipynb" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -100,24 +105,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Day 1 Notebook</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>#Initial Setup of Python Environment
-Over the course of the next few days, we will rely on a number of python modules. Google Colaboratory comes equipped with a large number of these modules, but there are a few that we need that are not provided by default. Run the cells below to install these modules. You can optionally comment out modules that are only necessary for specific days that you will not be attending.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="day-1-notebook">
+<h1>Day 1 Notebook<a class="headerlink" href="#day-1-notebook" title="Permalink to this headline"></a></h1>
+<section id="initial-setup-of-python-environment">
+<h2>Initial Setup of Python Environment<a class="headerlink" href="#initial-setup-of-python-environment" title="Permalink to this headline"></a></h2>
+<p>Over the course of the next few days, we will rely on a number of python modules. Google Colaboratory comes equipped with a large number of these modules, but there are a few that we need that are not provided by default. Run the cells below to install these modules. You can optionally comment out modules that are only necessary for specific days that you will not be attending.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get non-default modules</span>
 <span class="o">!</span>pip install rdkit-pypi
-<span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">!apt-get -qq install -y graphviz &amp;&amp; pip install -q pydot</span>
-<span class="sd">!pip install jaxlib jax</span>
-<span class="sd">!pip install leruli # only necessary for day 3</span>
-<span class="sd">&#39;&#39;&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -129,28 +125,32 @@ Over the course of the next few days, we will rely on a number of python modules
 ?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/22.9 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.1/22.9 MB</span> <span class=" -Color -Color-Red">2.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:10</span>
-     ╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.3/22.9 MB</span> <span class=" -Color -Color-Red">5.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:05</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/22.9 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/22.9 MB</span> <span class=" -Color -Color-Red">3.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:07</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.1/22.9 MB</span> <span class=" -Color -Color-Red">10.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:03</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.1/22.9 MB</span> <span class=" -Color -Color-Red">2.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:09</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.4/22.9 MB</span> <span class=" -Color -Color-Red">24.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">8.0/22.9 MB</span> <span class=" -Color -Color-Red">45.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.3/22.9 MB</span> <span class=" -Color -Color-Red">4.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:06</span>
+     ━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.4/22.9 MB</span> <span class=" -Color -Color-Red">11.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:02</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">13.3/22.9 MB</span> <span class=" -Color -Color-Red">141.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.7/22.9 MB</span> <span class=" -Color -Color-Red">23.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━ <span class=" -Color -Color-Green">17.9/22.9 MB</span> <span class=" -Color -Color-Red">141.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">8.7/22.9 MB</span> <span class=" -Color -Color-Red">45.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">13.4/22.9 MB</span> <span class=" -Color -Color-Red">138.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">22.9/22.9 MB</span> <span class=" -Color -Color-Red">139.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━ <span class=" -Color -Color-Green">18.3/22.9 MB</span> <span class=" -Color -Color-Red">132.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">22.9/22.9 MB</span> <span class=" -Color -Color-Red">139.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">22.9/22.9 MB</span> <span class=" -Color -Color-Red">73.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">22.9/22.9 MB</span> <span class=" -Color -Color-Red">132.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">22.9/22.9 MB</span> <span class=" -Color -Color-Red">132.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">22.9/22.9 MB</span> <span class=" -Color -Color-Red">66.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
@@ -159,7 +159,7 @@ Over the course of the next few days, we will rely on a number of python modules
 ?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/3.1 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.1/3.1 MB</span> <span class=" -Color -Color-Red">107.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.1/3.1 MB</span> <span class=" -Color -Color-Red">99.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
@@ -168,17 +168,18 @@ Over the course of the next few days, we will rely on a number of python modules
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading numpy-1.22.4-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.9 MB)
 ?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/16.9 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">5.5/16.9 MB</span> <span class=" -Color -Color-Red">165.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">5.4/16.9 MB</span> <span class=" -Color -Color-Red">167.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">9.9/16.9 MB</span> <span class=" -Color -Color-Red">144.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">9.7/16.9 MB</span> <span class=" -Color -Color-Red">141.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━ <span class=" -Color -Color-Green">14.2/16.9 MB</span> <span class=" -Color -Color-Red">137.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━ <span class=" -Color -Color-Green">14.0/16.9 MB</span> <span class=" -Color -Color-Red">139.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">16.8/16.9 MB</span> <span class=" -Color -Color-Red">137.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">16.8/16.9 MB</span> <span class=" -Color -Color-Red">138.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.9/16.9 MB</span> <span class=" -Color -Color-Red">86.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">16.8/16.9 MB</span> <span class=" -Color -Color-Red">137.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.9/16.9 MB</span> <span class=" -Color -Color-Red">78.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
@@ -188,13 +189,12 @@ Over the course of the next few days, we will rely on a number of python modules
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed Pillow-9.1.1 numpy-1.22.4 rdkit-pypi-2022.3.2.1
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\n!apt-get -qq install -y graphviz &amp;&amp; pip install -q pydot\n!pip install jaxlib jax\n!pip install leruli # only necessary for day 3\n&#39;
-</pre></div>
 </div>
 </div>
-</div>
-<section class="tex2jax_ignore mathjax_ignore" id="activity-0-coneptualization-with-linear-regression">
-<h1>Activity 0: Coneptualization with Linear Regression<a class="headerlink" href="#activity-0-coneptualization-with-linear-regression" title="Permalink to this headline"></a></h1>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="activity-0-concepts-with-linear-regression">
+<h1>Activity 0: Concepts with Linear Regression<a class="headerlink" href="#activity-0-concepts-with-linear-regression" title="Permalink to this headline"></a></h1>
 <p>Many of the important concepts in supervised machine learning can be appreciated by a solid understanding of linear regression, which we all probably encountered early on – like elementary school. We are going to work through a linear regression task in a fashion  to appreciate many of the basic mechanics that underlie deep learning.</p>
 <p>To start, we will pull a dataset generated in a recent paper that explores the use of machine learning to predict polymer properties. The label  that we extract (and our target for prediction) will be the radius of gyration (<span class="math notranslate nohighlight">\(R_g\)</span>), which provides a measure of an object’s size, for some simulated intrinsically disordered proteins.</p>
 <p>A well known result from polymer physics is that <span class="math notranslate nohighlight">\(R_g \propto M^{0.5}\)</span>, where <span class="math notranslate nohighlight">\(M\)</span> is the number of some statistically uncorrelated sub-units in the polymer; the same result arises in the context of diffusion/random walks.</p>
@@ -214,7 +214,7 @@ Over the course of the next few days, we will rely on a number of python modules
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [3],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># modules for this activity</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -257,9 +257,8 @@ Over the course of the next few days, we will rely on a number of python modules
 <img alt="../_images/2a44ed497ddc73f785a8f85034d542658e832b3ea186a78c07fce0550e10a8b2.png" src="../_images/2a44ed497ddc73f785a8f85034d542658e832b3ea186a78c07fce0550e10a8b2.png" />
 </div>
 </div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="examining-a-human-hypothesis">
-<h1>Examining a human hypothesis<a class="headerlink" href="#examining-a-human-hypothesis" title="Permalink to this headline"></a></h1>
+<section id="examining-a-human-hypothesis">
+<h2>Examining a human hypothesis<a class="headerlink" href="#examining-a-human-hypothesis" title="Permalink to this headline"></a></h2>
 <p>At first glance, it certainly seems that there is reasonable linear correlation between our input and labels.</p>
 <p>We are going to consider a function of the form</p>
 <div class="math notranslate nohighlight">
@@ -301,8 +300,8 @@ Over the course of the next few days, we will rely on a number of python modules
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="approach-by-more-formal-optimization">
-<h1>Approach by more formal optimization<a class="headerlink" href="#approach-by-more-formal-optimization" title="Permalink to this headline"></a></h1>
+<section id="more-formal-optimization">
+<h2>More formal optimization<a class="headerlink" href="#more-formal-optimization" title="Permalink to this headline"></a></h2>
 <p>Probably your human-intuited fit yields a pretty darn good description of the data, but we’ll try to do better.</p>
 <p>The ``training’’ of neural networks is really about <em>optimization</em> where the objective is to minimze a <em>loss</em> function that describes a disparity between the model predictions and the ground truth of some set of labels.</p>
 <p>When we first encounter linear regression, our optimization is usually in the `least-squares’ sense; that is, our loss function is the mean-squared error over our observations. The problem of linear least-squares regression can be ``exactly’’ solved using techniques from linear algebra, but that is not so much the domain of machine learning. Therefore, we will approach a solution using gradient descent optimization, which is more akin to what is needed fro training a neural network.</p>
@@ -368,8 +367,8 @@ Over the course of the next few days, we will rely on a number of python modules
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="gradient-descent">
-<h1>Gradient Descent<a class="headerlink" href="#gradient-descent" title="Permalink to this headline"></a></h1>
+<section id="gradient-descent">
+<h2>Gradient Descent<a class="headerlink" href="#gradient-descent" title="Permalink to this headline"></a></h2>
 <p>Next, we will implement gradient descent to find an optimal set of parameters. For this type of linear model, it is possible to obtain the requisite derivative of the loss function with respect to the parameters analytically. I have used that solution below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -449,14 +448,14 @@ theta_1 =   0.2827
 </div>
 <img alt="../_images/22baedb044f28df1f58fd49f46d6713c2ba1171ea363b840d833cca96f91b761.png" src="../_images/22baedb044f28df1f58fd49f46d6713c2ba1171ea363b840d833cca96f91b761.png" />
 <img alt="../_images/205048a929f119629fd3a95f793c6c8526ef04fcc0e003e5588816d93918c2bb.png" src="../_images/205048a929f119629fd3a95f793c6c8526ef04fcc0e003e5588816d93918c2bb.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>r2 = 0.941, MSE =  0.07503, MAE = 0.152
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>r2 = 0.930, MSE =  0.08822, MAE = 0.162
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="check-against-linear-algebra">
-<h1>Check against linear algebra<a class="headerlink" href="#check-against-linear-algebra" title="Permalink to this headline"></a></h1>
+<section id="linear-algebraic-solution">
+<h2>Linear algebraic solution<a class="headerlink" href="#linear-algebraic-solution" title="Permalink to this headline"></a></h2>
 <p>If run for enough iterations, the solution obtained from gradient descent should outperform our human-intuited estimated model, even if just slightly. Because this is least-squares linear regression, we can also compare our solution with that obtained via linear algebra.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -480,14 +479,14 @@ theta_1 =   0.2827
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>theta_0 =  -0.0384
 theta_1 =   0.2827
-r2 = 0.941, MSE =  0.07503, MAE = 0.152
+r2 = 0.941, MSE =  0.08822, MAE = 0.152
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="incorporating-train-test-splits">
-<h1>Incorporating train/test splits<a class="headerlink" href="#incorporating-train-test-splits" title="Permalink to this headline"></a></h1>
+<section id="using-train-test-splits">
+<h2>Using train/test splits<a class="headerlink" href="#using-train-test-splits" title="Permalink to this headline"></a></h2>
 <p>In our example so far, we did something, which is not generally good practice in machine learning: the data we used to train/optimize the model was the same data that we ultimately tested on. Because of the simplicity of the model that we have here, we are not at significant risk of overfitting, but it is better if we can assess the model using data that was held-out or unseen during training.</p>
 <p>In the following cells, we will demonstrate the use of some convenient functions from scikit-learn that allow us to create a simple train/test split of our data.</p>
 <div class="cell docutils container">
@@ -528,14 +527,14 @@ theta_1 =   0.2878
 </div>
 <img alt="../_images/a49405ad43173b8aed294957b1352cb9bda59f98860757d9d777b8196ad07a49.png" src="../_images/a49405ad43173b8aed294957b1352cb9bda59f98860757d9d777b8196ad07a49.png" />
 <img alt="../_images/4267a7ecd55c37a67109bc86e8d73f6641db0781389cce3a2c577be75fd73fbc.png" src="../_images/4267a7ecd55c37a67109bc86e8d73f6641db0781389cce3a2c577be75fd73fbc.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>r2 = 0.930, MSE =  0.08859, MAE = 0.158
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>r2 = 0.930, MSE =  0.08822, MAE = 0.158
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="cross-validation">
-<h1>Cross-validation<a class="headerlink" href="#cross-validation" title="Permalink to this headline"></a></h1>
+<section id="cross-validation">
+<h2>Cross-validation<a class="headerlink" href="#cross-validation" title="Permalink to this headline"></a></h2>
 <p>An important consideration is how the choices that we make when constructing a model <em>impact</em> the model. Some of these choice may include things like hyperparameters associated with training (e.g., the number of training iterations and learning rate) or the actual constitution of our training data. If possible, we would like to mitigate any biases or deficiencies that we introduce in this fashion. Cross-validation provides one framework that can facililitate robustness with respect to the model training and our reporting of its results.</p>
 <p>In the next cells, we will perform <span class="math notranslate nohighlight">\(k\)</span>-fold cross-validation to provide a better estimate of prospective model performance.</p>
 <div class="cell docutils container">
@@ -552,10 +551,22 @@ theta_1 =   0.2878
     <span class="n">Xi_te</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">iTest</span><span class="p">]</span>
     <span class="n">yi_tr</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">iTrain</span><span class="p">]</span>
     <span class="n">yi_te</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">iTest</span><span class="p">]</span>
-    <span class="n">thetaGD</span><span class="p">,</span> <span class="o">=</span> <span class="n">Grad_Descent</span><span class="p">(</span><span class="n">X_tr</span><span class="p">,</span><span class="n">y_tr</span><span class="p">,</span><span class="n">th0</span><span class="p">,</span><span class="mf">8e-6</span><span class="p">,</span><span class="n">nIters</span><span class="p">)</span>
-    <span class="n">yhat</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">X_te</span><span class="p">,</span><span class="n">thetaGD</span><span class="p">)</span>
+    <span class="n">thetaGD</span><span class="p">,</span> <span class="n">E_tr</span><span class="p">,</span> <span class="n">E_te</span> <span class="o">=</span> <span class="n">Grad_Descent</span><span class="p">(</span><span class="n">Xi_tr</span><span class="p">,</span><span class="n">yi_tr</span><span class="p">,</span><span class="n">th0</span><span class="p">,</span><span class="mf">8e-6</span><span class="p">,</span><span class="n">nIters</span><span class="p">,</span><span class="n">Xi_te</span><span class="p">,</span><span class="n">yi_te</span><span class="p">)</span>
+    <span class="n">yhat</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">Xi_te</span><span class="p">,</span><span class="n">thetaGD</span><span class="p">)</span>
     <span class="p">(</span><span class="n">r2s</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">mses</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">maes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">=</span> \
-    <span class="p">(</span><span class="n">r2_score</span><span class="p">(</span><span class="n">y_te</span><span class="p">,</span><span class="n">yhat</span><span class="p">),</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_te</span><span class="p">,</span><span class="n">yhat</span><span class="p">),</span><span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_te</span><span class="p">,</span><span class="n">yhat</span><span class="p">))</span>
+    <span class="p">(</span><span class="n">r2_score</span><span class="p">(</span><span class="n">yi_te</span><span class="p">,</span><span class="n">yhat</span><span class="p">),</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">yi_te</span><span class="p">,</span><span class="n">yhat</span><span class="p">),</span><span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">yi_te</span><span class="p">,</span><span class="n">yhat</span><span class="p">))</span>
+
+<span class="n">invsqrtk</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="n">k</span><span class="o">**</span><span class="mf">0.5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;r2 = </span><span class="si">{:&gt;5.3f}</span><span class="s2"> +/- </span><span class="si">{:&gt;5.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">r2s</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">r2s</span><span class="p">,</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">invsqrtk</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mae= </span><span class="si">{:&gt;5.3f}</span><span class="s2"> +/- </span><span class="si">{:&gt;5.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">mses</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">mses</span><span class="p">,</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">invsqrtk</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mse= </span><span class="si">{:&gt;5.3f}</span><span class="s2"> +/- </span><span class="si">{:&gt;5.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">maes</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">maes</span><span class="p">,</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">invsqrtk</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>r2 = 0.941 +/- 0.003
+mae= 0.075 +/- 0.006
+mse= 0.152 +/- 0.004
 </pre></div>
 </div>
 </div>
@@ -563,23 +574,19 @@ theta_1 =   0.2878
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">sklearn.manifold</span><span class="o">,</span> <span class="nn">sklearn.cluster</span>
 <span class="kn">import</span> <span class="nn">rdkit</span><span class="o">,</span> <span class="nn">rdkit.Chem</span><span class="o">,</span> <span class="nn">rdkit.Chem.Draw</span>
 <span class="kn">from</span> <span class="nn">rdkit.Chem.Draw</span> <span class="kn">import</span> <span class="n">IPythonConsole</span>
-
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="activity-1-chemical-data-basics">
-<h1>Activity 1: Chemical Data Basics<a class="headerlink" href="#activity-1-chemical-data-basics" title="Permalink to this headline"></a></h1>
+<section id="activity-1-chemical-data-basics">
+<h2>Activity 1: Chemical Data Basics<a class="headerlink" href="#activity-1-chemical-data-basics" title="Permalink to this headline"></a></h2>
 <p>In this activity, we will be working with a dataset on the aqueous solubility  of various molecules. Our main objective will be to construct and assess the performance of simple linear model for predicting solubility. Although linear modeling is not canonically machine learning, all the concepts and approaches we consider for treating/examining the data as well as evaluating the models will be transferable to building models based on deep learning algorithms.</p>
 <p>Execute the following cell to import necessary modules and load the dataset. The data will be loaded into a Pandas dataframe named <code class="docutils literal notranslate"><span class="pre">soldata</span></code>. After, you can progress through the tasks as described.</p>
 <div class="cell docutils container">
@@ -609,20 +616,266 @@ theta_1 =   0.2878
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-bbda20c2-119b-4df7-85c0-db17d4ac6a84">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>InChI</th>
+      <th>InChIKey</th>
+      <th>SMILES</th>
+      <th>Solubility</th>
+      <th>SD</th>
+      <th>Ocurrences</th>
+      <th>Group</th>
+      <th>MolWt</th>
+      <th>...</th>
+      <th>NumRotatableBonds</th>
+      <th>NumValenceElectrons</th>
+      <th>NumAromaticRings</th>
+      <th>NumSaturatedRings</th>
+      <th>NumAliphaticRings</th>
+      <th>RingCount</th>
+      <th>TPSA</th>
+      <th>LabuteASA</th>
+      <th>BalabanJ</th>
+      <th>BertzCT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>A-3</td>
+      <td>N,N,N-trimethyloctadecan-1-aminium bromide</td>
+      <td>InChI=1S/C21H46N.BrH/c1-5-6-7-8-9-10-11-12-13-...</td>
+      <td>SZEMGTQCPRNXEG-UHFFFAOYSA-M</td>
+      <td>[Br-].CCCCCCCCCCCCCCCCCC[N+](C)(C)C</td>
+      <td>-3.616127</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>G1</td>
+      <td>392.510</td>
+      <td>...</td>
+      <td>17.0</td>
+      <td>142.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+      <td>158.520601</td>
+      <td>0.000000e+00</td>
+      <td>210.377334</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>A-4</td>
+      <td>Benzo[cd]indol-2(1H)-one</td>
+      <td>InChI=1S/C11H7NO/c13-11-8-5-1-3-7-4-2-6-9(12-1...</td>
+      <td>GPYLCFQEKPUWLD-UHFFFAOYSA-N</td>
+      <td>O=C1Nc2cccc3cccc1c23</td>
+      <td>-3.254767</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>G1</td>
+      <td>169.183</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>62.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>29.10</td>
+      <td>75.183563</td>
+      <td>2.582996e+00</td>
+      <td>511.229248</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>A-5</td>
+      <td>4-chlorobenzaldehyde</td>
+      <td>InChI=1S/C7H5ClO/c8-7-3-1-6(5-9)2-4-7/h1-5H</td>
+      <td>AVPYQKSLYISFPO-UHFFFAOYSA-N</td>
+      <td>Clc1ccc(C=O)cc1</td>
+      <td>-2.177078</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>G1</td>
+      <td>140.569</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>46.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>17.07</td>
+      <td>58.261134</td>
+      <td>3.009782e+00</td>
+      <td>202.661065</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>A-8</td>
+      <td>zinc bis[2-hydroxy-3,5-bis(1-phenylethyl)benzo...</td>
+      <td>InChI=1S/2C23H22O3.Zn/c2*1-15(17-9-5-3-6-10-17...</td>
+      <td>XTUPUYCJWKHGSW-UHFFFAOYSA-L</td>
+      <td>[Zn++].CC(c1ccccc1)c2cc(C(C)c3ccccc3)c(O)c(c2)...</td>
+      <td>-3.924409</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>G1</td>
+      <td>756.226</td>
+      <td>...</td>
+      <td>10.0</td>
+      <td>264.0</td>
+      <td>6.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>6.0</td>
+      <td>120.72</td>
+      <td>323.755434</td>
+      <td>2.322963e-07</td>
+      <td>1964.648666</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>A-9</td>
+      <td>4-({4-[bis(oxiran-2-ylmethyl)amino]phenyl}meth...</td>
+      <td>InChI=1S/C25H30N2O4/c1-5-20(26(10-22-14-28-22)...</td>
+      <td>FAUAZXVRLVIARB-UHFFFAOYSA-N</td>
+      <td>C1OC1CN(CC2CO2)c3ccc(Cc4ccc(cc4)N(CC5CO5)CC6CO...</td>
+      <td>-4.662065</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>G1</td>
+      <td>422.525</td>
+      <td>...</td>
+      <td>12.0</td>
+      <td>164.0</td>
+      <td>2.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>6.0</td>
+      <td>56.60</td>
+      <td>183.183268</td>
+      <td>1.084427e+00</td>
+      <td>769.899934</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 26 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-bbda20c2-119b-4df7-85c0-db17d4ac6a84')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-bbda20c2-119b-4df7-85c0-db17d4ac6a84 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-bbda20c2-119b-4df7-85c0-db17d4ac6a84');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="dataset-exploration">
-<h1>Dataset Exploration<a class="headerlink" href="#dataset-exploration" title="Permalink to this headline"></a></h1>
+<section id="dataset-exploration">
+<h2>Dataset Exploration<a class="headerlink" href="#dataset-exploration" title="Permalink to this headline"></a></h2>
 <p>One of the first things you should do for any ML task is simply get a feel for the data. As an end goal, we know we want to <em><strong>predict solubility</strong></em>. Thus, <em><strong>solubility</strong></em> is our <em><strong>label</strong></em> for a regression task, and we will try model this as a function of molecular descriptors of a molecule; these are used to construct prospective <em><strong>input feature vectors</strong></em> that represent the molecule.</p>
+</section>
 <section id="summary-of-tasks">
 <h2>Summary of Tasks<a class="headerlink" href="#summary-of-tasks" title="Permalink to this headline"></a></h2>
 <p>A. Take a moment to familiarize yourself with the modules that are imported in the previous cell. Then, look at the organization of the DataFrame, the first lines of which are shown above.</p>
 <p>B. Plot the distribution of solubility values. Is there anything notable about its shape or range?</p>
 <p>C. Examine pair correlations amongst possible input features. Are any descriptors highly correlated? How do the scale of the features compare?</p>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="task-b">
-<h1>Task B<a class="headerlink" href="#task-b" title="Permalink to this headline"></a></h1>
+<section id="what-does-the-data-look-like">
+<h2>What does the data look like?<a class="headerlink" href="#what-does-the-data-look-like" title="Permalink to this headline"></a></h2>
 <p>Plot the distribution of solubility values. Is there anything notable about its shape or range?</p>
 <p>Useful function: Useful function: sns.distplot
 https://seaborn.pydata.org/generated/seaborn.distplot.html</p>
@@ -633,10 +886,10 @@ https://seaborn.pydata.org/generated/seaborn.distplot.html</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/99ecfc3971d7795b45e5e0d94b42fedd1155629d77b7168ec1d24bbff20628ca.png" src="../_images/99ecfc3971d7795b45e5e0d94b42fedd1155629d77b7168ec1d24bbff20628ca.png" />
 </div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="task-c">
-<h1>Task C<a class="headerlink" href="#task-c" title="Permalink to this headline"></a></h1>
+</div>
 <p>Examine pair correlations amongst possible input features. Are any descriptors highly correlated? How do the scale of the features compare? What about correlation with the <em><strong>Solubility</strong></em>?</p>
 <p>Useful function: sns.pairplot
 https://seaborn.pydata.org/generated/seaborn.pairplot.html</p>
@@ -652,6 +905,9 @@ https://seaborn.pydata.org/generated/seaborn.pairplot.html</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7324e9b3755ebfa4d3de92e69b0effd915606f292d03424cdf0a114587c51714.png" src="../_images/7324e9b3755ebfa4d3de92e69b0effd915606f292d03424cdf0a114587c51714.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -672,16 +928,19 @@ https://seaborn.pydata.org/generated/seaborn.pairplot.html</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/fc7932fa2a5697fc396bf062a20436b6e1faa87112d6d21f6f3daed7ba7ce459.png" src="../_images/fc7932fa2a5697fc396bf062a20436b6e1faa87112d6d21f6f3daed7ba7ce459.png" />
+</div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="feature-scaling">
-<h1>Feature scaling<a class="headerlink" href="#feature-scaling" title="Permalink to this headline"></a></h1>
+<section id="feature-scaling">
+<h2>Feature scaling<a class="headerlink" href="#feature-scaling" title="Permalink to this headline"></a></h2>
 <p>Based on the disparate magnitudes of the possible features, we will perform a transformation of the input features to ensure everything has a similar “scale.”</p>
 <p>We will use standard scaling here. Although I will not represent that this is the <em>best</em> choice for scaling, it is simple/safe to implement.</p>
 <p>There are many scaling/transforming techniques available in packages like scikit-learn: https://scikit-learn.org/stable/modules/classes.html#module-sklearn.preprocessing</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="task-d">
-<h1>Task D:<a class="headerlink" href="#task-d" title="Permalink to this headline"></a></h1>
+<section id="how-good-is-the-model">
+<h2>How good is the model?<a class="headerlink" href="#how-good-is-the-model" title="Permalink to this headline"></a></h2>
 <p>Determine and evaluate the performance of a linear model. You can compare your results with that of the “exact” least-squares result afforded by linear algebra.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -703,6 +962,9 @@ https://seaborn.pydata.org/generated/seaborn.pairplot.html</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c2765b12834b077f8c88c61a47ff8e749dfdadac694a70e6d3e835027c2b3f54.png" src="../_images/c2765b12834b077f8c88c61a47ff8e749dfdadac694a70e6d3e835027c2b3f54.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -747,35 +1009,35 @@ https://seaborn.pydata.org/generated/seaborn.pairplot.html</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(7985, 17)
-[ 0.66266243  0.55167596  0.74573751  0.44560363 -0.98735297 -0.74262644
- -0.67197808  2.24165037  0.71608151 -0.81102151 -0.32709912 -0.42073195
- -0.91195572 -0.97723182  0.63327093 -2.19088662 -0.46601569]
+[ 0.67161614  0.54889838  0.74469141  0.44727935 -1.01140559 -0.77408708
+ -0.67927062  2.20020321  0.71865606 -0.80288253 -0.35141276 -0.44078171
+ -0.92806905 -1.0050756   0.6321915  -2.17850317 -0.46330734]
 (7985, 17)
-[ 0.67168308  0.56271087  0.75288851  0.44978121 -0.98606928 -0.74020689
- -0.67731497  2.2979138   0.72762402 -0.80613049 -0.32532152 -0.41927133
- -0.91242233 -0.97115044  0.63565738 -2.19823093 -0.46472986]
+[ 0.69538618  0.55533261  0.78661745  0.47384175 -1.00850871 -0.73529816
+ -0.67776548  2.2696453   0.75833988 -0.8442882  -0.32164625 -0.41435253
+ -0.93109498 -0.98781434  0.66407942 -2.19315014 -0.50036639]
 (7986, 17)
-[ 0.66481244  0.55026935  0.74235275  0.44217854 -0.99052426 -0.75837199
- -0.66882815  2.18469492  0.71264779 -0.81875172 -0.36006801 -0.4485811
- -0.94373905 -0.98302111  0.62527498 -2.16908788 -0.46341353]
+[ 0.68548659  0.58401639  0.77702782  0.46119767 -0.97839198 -0.73494155
+ -0.66507997  2.37183334  0.73904988 -0.81524166 -0.3234932  -0.4165034
+ -0.91558844 -0.9706682   0.65404438 -2.20636714 -0.46274899]
 (7986, 17)
-[ 0.71987912  0.58287619  0.81193542  0.48708865 -1.01039072 -0.73517037
- -0.67607478  2.39545265  0.77913454 -0.83946299 -0.32326677 -0.41611253
- -0.93224841 -1.00143824  0.6789977  -2.1943064  -0.49503146]
+[ 0.67239811  0.55468607  0.7584076   0.45388542 -0.99154917 -0.74508138
+ -0.66909508  2.27375654  0.73092381 -0.80753535 -0.34930324 -0.43612577
+ -0.92860276 -0.98914283  0.64197991 -2.18722654 -0.46163229]
 (7986, 17)
-[-0.52301996  0.11859671 -0.31357522 -0.35063347 -0.71762429 -0.06614572
- -0.68165734 -0.73200014 -0.49373177  0.71697134 -0.3325122   0.53125684
-  0.91115004 -0.52789498 -0.43689304  0.16564577  0.09016238]
-0.5009064999381232
-[0.55251232 0.47352989 0.5042284  0.45795454 0.51630736]
+[-0.53580184  0.12412468 -0.31860165 -0.3559494  -0.70985818 -0.07402442
+ -0.68463745 -0.73361094 -0.49781852  0.70295494 -0.32093239  0.52592039
+  0.89115753 -0.52409523 -0.44162256  0.17772238  0.08033724]
+0.4994079095136826
+[0.52394249 0.53448421 0.45143057 0.495154   0.49202827]
 </pre></div>
 </div>
-<img alt="../_images/ddf36662d842529b4d9a7b52b2e77c716740669f81bf7d44aff2f01aaaf04d5a.png" src="../_images/ddf36662d842529b4d9a7b52b2e77c716740669f81bf7d44aff2f01aaaf04d5a.png" />
+<img alt="../_images/fcbbf3d5ca4a5002f2e4845839ab6bd76f60c5d8b7d0af3d04d8c885af76a602.png" src="../_images/fcbbf3d5ca4a5002f2e4845839ab6bd76f60c5d8b7d0af3d04d8c885af76a602.png" />
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="impact-of-regularization">
-<h1>Impact of regularization<a class="headerlink" href="#impact-of-regularization" title="Permalink to this headline"></a></h1>
+<section id="regularization">
+<h2>Regularization<a class="headerlink" href="#regularization" title="Permalink to this headline"></a></h2>
 <p>In the previous cells, we considered a model using all possible features, but earlier inspection of the data suggests that some of the features are highly correlated. The implication is that we might obtain a <em>simpler</em> model without any significant loss in accuracy were we to use a different set of features.</p>
 <p>As a first pass towards something akin to feature selection, we will examine the impact of regularization on the model parameters. We discussed L1 and L2 regularization. Use the cells below to examine how using these regularization terms impacts the model parameters (i.e., coefficients).</p>
 <p>For simplicity, we will just use a simple train/test split. Examine the performance on the test set for the different methods and how this and the produced coefficients are impacted by the regularization weighting.</p>
@@ -823,10 +1085,17 @@ https://seaborn.pydata.org/generated/seaborn.pairplot.html</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/d4d76bc818e2aa273811a0791f48e2ee40ec1a34846591e645d7138d77c15da5.png" src="../_images/d4d76bc818e2aa273811a0791f48e2ee40ec1a34846591e645d7138d77c15da5.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Coefficients of determination are..
+L0:    0.468, L1:    0.420, L2:    0.467
+</pre></div>
+</div>
+</div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="feature-selection">
-<h1>Feature Selection<a class="headerlink" href="#feature-selection" title="Permalink to this headline"></a></h1>
+<section id="feature-selection">
+<h2>Feature Selection<a class="headerlink" href="#feature-selection" title="Permalink to this headline"></a></h2>
 <p>From previous results and analysis, we can probably conclude that we do not need all of the features for an accurate model. We mentioned a variety of feature selection methods. Here, we’ll use a simple greedy correlation filter to remove “redundant” features.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -862,7 +1131,21 @@ https://seaborn.pydata.org/generated/seaborn.pairplot.html</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Removing feature NumValenceElectrons with correlation of 0.993 with HeavyAtomCount
+Removing feature LabuteASA with correlation of 0.983 with HeavyAtomCount
+Removing feature HeavyAtomCount with correlation of 0.975 with MolMR
+Removing feature MolMR with correlation of 0.919 with MolWt
+Removing feature NumAliphaticRings with correlation of 0.903 with NumSaturatedRings
+Removing feature TPSA with correlation of 0.900 with NumHAcceptors
+Removing feature NumHeteroatoms with correlation of 0.890 with NumHAcceptors
+Removing feature BertzCT with correlation of 0.861 with MolWt
+0.42663105761132647
+</pre></div>
 </div>
+</div>
+</div>
+</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="activity-2-fun-with-neural-networks">
 <h1>Activity 2: Fun with Neural Networks<a class="headerlink" href="#activity-2-fun-with-neural-networks" title="Permalink to this headline"></a></h1>
@@ -886,9 +1169,8 @@ https://seaborn.pydata.org/generated/seaborn.pairplot.html</p>
 </div>
 </div>
 </div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="how-to-build-sequential-models-simple-example">
-<h1>How to build Sequential models (simple example)<a class="headerlink" href="#how-to-build-sequential-models-simple-example" title="Permalink to this headline"></a></h1>
+<section id="building-models-with-the-sequential-api">
+<h2>Building models with the Sequential API<a class="headerlink" href="#building-models-with-the-sequential-api" title="Permalink to this headline"></a></h2>
 <p>We will start with the “sequential” model, which is really easy to use! You can play around with the different parameters and check the output with the .summary() method. <strong>Can you make sense of the number of parameters that are reported???</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -933,8 +1215,8 @@ _________________________________________________________________
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="how-to-build-models-with-functional-api-simple-example">
-<h1>How to build models with Functional API (simple example)<a class="headerlink" href="#how-to-build-models-with-functional-api-simple-example" title="Permalink to this headline"></a></h1>
+<section id="building-models-with-functional-api">
+<h2>Building models with Functional API<a class="headerlink" href="#building-models-with-functional-api" title="Permalink to this headline"></a></h2>
 <p>We will also demonstrate the functional API. The functional API is more flexible than the Sequential API and permits you more control over the architecture. By contrast, <code class="docutils literal notranslate"><span class="pre">Sequential</span></code> models can only be fully connected, feed forward.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -985,8 +1267,8 @@ _________________________________________________________________
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="return-of-the-solubility-dataset">
-<h1>Return of the Solubility Dataset<a class="headerlink" href="#return-of-the-solubility-dataset" title="Permalink to this headline"></a></h1>
+<section id="return-of-the-solubility-dataset">
+<h2>Return of the Solubility Dataset<a class="headerlink" href="#return-of-the-solubility-dataset" title="Permalink to this headline"></a></h2>
 <p>So, now we are going to try and apply what we have learned to create a neural network that can predict solubility from chemical descriptors of a molecule.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1013,8 +1295,8 @@ _________________________________________________________________
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="data-preprocessing">
-<h1>Data Preprocessing<a class="headerlink" href="#data-preprocessing" title="Permalink to this headline"></a></h1>
+<section id="data-preprocessing">
+<h2>Data Preprocessing<a class="headerlink" href="#data-preprocessing" title="Permalink to this headline"></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inScaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span> <span class="c1"># scaler for features</span>
@@ -1037,7 +1319,7 @@ _________________________________________________________________
 
 <span class="c1"># now we compile the model and train it</span>
 <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s2">&quot;SGD&quot;</span><span class="p">,</span><span class="n">loss</span><span class="o">=</span><span class="s2">&quot;mean_squared_error&quot;</span><span class="p">,</span><span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mean_absolute_error&quot;</span><span class="p">])</span>
-<span class="n">hist</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Xsc</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">ysc</span><span class="p">,</span><span class="n">epochs</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span><span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">hist</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Xsc</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">ysc</span><span class="p">,</span><span class="n">epochs</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
 
 <span class="n">ypredsc</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xsc</span><span class="p">)</span> 
 <span class="n">ypred</span>   <span class="o">=</span> <span class="n">outScaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">ypredsc</span><span class="p">)</span>
@@ -1051,1032 +1333,233 @@ _________________________________________________________________
 <span class="n">yline</span> <span class="o">=</span> <span class="n">linearFit</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">xline</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xline</span><span class="p">,</span><span class="n">yline</span><span class="p">,</span><span class="s1">&#39;-r&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xline</span><span class="p">,</span><span class="n">xline</span><span class="p">,</span><span class="s1">&#39;:k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model: &quot;sequential_3&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model: &quot;sequential_1&quot;
 _________________________________________________________________
  Layer (type)                Output Shape              Param #   
 =================================================================
- dense_9 (Dense)             (None, 32)                576       
+ dense_3 (Dense)             (None, 32)                576       
                                                                  
- dense_10 (Dense)            (None, 5)                 165       
+ dense_4 (Dense)             (None, 5)                 165       
                                                                  
- dense_11 (Dense)            (None, 1)                 6         
+ dense_5 (Dense)             (None, 1)                 6         
                                                                  
 =================================================================
 Total params: 747
 Trainable params: 747
 Non-trainable params: 0
 _________________________________________________________________
-Epoch 1/500
-250/250 [==============================] - 2s 5ms/step - loss: 0.6153 - mean_absolute_error: 0.5834 - val_loss: 0.2924 - val_mean_absolute_error: 0.4200
-Epoch 2/500
-250/250 [==============================] - 1s 4ms/step - loss: 0.4346 - mean_absolute_error: 0.4787 - val_loss: 0.2537 - val_mean_absolute_error: 0.3914
-Epoch 3/500
-250/250 [==============================] - 1s 4ms/step - loss: 0.3939 - mean_absolute_error: 0.4525 - val_loss: 0.2598 - val_mean_absolute_error: 0.3897
-Epoch 4/500
-250/250 [==============================] - 1s 4ms/step - loss: 0.3620 - mean_absolute_error: 0.4328 - val_loss: 0.2546 - val_mean_absolute_error: 0.3842
-Epoch 5/500
-250/250 [==============================] - 1s 4ms/step - loss: 0.3429 - mean_absolute_error: 0.4229 - val_loss: 0.2528 - val_mean_absolute_error: 0.3836
-Epoch 6/500
-250/250 [==============================] - 1s 5ms/step - loss: 0.3329 - mean_absolute_error: 0.4134 - val_loss: 0.2495 - val_mean_absolute_error: 0.3810
-Epoch 7/500
-250/250 [==============================] - 1s 4ms/step - loss: 0.3246 - mean_absolute_error: 0.4105 - val_loss: 0.2555 - val_mean_absolute_error: 0.3847
-Epoch 8/500
-250/250 [==============================] - 1s 5ms/step - loss: 0.3202 - mean_absolute_error: 0.4048 - val_loss: 0.2508 - val_mean_absolute_error: 0.3793
-Epoch 9/500
-250/250 [==============================] - 1s 4ms/step - loss: 0.3129 - mean_absolute_error: 0.3995 - val_loss: 0.2435 - val_mean_absolute_error: 0.3768
-Epoch 10/500
-250/250 [==============================] - 1s 4ms/step - loss: 0.3092 - mean_absolute_error: 0.3973 - val_loss: 0.2365 - val_mean_absolute_error: 0.3718
-Epoch 11/500
-250/250 [==============================] - 1s 4ms/step - loss: 0.3024 - mean_absolute_error: 0.3935 - val_loss: 0.2346 - val_mean_absolute_error: 0.3714
-Epoch 12/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.3001 - mean_absolute_error: 0.3918 - val_loss: 0.2273 - val_mean_absolute_error: 0.3652
-Epoch 13/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2966 - mean_absolute_error: 0.3895 - val_loss: 0.2235 - val_mean_absolute_error: 0.3595
-Epoch 14/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2945 - mean_absolute_error: 0.3879 - val_loss: 0.2218 - val_mean_absolute_error: 0.3585
-Epoch 15/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2892 - mean_absolute_error: 0.3831 - val_loss: 0.2407 - val_mean_absolute_error: 0.3732
-Epoch 16/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2887 - mean_absolute_error: 0.3833 - val_loss: 0.2254 - val_mean_absolute_error: 0.3625
-Epoch 17/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2863 - mean_absolute_error: 0.3818 - val_loss: 0.2294 - val_mean_absolute_error: 0.3664
-Epoch 18/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2844 - mean_absolute_error: 0.3801 - val_loss: 0.2143 - val_mean_absolute_error: 0.3534
-Epoch 19/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2824 - mean_absolute_error: 0.3791 - val_loss: 0.2215 - val_mean_absolute_error: 0.3563
-Epoch 20/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2805 - mean_absolute_error: 0.3768 - val_loss: 0.2335 - val_mean_absolute_error: 0.3672
-Epoch 21/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2787 - mean_absolute_error: 0.3760 - val_loss: 0.2173 - val_mean_absolute_error: 0.3544
-Epoch 22/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2771 - mean_absolute_error: 0.3747 - val_loss: 0.2179 - val_mean_absolute_error: 0.3547
-Epoch 23/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2747 - mean_absolute_error: 0.3730 - val_loss: 0.2230 - val_mean_absolute_error: 0.3574
-Epoch 24/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2746 - mean_absolute_error: 0.3730 - val_loss: 0.2103 - val_mean_absolute_error: 0.3501
-Epoch 25/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2722 - mean_absolute_error: 0.3720 - val_loss: 0.2197 - val_mean_absolute_error: 0.3553
-Epoch 26/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2727 - mean_absolute_error: 0.3718 - val_loss: 0.2158 - val_mean_absolute_error: 0.3524
-Epoch 27/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2699 - mean_absolute_error: 0.3697 - val_loss: 0.2243 - val_mean_absolute_error: 0.3591
-Epoch 28/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2684 - mean_absolute_error: 0.3681 - val_loss: 0.2160 - val_mean_absolute_error: 0.3513
-Epoch 29/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2675 - mean_absolute_error: 0.3685 - val_loss: 0.2326 - val_mean_absolute_error: 0.3659
-Epoch 30/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2674 - mean_absolute_error: 0.3681 - val_loss: 0.2115 - val_mean_absolute_error: 0.3506
-Epoch 31/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2651 - mean_absolute_error: 0.3654 - val_loss: 0.2295 - val_mean_absolute_error: 0.3640
-Epoch 32/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2636 - mean_absolute_error: 0.3661 - val_loss: 0.2402 - val_mean_absolute_error: 0.3753
-Epoch 33/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2642 - mean_absolute_error: 0.3669 - val_loss: 0.2178 - val_mean_absolute_error: 0.3537
-Epoch 34/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2640 - mean_absolute_error: 0.3656 - val_loss: 0.2073 - val_mean_absolute_error: 0.3470
-Epoch 35/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2630 - mean_absolute_error: 0.3650 - val_loss: 0.2111 - val_mean_absolute_error: 0.3489
-Epoch 36/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2621 - mean_absolute_error: 0.3638 - val_loss: 0.2244 - val_mean_absolute_error: 0.3580
-Epoch 37/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2598 - mean_absolute_error: 0.3628 - val_loss: 0.2041 - val_mean_absolute_error: 0.3435
-Epoch 38/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2594 - mean_absolute_error: 0.3630 - val_loss: 0.1976 - val_mean_absolute_error: 0.3383
-Epoch 39/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2586 - mean_absolute_error: 0.3614 - val_loss: 0.2015 - val_mean_absolute_error: 0.3403
-Epoch 40/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2601 - mean_absolute_error: 0.3625 - val_loss: 0.2276 - val_mean_absolute_error: 0.3603
-Epoch 41/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2580 - mean_absolute_error: 0.3618 - val_loss: 0.2169 - val_mean_absolute_error: 0.3531
-Epoch 42/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2565 - mean_absolute_error: 0.3611 - val_loss: 0.2153 - val_mean_absolute_error: 0.3541
-Epoch 43/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2565 - mean_absolute_error: 0.3606 - val_loss: 0.2253 - val_mean_absolute_error: 0.3614
-Epoch 44/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2553 - mean_absolute_error: 0.3597 - val_loss: 0.2124 - val_mean_absolute_error: 0.3484
-Epoch 45/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2553 - mean_absolute_error: 0.3588 - val_loss: 0.2218 - val_mean_absolute_error: 0.3573
-Epoch 46/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2565 - mean_absolute_error: 0.3592 - val_loss: 0.2147 - val_mean_absolute_error: 0.3522
-Epoch 47/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2559 - mean_absolute_error: 0.3596 - val_loss: 0.2056 - val_mean_absolute_error: 0.3428
-Epoch 48/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2542 - mean_absolute_error: 0.3576 - val_loss: 0.2214 - val_mean_absolute_error: 0.3576
-Epoch 49/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2542 - mean_absolute_error: 0.3584 - val_loss: 0.2185 - val_mean_absolute_error: 0.3526
-Epoch 50/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2522 - mean_absolute_error: 0.3575 - val_loss: 0.2132 - val_mean_absolute_error: 0.3493
-Epoch 51/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2532 - mean_absolute_error: 0.3566 - val_loss: 0.2200 - val_mean_absolute_error: 0.3559
-Epoch 52/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2527 - mean_absolute_error: 0.3576 - val_loss: 0.2180 - val_mean_absolute_error: 0.3530
-Epoch 53/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2521 - mean_absolute_error: 0.3567 - val_loss: 0.1993 - val_mean_absolute_error: 0.3398
-Epoch 54/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2516 - mean_absolute_error: 0.3568 - val_loss: 0.2331 - val_mean_absolute_error: 0.3647
-Epoch 55/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2506 - mean_absolute_error: 0.3556 - val_loss: 0.2141 - val_mean_absolute_error: 0.3503
-Epoch 56/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2508 - mean_absolute_error: 0.3553 - val_loss: 0.2066 - val_mean_absolute_error: 0.3458
-Epoch 57/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2501 - mean_absolute_error: 0.3559 - val_loss: 0.2029 - val_mean_absolute_error: 0.3417
-Epoch 58/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2496 - mean_absolute_error: 0.3550 - val_loss: 0.2320 - val_mean_absolute_error: 0.3616
-Epoch 59/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2484 - mean_absolute_error: 0.3550 - val_loss: 0.2077 - val_mean_absolute_error: 0.3442
-Epoch 60/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2483 - mean_absolute_error: 0.3541 - val_loss: 0.2254 - val_mean_absolute_error: 0.3561
-Epoch 61/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2474 - mean_absolute_error: 0.3531 - val_loss: 0.2099 - val_mean_absolute_error: 0.3438
-Epoch 62/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2480 - mean_absolute_error: 0.3534 - val_loss: 0.2077 - val_mean_absolute_error: 0.3423
-Epoch 63/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2474 - mean_absolute_error: 0.3534 - val_loss: 0.2091 - val_mean_absolute_error: 0.3444
-Epoch 64/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2470 - mean_absolute_error: 0.3538 - val_loss: 0.2041 - val_mean_absolute_error: 0.3423
-Epoch 65/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2459 - mean_absolute_error: 0.3530 - val_loss: 0.2132 - val_mean_absolute_error: 0.3467
-Epoch 66/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2469 - mean_absolute_error: 0.3530 - val_loss: 0.2152 - val_mean_absolute_error: 0.3504
-Epoch 67/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2458 - mean_absolute_error: 0.3534 - val_loss: 0.2292 - val_mean_absolute_error: 0.3584
-Epoch 68/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2463 - mean_absolute_error: 0.3531 - val_loss: 0.2150 - val_mean_absolute_error: 0.3465
-Epoch 69/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2457 - mean_absolute_error: 0.3520 - val_loss: 0.2279 - val_mean_absolute_error: 0.3587
-Epoch 70/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2460 - mean_absolute_error: 0.3524 - val_loss: 0.2179 - val_mean_absolute_error: 0.3487
-Epoch 71/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2442 - mean_absolute_error: 0.3516 - val_loss: 0.2388 - val_mean_absolute_error: 0.3651
-Epoch 72/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2448 - mean_absolute_error: 0.3523 - val_loss: 0.2117 - val_mean_absolute_error: 0.3463
-Epoch 73/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2438 - mean_absolute_error: 0.3507 - val_loss: 0.2703 - val_mean_absolute_error: 0.3885
-Epoch 74/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2425 - mean_absolute_error: 0.3507 - val_loss: 0.2080 - val_mean_absolute_error: 0.3446
-Epoch 75/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2425 - mean_absolute_error: 0.3505 - val_loss: 0.2190 - val_mean_absolute_error: 0.3552
-Epoch 76/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2454 - mean_absolute_error: 0.3525 - val_loss: 0.2000 - val_mean_absolute_error: 0.3368
-Epoch 77/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2433 - mean_absolute_error: 0.3512 - val_loss: 0.2183 - val_mean_absolute_error: 0.3519
-Epoch 78/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2424 - mean_absolute_error: 0.3510 - val_loss: 0.2164 - val_mean_absolute_error: 0.3504
-Epoch 79/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2415 - mean_absolute_error: 0.3496 - val_loss: 0.2083 - val_mean_absolute_error: 0.3424
-Epoch 80/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2416 - mean_absolute_error: 0.3507 - val_loss: 0.2036 - val_mean_absolute_error: 0.3391
-Epoch 81/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2419 - mean_absolute_error: 0.3493 - val_loss: 0.2008 - val_mean_absolute_error: 0.3377
-Epoch 82/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2404 - mean_absolute_error: 0.3502 - val_loss: 0.2053 - val_mean_absolute_error: 0.3416
-Epoch 83/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2405 - mean_absolute_error: 0.3491 - val_loss: 0.2605 - val_mean_absolute_error: 0.3817
-Epoch 84/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2397 - mean_absolute_error: 0.3498 - val_loss: 0.2059 - val_mean_absolute_error: 0.3416
-Epoch 85/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2396 - mean_absolute_error: 0.3488 - val_loss: 0.2271 - val_mean_absolute_error: 0.3579
-Epoch 86/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2392 - mean_absolute_error: 0.3490 - val_loss: 0.2166 - val_mean_absolute_error: 0.3484
-Epoch 87/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2402 - mean_absolute_error: 0.3493 - val_loss: 0.2090 - val_mean_absolute_error: 0.3434
-Epoch 88/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2395 - mean_absolute_error: 0.3480 - val_loss: 0.2142 - val_mean_absolute_error: 0.3467
-Epoch 89/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2387 - mean_absolute_error: 0.3480 - val_loss: 0.2044 - val_mean_absolute_error: 0.3430
-Epoch 90/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2379 - mean_absolute_error: 0.3476 - val_loss: 0.1989 - val_mean_absolute_error: 0.3359
-Epoch 91/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2416 - mean_absolute_error: 0.3491 - val_loss: 0.2159 - val_mean_absolute_error: 0.3501
-Epoch 92/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2383 - mean_absolute_error: 0.3487 - val_loss: 0.2011 - val_mean_absolute_error: 0.3386
-Epoch 93/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2385 - mean_absolute_error: 0.3476 - val_loss: 0.2162 - val_mean_absolute_error: 0.3512
-Epoch 94/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2364 - mean_absolute_error: 0.3458 - val_loss: 0.2068 - val_mean_absolute_error: 0.3419
-Epoch 95/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2369 - mean_absolute_error: 0.3465 - val_loss: 0.2056 - val_mean_absolute_error: 0.3420
-Epoch 96/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2367 - mean_absolute_error: 0.3462 - val_loss: 0.2045 - val_mean_absolute_error: 0.3400
-Epoch 97/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2371 - mean_absolute_error: 0.3469 - val_loss: 0.2100 - val_mean_absolute_error: 0.3443
-Epoch 98/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2347 - mean_absolute_error: 0.3451 - val_loss: 0.2029 - val_mean_absolute_error: 0.3401
-Epoch 99/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2354 - mean_absolute_error: 0.3465 - val_loss: 0.1955 - val_mean_absolute_error: 0.3338
-Epoch 100/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2369 - mean_absolute_error: 0.3474 - val_loss: 0.2017 - val_mean_absolute_error: 0.3378
-Epoch 101/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2357 - mean_absolute_error: 0.3466 - val_loss: 0.1943 - val_mean_absolute_error: 0.3321
-Epoch 102/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2341 - mean_absolute_error: 0.3449 - val_loss: 0.2362 - val_mean_absolute_error: 0.3664
-Epoch 103/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2353 - mean_absolute_error: 0.3452 - val_loss: 0.1962 - val_mean_absolute_error: 0.3357
-Epoch 104/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2333 - mean_absolute_error: 0.3435 - val_loss: 0.2044 - val_mean_absolute_error: 0.3423
-Epoch 105/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2359 - mean_absolute_error: 0.3452 - val_loss: 0.2205 - val_mean_absolute_error: 0.3542
-Epoch 106/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2364 - mean_absolute_error: 0.3467 - val_loss: 0.2150 - val_mean_absolute_error: 0.3509
-Epoch 107/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2326 - mean_absolute_error: 0.3433 - val_loss: 0.2256 - val_mean_absolute_error: 0.3585
-Epoch 108/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2315 - mean_absolute_error: 0.3435 - val_loss: 0.1962 - val_mean_absolute_error: 0.3345
-Epoch 109/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2333 - mean_absolute_error: 0.3443 - val_loss: 0.2014 - val_mean_absolute_error: 0.3384
-Epoch 110/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2316 - mean_absolute_error: 0.3429 - val_loss: 0.1985 - val_mean_absolute_error: 0.3371
-Epoch 111/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2313 - mean_absolute_error: 0.3434 - val_loss: 0.2072 - val_mean_absolute_error: 0.3450
-Epoch 112/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2323 - mean_absolute_error: 0.3433 - val_loss: 0.2019 - val_mean_absolute_error: 0.3398
-Epoch 113/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2310 - mean_absolute_error: 0.3422 - val_loss: 0.2180 - val_mean_absolute_error: 0.3514
-Epoch 114/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2305 - mean_absolute_error: 0.3419 - val_loss: 0.2048 - val_mean_absolute_error: 0.3437
-Epoch 115/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2317 - mean_absolute_error: 0.3452 - val_loss: 0.2072 - val_mean_absolute_error: 0.3439
-Epoch 116/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2307 - mean_absolute_error: 0.3425 - val_loss: 0.1994 - val_mean_absolute_error: 0.3390
-Epoch 117/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2317 - mean_absolute_error: 0.3441 - val_loss: 0.1999 - val_mean_absolute_error: 0.3362
-Epoch 118/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2304 - mean_absolute_error: 0.3420 - val_loss: 0.2170 - val_mean_absolute_error: 0.3504
-Epoch 119/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2291 - mean_absolute_error: 0.3422 - val_loss: 0.2106 - val_mean_absolute_error: 0.3491
-Epoch 120/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2290 - mean_absolute_error: 0.3428 - val_loss: 0.2113 - val_mean_absolute_error: 0.3466
-Epoch 121/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2285 - mean_absolute_error: 0.3413 - val_loss: 0.2171 - val_mean_absolute_error: 0.3528
-Epoch 122/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2291 - mean_absolute_error: 0.3416 - val_loss: 0.2011 - val_mean_absolute_error: 0.3377
-Epoch 123/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2288 - mean_absolute_error: 0.3409 - val_loss: 0.2082 - val_mean_absolute_error: 0.3468
-Epoch 124/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2281 - mean_absolute_error: 0.3414 - val_loss: 0.2120 - val_mean_absolute_error: 0.3460
-Epoch 125/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2280 - mean_absolute_error: 0.3417 - val_loss: 0.2024 - val_mean_absolute_error: 0.3389
-Epoch 126/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2273 - mean_absolute_error: 0.3412 - val_loss: 0.2072 - val_mean_absolute_error: 0.3438
-Epoch 127/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2272 - mean_absolute_error: 0.3412 - val_loss: 0.2103 - val_mean_absolute_error: 0.3457
-Epoch 128/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2274 - mean_absolute_error: 0.3409 - val_loss: 0.2310 - val_mean_absolute_error: 0.3641
-Epoch 129/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2270 - mean_absolute_error: 0.3396 - val_loss: 0.2250 - val_mean_absolute_error: 0.3573
-Epoch 130/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2258 - mean_absolute_error: 0.3400 - val_loss: 0.2091 - val_mean_absolute_error: 0.3493
-Epoch 131/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2265 - mean_absolute_error: 0.3401 - val_loss: 0.2120 - val_mean_absolute_error: 0.3542
-Epoch 132/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2269 - mean_absolute_error: 0.3402 - val_loss: 0.2311 - val_mean_absolute_error: 0.3610
-Epoch 133/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2264 - mean_absolute_error: 0.3392 - val_loss: 0.2276 - val_mean_absolute_error: 0.3568
-Epoch 134/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2257 - mean_absolute_error: 0.3402 - val_loss: 0.2173 - val_mean_absolute_error: 0.3493
-Epoch 135/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2268 - mean_absolute_error: 0.3409 - val_loss: 0.2161 - val_mean_absolute_error: 0.3488
-Epoch 136/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2242 - mean_absolute_error: 0.3392 - val_loss: 0.2173 - val_mean_absolute_error: 0.3520
-Epoch 137/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2260 - mean_absolute_error: 0.3396 - val_loss: 0.2051 - val_mean_absolute_error: 0.3409
-Epoch 138/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2260 - mean_absolute_error: 0.3399 - val_loss: 0.2258 - val_mean_absolute_error: 0.3561
-Epoch 139/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2244 - mean_absolute_error: 0.3386 - val_loss: 0.2418 - val_mean_absolute_error: 0.3715
-Epoch 140/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2254 - mean_absolute_error: 0.3390 - val_loss: 0.2113 - val_mean_absolute_error: 0.3468
-Epoch 141/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2235 - mean_absolute_error: 0.3362 - val_loss: 0.2142 - val_mean_absolute_error: 0.3473
-Epoch 142/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2244 - mean_absolute_error: 0.3384 - val_loss: 0.2193 - val_mean_absolute_error: 0.3505
-Epoch 143/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2240 - mean_absolute_error: 0.3375 - val_loss: 0.2067 - val_mean_absolute_error: 0.3416
-Epoch 144/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2243 - mean_absolute_error: 0.3375 - val_loss: 0.2190 - val_mean_absolute_error: 0.3515
-Epoch 145/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2237 - mean_absolute_error: 0.3392 - val_loss: 0.2056 - val_mean_absolute_error: 0.3436
-Epoch 146/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2247 - mean_absolute_error: 0.3385 - val_loss: 0.2133 - val_mean_absolute_error: 0.3461
-Epoch 147/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2238 - mean_absolute_error: 0.3377 - val_loss: 0.2225 - val_mean_absolute_error: 0.3529
-Epoch 148/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2227 - mean_absolute_error: 0.3380 - val_loss: 0.2278 - val_mean_absolute_error: 0.3603
-Epoch 149/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2234 - mean_absolute_error: 0.3366 - val_loss: 0.2202 - val_mean_absolute_error: 0.3539
-Epoch 150/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2228 - mean_absolute_error: 0.3385 - val_loss: 0.2049 - val_mean_absolute_error: 0.3414
-Epoch 151/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2222 - mean_absolute_error: 0.3366 - val_loss: 0.2210 - val_mean_absolute_error: 0.3530
-Epoch 152/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2215 - mean_absolute_error: 0.3356 - val_loss: 0.2298 - val_mean_absolute_error: 0.3605
-Epoch 153/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2219 - mean_absolute_error: 0.3359 - val_loss: 0.2108 - val_mean_absolute_error: 0.3443
-Epoch 154/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2222 - mean_absolute_error: 0.3371 - val_loss: 0.2205 - val_mean_absolute_error: 0.3517
-Epoch 155/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2216 - mean_absolute_error: 0.3365 - val_loss: 0.2023 - val_mean_absolute_error: 0.3379
-Epoch 156/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2232 - mean_absolute_error: 0.3382 - val_loss: 0.2220 - val_mean_absolute_error: 0.3533
-Epoch 157/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2225 - mean_absolute_error: 0.3374 - val_loss: 0.2063 - val_mean_absolute_error: 0.3422
-Epoch 158/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2212 - mean_absolute_error: 0.3355 - val_loss: 0.2252 - val_mean_absolute_error: 0.3589
-Epoch 159/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2205 - mean_absolute_error: 0.3359 - val_loss: 0.2213 - val_mean_absolute_error: 0.3533
-Epoch 160/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2206 - mean_absolute_error: 0.3355 - val_loss: 0.1973 - val_mean_absolute_error: 0.3353
-Epoch 161/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2218 - mean_absolute_error: 0.3366 - val_loss: 0.2159 - val_mean_absolute_error: 0.3495
-Epoch 162/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2225 - mean_absolute_error: 0.3373 - val_loss: 0.2465 - val_mean_absolute_error: 0.3734
-Epoch 163/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2207 - mean_absolute_error: 0.3359 - val_loss: 0.2029 - val_mean_absolute_error: 0.3382
-Epoch 164/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2209 - mean_absolute_error: 0.3359 - val_loss: 0.2196 - val_mean_absolute_error: 0.3538
-Epoch 165/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2218 - mean_absolute_error: 0.3363 - val_loss: 0.2083 - val_mean_absolute_error: 0.3443
-Epoch 166/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2214 - mean_absolute_error: 0.3361 - val_loss: 0.2306 - val_mean_absolute_error: 0.3597
-Epoch 167/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2210 - mean_absolute_error: 0.3348 - val_loss: 0.2122 - val_mean_absolute_error: 0.3472
-Epoch 168/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2190 - mean_absolute_error: 0.3349 - val_loss: 0.2095 - val_mean_absolute_error: 0.3443
-Epoch 169/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2202 - mean_absolute_error: 0.3343 - val_loss: 0.2179 - val_mean_absolute_error: 0.3484
-Epoch 170/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2205 - mean_absolute_error: 0.3355 - val_loss: 0.2317 - val_mean_absolute_error: 0.3622
-Epoch 171/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2200 - mean_absolute_error: 0.3351 - val_loss: 0.2178 - val_mean_absolute_error: 0.3520
-Epoch 172/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2185 - mean_absolute_error: 0.3341 - val_loss: 0.2090 - val_mean_absolute_error: 0.3423
-Epoch 173/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2196 - mean_absolute_error: 0.3348 - val_loss: 0.2043 - val_mean_absolute_error: 0.3422
-Epoch 174/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2177 - mean_absolute_error: 0.3336 - val_loss: 0.2028 - val_mean_absolute_error: 0.3392
-Epoch 175/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2199 - mean_absolute_error: 0.3354 - val_loss: 0.2016 - val_mean_absolute_error: 0.3377
-Epoch 176/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2172 - mean_absolute_error: 0.3325 - val_loss: 0.2049 - val_mean_absolute_error: 0.3418
-Epoch 177/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2209 - mean_absolute_error: 0.3359 - val_loss: 0.2179 - val_mean_absolute_error: 0.3492
-Epoch 178/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2180 - mean_absolute_error: 0.3325 - val_loss: 0.2131 - val_mean_absolute_error: 0.3460
-Epoch 179/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2186 - mean_absolute_error: 0.3335 - val_loss: 0.2182 - val_mean_absolute_error: 0.3489
-Epoch 180/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2175 - mean_absolute_error: 0.3331 - val_loss: 0.2277 - val_mean_absolute_error: 0.3583
-Epoch 181/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2190 - mean_absolute_error: 0.3350 - val_loss: 0.2264 - val_mean_absolute_error: 0.3566
-Epoch 182/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2183 - mean_absolute_error: 0.3345 - val_loss: 0.2253 - val_mean_absolute_error: 0.3582
-Epoch 183/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2177 - mean_absolute_error: 0.3334 - val_loss: 0.2368 - val_mean_absolute_error: 0.3676
-Epoch 184/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2180 - mean_absolute_error: 0.3336 - val_loss: 0.2260 - val_mean_absolute_error: 0.3556
-Epoch 185/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2184 - mean_absolute_error: 0.3334 - val_loss: 0.1969 - val_mean_absolute_error: 0.3359
-Epoch 186/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2168 - mean_absolute_error: 0.3316 - val_loss: 0.2002 - val_mean_absolute_error: 0.3378
-Epoch 187/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2182 - mean_absolute_error: 0.3342 - val_loss: 0.2044 - val_mean_absolute_error: 0.3408
-Epoch 188/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2178 - mean_absolute_error: 0.3329 - val_loss: 0.2385 - val_mean_absolute_error: 0.3655
-Epoch 189/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2176 - mean_absolute_error: 0.3329 - val_loss: 0.2013 - val_mean_absolute_error: 0.3380
-Epoch 190/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2160 - mean_absolute_error: 0.3329 - val_loss: 0.2355 - val_mean_absolute_error: 0.3774
-Epoch 191/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2180 - mean_absolute_error: 0.3340 - val_loss: 0.2046 - val_mean_absolute_error: 0.3418
-Epoch 192/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2165 - mean_absolute_error: 0.3333 - val_loss: 0.2069 - val_mean_absolute_error: 0.3445
-Epoch 193/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2179 - mean_absolute_error: 0.3335 - val_loss: 0.2032 - val_mean_absolute_error: 0.3395
-Epoch 194/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2181 - mean_absolute_error: 0.3324 - val_loss: 0.2152 - val_mean_absolute_error: 0.3488
-Epoch 195/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2160 - mean_absolute_error: 0.3312 - val_loss: 0.2256 - val_mean_absolute_error: 0.3564
-Epoch 196/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2170 - mean_absolute_error: 0.3322 - val_loss: 0.2108 - val_mean_absolute_error: 0.3454
-Epoch 197/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2169 - mean_absolute_error: 0.3330 - val_loss: 0.2047 - val_mean_absolute_error: 0.3404
-Epoch 198/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2173 - mean_absolute_error: 0.3327 - val_loss: 0.2051 - val_mean_absolute_error: 0.3404
-Epoch 199/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2151 - mean_absolute_error: 0.3308 - val_loss: 0.2132 - val_mean_absolute_error: 0.3456
-Epoch 200/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2161 - mean_absolute_error: 0.3311 - val_loss: 0.2118 - val_mean_absolute_error: 0.3451
-Epoch 201/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2184 - mean_absolute_error: 0.3331 - val_loss: 0.2034 - val_mean_absolute_error: 0.3426
-Epoch 202/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2153 - mean_absolute_error: 0.3313 - val_loss: 0.2121 - val_mean_absolute_error: 0.3470
-Epoch 203/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2162 - mean_absolute_error: 0.3317 - val_loss: 0.2175 - val_mean_absolute_error: 0.3557
-Epoch 204/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2167 - mean_absolute_error: 0.3323 - val_loss: 0.2276 - val_mean_absolute_error: 0.3571
-Epoch 205/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2174 - mean_absolute_error: 0.3330 - val_loss: 0.2089 - val_mean_absolute_error: 0.3415
-Epoch 206/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2158 - mean_absolute_error: 0.3315 - val_loss: 0.2225 - val_mean_absolute_error: 0.3508
-Epoch 207/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2150 - mean_absolute_error: 0.3322 - val_loss: 0.2157 - val_mean_absolute_error: 0.3482
-Epoch 208/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2150 - mean_absolute_error: 0.3312 - val_loss: 0.2413 - val_mean_absolute_error: 0.3683
-Epoch 209/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2159 - mean_absolute_error: 0.3318 - val_loss: 0.2195 - val_mean_absolute_error: 0.3498
-Epoch 210/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2144 - mean_absolute_error: 0.3296 - val_loss: 0.2138 - val_mean_absolute_error: 0.3447
-Epoch 211/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2145 - mean_absolute_error: 0.3319 - val_loss: 0.2133 - val_mean_absolute_error: 0.3449
-Epoch 212/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2149 - mean_absolute_error: 0.3313 - val_loss: 0.2067 - val_mean_absolute_error: 0.3417
-Epoch 213/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2152 - mean_absolute_error: 0.3313 - val_loss: 0.2262 - val_mean_absolute_error: 0.3589
-Epoch 214/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2154 - mean_absolute_error: 0.3317 - val_loss: 0.2158 - val_mean_absolute_error: 0.3490
-Epoch 215/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2147 - mean_absolute_error: 0.3300 - val_loss: 0.2085 - val_mean_absolute_error: 0.3426
-Epoch 216/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2149 - mean_absolute_error: 0.3297 - val_loss: 0.2015 - val_mean_absolute_error: 0.3403
-Epoch 217/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2142 - mean_absolute_error: 0.3314 - val_loss: 0.2128 - val_mean_absolute_error: 0.3450
-Epoch 218/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2146 - mean_absolute_error: 0.3312 - val_loss: 0.2080 - val_mean_absolute_error: 0.3447
-Epoch 219/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2148 - mean_absolute_error: 0.3318 - val_loss: 0.2181 - val_mean_absolute_error: 0.3521
-Epoch 220/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2141 - mean_absolute_error: 0.3306 - val_loss: 0.2047 - val_mean_absolute_error: 0.3428
-Epoch 221/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2127 - mean_absolute_error: 0.3296 - val_loss: 0.2104 - val_mean_absolute_error: 0.3424
-Epoch 222/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2147 - mean_absolute_error: 0.3318 - val_loss: 0.2475 - val_mean_absolute_error: 0.3714
-Epoch 223/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2144 - mean_absolute_error: 0.3315 - val_loss: 0.2063 - val_mean_absolute_error: 0.3412
-Epoch 224/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2143 - mean_absolute_error: 0.3304 - val_loss: 0.2090 - val_mean_absolute_error: 0.3439
-Epoch 225/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2143 - mean_absolute_error: 0.3317 - val_loss: 0.2169 - val_mean_absolute_error: 0.3519
-Epoch 226/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2147 - mean_absolute_error: 0.3306 - val_loss: 0.2307 - val_mean_absolute_error: 0.3602
-Epoch 227/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2143 - mean_absolute_error: 0.3308 - val_loss: 0.2124 - val_mean_absolute_error: 0.3465
-Epoch 228/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2153 - mean_absolute_error: 0.3318 - val_loss: 0.2024 - val_mean_absolute_error: 0.3404
-Epoch 229/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2135 - mean_absolute_error: 0.3303 - val_loss: 0.2084 - val_mean_absolute_error: 0.3441
-Epoch 230/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2140 - mean_absolute_error: 0.3307 - val_loss: 0.2330 - val_mean_absolute_error: 0.3627
-Epoch 231/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2144 - mean_absolute_error: 0.3308 - val_loss: 0.2515 - val_mean_absolute_error: 0.3769
-Epoch 232/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2153 - mean_absolute_error: 0.3301 - val_loss: 0.2215 - val_mean_absolute_error: 0.3510
-Epoch 233/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2134 - mean_absolute_error: 0.3296 - val_loss: 0.1974 - val_mean_absolute_error: 0.3360
-Epoch 234/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2138 - mean_absolute_error: 0.3303 - val_loss: 0.2207 - val_mean_absolute_error: 0.3525
-Epoch 235/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2140 - mean_absolute_error: 0.3310 - val_loss: 0.2276 - val_mean_absolute_error: 0.3581
-Epoch 236/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2138 - mean_absolute_error: 0.3299 - val_loss: 0.2092 - val_mean_absolute_error: 0.3434
-Epoch 237/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2129 - mean_absolute_error: 0.3285 - val_loss: 0.2069 - val_mean_absolute_error: 0.3469
-Epoch 238/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2135 - mean_absolute_error: 0.3305 - val_loss: 0.2292 - val_mean_absolute_error: 0.3560
-Epoch 239/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2133 - mean_absolute_error: 0.3289 - val_loss: 0.2053 - val_mean_absolute_error: 0.3422
-Epoch 240/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2121 - mean_absolute_error: 0.3290 - val_loss: 0.2066 - val_mean_absolute_error: 0.3426
-Epoch 241/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2135 - mean_absolute_error: 0.3292 - val_loss: 0.2451 - val_mean_absolute_error: 0.3780
-Epoch 242/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2134 - mean_absolute_error: 0.3302 - val_loss: 0.2445 - val_mean_absolute_error: 0.3677
-Epoch 243/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2113 - mean_absolute_error: 0.3283 - val_loss: 0.2357 - val_mean_absolute_error: 0.3624
-Epoch 244/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2132 - mean_absolute_error: 0.3296 - val_loss: 0.2270 - val_mean_absolute_error: 0.3564
-Epoch 245/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2127 - mean_absolute_error: 0.3306 - val_loss: 0.2015 - val_mean_absolute_error: 0.3387
-Epoch 246/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2123 - mean_absolute_error: 0.3297 - val_loss: 0.2381 - val_mean_absolute_error: 0.3635
-Epoch 247/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2127 - mean_absolute_error: 0.3299 - val_loss: 0.2227 - val_mean_absolute_error: 0.3519
-Epoch 248/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2113 - mean_absolute_error: 0.3290 - val_loss: 0.2381 - val_mean_absolute_error: 0.3642
-Epoch 249/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2135 - mean_absolute_error: 0.3301 - val_loss: 0.2200 - val_mean_absolute_error: 0.3514
-Epoch 250/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2128 - mean_absolute_error: 0.3286 - val_loss: 0.2038 - val_mean_absolute_error: 0.3396
-Epoch 251/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2126 - mean_absolute_error: 0.3290 - val_loss: 0.2039 - val_mean_absolute_error: 0.3411
-Epoch 252/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2123 - mean_absolute_error: 0.3289 - val_loss: 0.2129 - val_mean_absolute_error: 0.3468
-Epoch 253/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2129 - mean_absolute_error: 0.3302 - val_loss: 0.2104 - val_mean_absolute_error: 0.3456
-Epoch 254/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2110 - mean_absolute_error: 0.3287 - val_loss: 0.2098 - val_mean_absolute_error: 0.3461
-Epoch 255/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2117 - mean_absolute_error: 0.3283 - val_loss: 0.2349 - val_mean_absolute_error: 0.3610
-Epoch 256/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2108 - mean_absolute_error: 0.3282 - val_loss: 0.2220 - val_mean_absolute_error: 0.3585
-Epoch 257/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2123 - mean_absolute_error: 0.3284 - val_loss: 0.2066 - val_mean_absolute_error: 0.3427
-Epoch 258/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2118 - mean_absolute_error: 0.3305 - val_loss: 0.2053 - val_mean_absolute_error: 0.3420
-Epoch 259/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2122 - mean_absolute_error: 0.3291 - val_loss: 0.2161 - val_mean_absolute_error: 0.3475
-Epoch 260/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2111 - mean_absolute_error: 0.3287 - val_loss: 0.2184 - val_mean_absolute_error: 0.3509
-Epoch 261/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2123 - mean_absolute_error: 0.3312 - val_loss: 0.2258 - val_mean_absolute_error: 0.3569
-Epoch 262/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2113 - mean_absolute_error: 0.3290 - val_loss: 0.2121 - val_mean_absolute_error: 0.3474
-Epoch 263/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2116 - mean_absolute_error: 0.3292 - val_loss: 0.2456 - val_mean_absolute_error: 0.3734
-Epoch 264/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2112 - mean_absolute_error: 0.3292 - val_loss: 0.2421 - val_mean_absolute_error: 0.3663
-Epoch 265/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2114 - mean_absolute_error: 0.3287 - val_loss: 0.2122 - val_mean_absolute_error: 0.3447
-Epoch 266/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2112 - mean_absolute_error: 0.3279 - val_loss: 0.2117 - val_mean_absolute_error: 0.3469
-Epoch 267/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2103 - mean_absolute_error: 0.3280 - val_loss: 0.2265 - val_mean_absolute_error: 0.3599
-Epoch 268/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2121 - mean_absolute_error: 0.3292 - val_loss: 0.2047 - val_mean_absolute_error: 0.3427
-Epoch 269/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2111 - mean_absolute_error: 0.3283 - val_loss: 0.2045 - val_mean_absolute_error: 0.3409
-Epoch 270/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2122 - mean_absolute_error: 0.3286 - val_loss: 0.2212 - val_mean_absolute_error: 0.3510
-Epoch 271/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2104 - mean_absolute_error: 0.3285 - val_loss: 0.2208 - val_mean_absolute_error: 0.3505
-Epoch 272/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2113 - mean_absolute_error: 0.3278 - val_loss: 0.2202 - val_mean_absolute_error: 0.3496
-Epoch 273/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2103 - mean_absolute_error: 0.3286 - val_loss: 0.2104 - val_mean_absolute_error: 0.3434
-Epoch 274/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2113 - mean_absolute_error: 0.3281 - val_loss: 0.2149 - val_mean_absolute_error: 0.3454
-Epoch 275/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2106 - mean_absolute_error: 0.3277 - val_loss: 0.2115 - val_mean_absolute_error: 0.3462
-Epoch 276/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2117 - mean_absolute_error: 0.3291 - val_loss: 0.2102 - val_mean_absolute_error: 0.3437
-Epoch 277/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2123 - mean_absolute_error: 0.3296 - val_loss: 0.2184 - val_mean_absolute_error: 0.3534
-Epoch 278/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2105 - mean_absolute_error: 0.3284 - val_loss: 0.2175 - val_mean_absolute_error: 0.3489
-Epoch 279/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2110 - mean_absolute_error: 0.3286 - val_loss: 0.2406 - val_mean_absolute_error: 0.3654
-Epoch 280/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2081 - mean_absolute_error: 0.3262 - val_loss: 0.2044 - val_mean_absolute_error: 0.3417
-Epoch 281/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2098 - mean_absolute_error: 0.3282 - val_loss: 0.2090 - val_mean_absolute_error: 0.3428
-Epoch 282/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2099 - mean_absolute_error: 0.3283 - val_loss: 0.2133 - val_mean_absolute_error: 0.3448
-Epoch 283/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2103 - mean_absolute_error: 0.3287 - val_loss: 0.2228 - val_mean_absolute_error: 0.3518
-Epoch 284/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2104 - mean_absolute_error: 0.3277 - val_loss: 0.2150 - val_mean_absolute_error: 0.3483
-Epoch 285/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2114 - mean_absolute_error: 0.3291 - val_loss: 0.2045 - val_mean_absolute_error: 0.3405
-Epoch 286/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2102 - mean_absolute_error: 0.3274 - val_loss: 0.2073 - val_mean_absolute_error: 0.3425
-Epoch 287/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2107 - mean_absolute_error: 0.3281 - val_loss: 0.2136 - val_mean_absolute_error: 0.3466
-Epoch 288/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2100 - mean_absolute_error: 0.3280 - val_loss: 0.2127 - val_mean_absolute_error: 0.3440
-Epoch 289/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2101 - mean_absolute_error: 0.3284 - val_loss: 0.2189 - val_mean_absolute_error: 0.3555
-Epoch 290/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2097 - mean_absolute_error: 0.3275 - val_loss: 0.2090 - val_mean_absolute_error: 0.3424
-Epoch 291/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2101 - mean_absolute_error: 0.3276 - val_loss: 0.2101 - val_mean_absolute_error: 0.3427
-Epoch 292/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2094 - mean_absolute_error: 0.3270 - val_loss: 0.2053 - val_mean_absolute_error: 0.3391
-Epoch 293/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2095 - mean_absolute_error: 0.3280 - val_loss: 0.2055 - val_mean_absolute_error: 0.3420
-Epoch 294/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2098 - mean_absolute_error: 0.3273 - val_loss: 0.2135 - val_mean_absolute_error: 0.3470
-Epoch 295/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2107 - mean_absolute_error: 0.3294 - val_loss: 0.2238 - val_mean_absolute_error: 0.3522
-Epoch 296/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2098 - mean_absolute_error: 0.3275 - val_loss: 0.2040 - val_mean_absolute_error: 0.3421
-Epoch 297/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2099 - mean_absolute_error: 0.3270 - val_loss: 0.2390 - val_mean_absolute_error: 0.3673
-Epoch 298/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2086 - mean_absolute_error: 0.3264 - val_loss: 0.2190 - val_mean_absolute_error: 0.3494
-Epoch 299/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2087 - mean_absolute_error: 0.3274 - val_loss: 0.2182 - val_mean_absolute_error: 0.3535
-Epoch 300/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2087 - mean_absolute_error: 0.3277 - val_loss: 0.2160 - val_mean_absolute_error: 0.3484
-Epoch 301/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2092 - mean_absolute_error: 0.3274 - val_loss: 0.2059 - val_mean_absolute_error: 0.3443
-Epoch 302/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2111 - mean_absolute_error: 0.3285 - val_loss: 0.2117 - val_mean_absolute_error: 0.3449
-Epoch 303/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2094 - mean_absolute_error: 0.3276 - val_loss: 0.2182 - val_mean_absolute_error: 0.3482
-Epoch 304/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2089 - mean_absolute_error: 0.3281 - val_loss: 0.2216 - val_mean_absolute_error: 0.3548
-Epoch 305/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2083 - mean_absolute_error: 0.3277 - val_loss: 0.2133 - val_mean_absolute_error: 0.3463
-Epoch 306/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2087 - mean_absolute_error: 0.3266 - val_loss: 0.2099 - val_mean_absolute_error: 0.3488
-Epoch 307/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2076 - mean_absolute_error: 0.3258 - val_loss: 0.2148 - val_mean_absolute_error: 0.3460
-Epoch 308/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2094 - mean_absolute_error: 0.3282 - val_loss: 0.2108 - val_mean_absolute_error: 0.3445
-Epoch 309/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2095 - mean_absolute_error: 0.3269 - val_loss: 0.2117 - val_mean_absolute_error: 0.3474
-Epoch 310/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2078 - mean_absolute_error: 0.3256 - val_loss: 0.2122 - val_mean_absolute_error: 0.3460
-Epoch 311/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2097 - mean_absolute_error: 0.3289 - val_loss: 0.2251 - val_mean_absolute_error: 0.3546
-Epoch 312/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2095 - mean_absolute_error: 0.3272 - val_loss: 0.2120 - val_mean_absolute_error: 0.3462
-Epoch 313/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2102 - mean_absolute_error: 0.3280 - val_loss: 0.2143 - val_mean_absolute_error: 0.3469
-Epoch 314/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2089 - mean_absolute_error: 0.3278 - val_loss: 0.2406 - val_mean_absolute_error: 0.3660
-Epoch 315/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2094 - mean_absolute_error: 0.3277 - val_loss: 0.2046 - val_mean_absolute_error: 0.3410
-Epoch 316/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2102 - mean_absolute_error: 0.3282 - val_loss: 0.2124 - val_mean_absolute_error: 0.3473
-Epoch 317/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2085 - mean_absolute_error: 0.3267 - val_loss: 0.2383 - val_mean_absolute_error: 0.3659
-Epoch 318/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2080 - mean_absolute_error: 0.3268 - val_loss: 0.2134 - val_mean_absolute_error: 0.3441
-Epoch 319/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2068 - mean_absolute_error: 0.3249 - val_loss: 0.2182 - val_mean_absolute_error: 0.3514
-Epoch 320/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2085 - mean_absolute_error: 0.3264 - val_loss: 0.2114 - val_mean_absolute_error: 0.3437
-Epoch 321/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2074 - mean_absolute_error: 0.3261 - val_loss: 0.2110 - val_mean_absolute_error: 0.3513
-Epoch 322/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2085 - mean_absolute_error: 0.3271 - val_loss: 0.2067 - val_mean_absolute_error: 0.3400
-Epoch 323/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2069 - mean_absolute_error: 0.3264 - val_loss: 0.2421 - val_mean_absolute_error: 0.3685
-Epoch 324/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2087 - mean_absolute_error: 0.3275 - val_loss: 0.2244 - val_mean_absolute_error: 0.3546
-Epoch 325/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2070 - mean_absolute_error: 0.3255 - val_loss: 0.2170 - val_mean_absolute_error: 0.3502
-Epoch 326/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2084 - mean_absolute_error: 0.3270 - val_loss: 0.2337 - val_mean_absolute_error: 0.3667
-Epoch 327/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2087 - mean_absolute_error: 0.3271 - val_loss: 0.2069 - val_mean_absolute_error: 0.3418
-Epoch 328/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2086 - mean_absolute_error: 0.3277 - val_loss: 0.2366 - val_mean_absolute_error: 0.3664
-Epoch 329/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2087 - mean_absolute_error: 0.3273 - val_loss: 0.2071 - val_mean_absolute_error: 0.3410
-Epoch 330/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2095 - mean_absolute_error: 0.3277 - val_loss: 0.2173 - val_mean_absolute_error: 0.3501
-Epoch 331/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2075 - mean_absolute_error: 0.3257 - val_loss: 0.2034 - val_mean_absolute_error: 0.3405
-Epoch 332/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2086 - mean_absolute_error: 0.3267 - val_loss: 0.2168 - val_mean_absolute_error: 0.3476
-Epoch 333/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2069 - mean_absolute_error: 0.3256 - val_loss: 0.2195 - val_mean_absolute_error: 0.3496
-Epoch 334/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2065 - mean_absolute_error: 0.3252 - val_loss: 0.2071 - val_mean_absolute_error: 0.3426
-Epoch 335/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2067 - mean_absolute_error: 0.3258 - val_loss: 0.2105 - val_mean_absolute_error: 0.3443
-Epoch 336/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2084 - mean_absolute_error: 0.3271 - val_loss: 0.2103 - val_mean_absolute_error: 0.3459
-Epoch 337/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2075 - mean_absolute_error: 0.3262 - val_loss: 0.2223 - val_mean_absolute_error: 0.3525
-Epoch 338/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2084 - mean_absolute_error: 0.3269 - val_loss: 0.2332 - val_mean_absolute_error: 0.3600
-Epoch 339/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2070 - mean_absolute_error: 0.3258 - val_loss: 0.2242 - val_mean_absolute_error: 0.3538
-Epoch 340/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2068 - mean_absolute_error: 0.3269 - val_loss: 0.2139 - val_mean_absolute_error: 0.3458
-Epoch 341/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2064 - mean_absolute_error: 0.3258 - val_loss: 0.2029 - val_mean_absolute_error: 0.3413
-Epoch 342/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2078 - mean_absolute_error: 0.3263 - val_loss: 0.2253 - val_mean_absolute_error: 0.3596
-Epoch 343/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2074 - mean_absolute_error: 0.3264 - val_loss: 0.2043 - val_mean_absolute_error: 0.3414
-Epoch 344/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2062 - mean_absolute_error: 0.3247 - val_loss: 0.2083 - val_mean_absolute_error: 0.3446
-Epoch 345/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2066 - mean_absolute_error: 0.3253 - val_loss: 0.2280 - val_mean_absolute_error: 0.3695
-Epoch 346/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2078 - mean_absolute_error: 0.3273 - val_loss: 0.2224 - val_mean_absolute_error: 0.3587
-Epoch 347/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2065 - mean_absolute_error: 0.3255 - val_loss: 0.2062 - val_mean_absolute_error: 0.3422
-Epoch 348/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2064 - mean_absolute_error: 0.3265 - val_loss: 0.2065 - val_mean_absolute_error: 0.3410
-Epoch 349/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2072 - mean_absolute_error: 0.3262 - val_loss: 0.2194 - val_mean_absolute_error: 0.3510
-Epoch 350/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2065 - mean_absolute_error: 0.3267 - val_loss: 0.2190 - val_mean_absolute_error: 0.3508
-Epoch 351/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2039 - mean_absolute_error: 0.3237 - val_loss: 0.2034 - val_mean_absolute_error: 0.3402
-Epoch 352/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2072 - mean_absolute_error: 0.3257 - val_loss: 0.2444 - val_mean_absolute_error: 0.3680
-Epoch 353/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2060 - mean_absolute_error: 0.3256 - val_loss: 0.2165 - val_mean_absolute_error: 0.3495
-Epoch 354/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2054 - mean_absolute_error: 0.3250 - val_loss: 0.2413 - val_mean_absolute_error: 0.3645
-Epoch 355/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2059 - mean_absolute_error: 0.3252 - val_loss: 0.2122 - val_mean_absolute_error: 0.3500
-Epoch 356/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2059 - mean_absolute_error: 0.3258 - val_loss: 0.2198 - val_mean_absolute_error: 0.3505
-Epoch 357/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2067 - mean_absolute_error: 0.3266 - val_loss: 0.2222 - val_mean_absolute_error: 0.3518
-Epoch 358/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2059 - mean_absolute_error: 0.3259 - val_loss: 0.2291 - val_mean_absolute_error: 0.3553
-Epoch 359/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2064 - mean_absolute_error: 0.3254 - val_loss: 0.2181 - val_mean_absolute_error: 0.3471
-Epoch 360/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2055 - mean_absolute_error: 0.3255 - val_loss: 0.2199 - val_mean_absolute_error: 0.3528
-Epoch 361/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2057 - mean_absolute_error: 0.3261 - val_loss: 0.2220 - val_mean_absolute_error: 0.3548
-Epoch 362/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2059 - mean_absolute_error: 0.3249 - val_loss: 0.2193 - val_mean_absolute_error: 0.3550
-Epoch 363/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2056 - mean_absolute_error: 0.3243 - val_loss: 0.2079 - val_mean_absolute_error: 0.3431
-Epoch 364/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2061 - mean_absolute_error: 0.3256 - val_loss: 0.2180 - val_mean_absolute_error: 0.3505
-Epoch 365/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2073 - mean_absolute_error: 0.3264 - val_loss: 0.2063 - val_mean_absolute_error: 0.3416
-Epoch 366/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2060 - mean_absolute_error: 0.3249 - val_loss: 0.2578 - val_mean_absolute_error: 0.3818
-Epoch 367/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2056 - mean_absolute_error: 0.3246 - val_loss: 0.2049 - val_mean_absolute_error: 0.3394
-Epoch 368/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2065 - mean_absolute_error: 0.3254 - val_loss: 0.2086 - val_mean_absolute_error: 0.3435
-Epoch 369/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2059 - mean_absolute_error: 0.3253 - val_loss: 0.2405 - val_mean_absolute_error: 0.3678
-Epoch 370/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2051 - mean_absolute_error: 0.3250 - val_loss: 0.2035 - val_mean_absolute_error: 0.3414
-Epoch 371/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2050 - mean_absolute_error: 0.3238 - val_loss: 0.2249 - val_mean_absolute_error: 0.3524
-Epoch 372/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2057 - mean_absolute_error: 0.3249 - val_loss: 0.2112 - val_mean_absolute_error: 0.3461
-Epoch 373/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2062 - mean_absolute_error: 0.3265 - val_loss: 0.2252 - val_mean_absolute_error: 0.3549
-Epoch 374/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2055 - mean_absolute_error: 0.3247 - val_loss: 0.2451 - val_mean_absolute_error: 0.3687
-Epoch 375/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2066 - mean_absolute_error: 0.3255 - val_loss: 0.2180 - val_mean_absolute_error: 0.3491
-Epoch 376/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2060 - mean_absolute_error: 0.3255 - val_loss: 0.2232 - val_mean_absolute_error: 0.3540
-Epoch 377/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2047 - mean_absolute_error: 0.3253 - val_loss: 0.2212 - val_mean_absolute_error: 0.3527
-Epoch 378/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2045 - mean_absolute_error: 0.3252 - val_loss: 0.2225 - val_mean_absolute_error: 0.3537
-Epoch 379/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2061 - mean_absolute_error: 0.3258 - val_loss: 0.2233 - val_mean_absolute_error: 0.3521
-Epoch 380/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2052 - mean_absolute_error: 0.3247 - val_loss: 0.2307 - val_mean_absolute_error: 0.3593
-Epoch 381/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2046 - mean_absolute_error: 0.3240 - val_loss: 0.2125 - val_mean_absolute_error: 0.3458
-Epoch 382/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2040 - mean_absolute_error: 0.3235 - val_loss: 0.2126 - val_mean_absolute_error: 0.3449
-Epoch 383/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2049 - mean_absolute_error: 0.3254 - val_loss: 0.2082 - val_mean_absolute_error: 0.3457
-Epoch 384/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2040 - mean_absolute_error: 0.3249 - val_loss: 0.2263 - val_mean_absolute_error: 0.3544
-Epoch 385/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2072 - mean_absolute_error: 0.3264 - val_loss: 0.2319 - val_mean_absolute_error: 0.3603
-Epoch 386/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2046 - mean_absolute_error: 0.3244 - val_loss: 0.2206 - val_mean_absolute_error: 0.3516
-Epoch 387/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2052 - mean_absolute_error: 0.3239 - val_loss: 0.2313 - val_mean_absolute_error: 0.3604
-Epoch 388/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2046 - mean_absolute_error: 0.3247 - val_loss: 0.2119 - val_mean_absolute_error: 0.3465
-Epoch 389/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2039 - mean_absolute_error: 0.3244 - val_loss: 0.2247 - val_mean_absolute_error: 0.3544
-Epoch 390/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2043 - mean_absolute_error: 0.3255 - val_loss: 0.2531 - val_mean_absolute_error: 0.3732
-Epoch 391/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2054 - mean_absolute_error: 0.3247 - val_loss: 0.2114 - val_mean_absolute_error: 0.3481
-Epoch 392/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2051 - mean_absolute_error: 0.3246 - val_loss: 0.2122 - val_mean_absolute_error: 0.3495
-Epoch 393/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2054 - mean_absolute_error: 0.3255 - val_loss: 0.2302 - val_mean_absolute_error: 0.3563
-Epoch 394/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2041 - mean_absolute_error: 0.3251 - val_loss: 0.2256 - val_mean_absolute_error: 0.3554
-Epoch 395/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2032 - mean_absolute_error: 0.3235 - val_loss: 0.2186 - val_mean_absolute_error: 0.3516
-Epoch 396/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2044 - mean_absolute_error: 0.3239 - val_loss: 0.2106 - val_mean_absolute_error: 0.3456
-Epoch 397/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2048 - mean_absolute_error: 0.3244 - val_loss: 0.2091 - val_mean_absolute_error: 0.3441
-Epoch 398/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2045 - mean_absolute_error: 0.3237 - val_loss: 0.2135 - val_mean_absolute_error: 0.3470
-Epoch 399/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2037 - mean_absolute_error: 0.3247 - val_loss: 0.2090 - val_mean_absolute_error: 0.3457
-Epoch 400/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2034 - mean_absolute_error: 0.3244 - val_loss: 0.2236 - val_mean_absolute_error: 0.3536
-Epoch 401/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2039 - mean_absolute_error: 0.3252 - val_loss: 0.2164 - val_mean_absolute_error: 0.3492
-Epoch 402/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2037 - mean_absolute_error: 0.3235 - val_loss: 0.2216 - val_mean_absolute_error: 0.3571
-Epoch 403/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2049 - mean_absolute_error: 0.3246 - val_loss: 0.2330 - val_mean_absolute_error: 0.3625
-Epoch 404/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2027 - mean_absolute_error: 0.3238 - val_loss: 0.2031 - val_mean_absolute_error: 0.3436
-Epoch 405/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2040 - mean_absolute_error: 0.3248 - val_loss: 0.2131 - val_mean_absolute_error: 0.3478
-Epoch 406/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2036 - mean_absolute_error: 0.3238 - val_loss: 0.2328 - val_mean_absolute_error: 0.3597
-Epoch 407/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2051 - mean_absolute_error: 0.3246 - val_loss: 0.2407 - val_mean_absolute_error: 0.3630
-Epoch 408/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2035 - mean_absolute_error: 0.3241 - val_loss: 0.2239 - val_mean_absolute_error: 0.3584
-Epoch 409/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2043 - mean_absolute_error: 0.3247 - val_loss: 0.2121 - val_mean_absolute_error: 0.3466
-Epoch 410/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2034 - mean_absolute_error: 0.3238 - val_loss: 0.2099 - val_mean_absolute_error: 0.3436
-Epoch 411/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2034 - mean_absolute_error: 0.3234 - val_loss: 0.2214 - val_mean_absolute_error: 0.3549
-Epoch 412/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2030 - mean_absolute_error: 0.3237 - val_loss: 0.2197 - val_mean_absolute_error: 0.3522
-Epoch 413/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2067 - mean_absolute_error: 0.3251 - val_loss: 0.2182 - val_mean_absolute_error: 0.3518
-Epoch 414/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2035 - mean_absolute_error: 0.3225 - val_loss: 0.2300 - val_mean_absolute_error: 0.3598
-Epoch 415/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2037 - mean_absolute_error: 0.3239 - val_loss: 0.2305 - val_mean_absolute_error: 0.3595
-Epoch 416/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2046 - mean_absolute_error: 0.3240 - val_loss: 0.2298 - val_mean_absolute_error: 0.3568
-Epoch 417/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2023 - mean_absolute_error: 0.3229 - val_loss: 0.2179 - val_mean_absolute_error: 0.3501
-Epoch 418/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2036 - mean_absolute_error: 0.3242 - val_loss: 0.2141 - val_mean_absolute_error: 0.3470
-Epoch 419/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2023 - mean_absolute_error: 0.3220 - val_loss: 0.2113 - val_mean_absolute_error: 0.3439
-Epoch 420/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2039 - mean_absolute_error: 0.3238 - val_loss: 0.2263 - val_mean_absolute_error: 0.3562
-Epoch 421/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2022 - mean_absolute_error: 0.3236 - val_loss: 0.2239 - val_mean_absolute_error: 0.3546
-Epoch 422/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2029 - mean_absolute_error: 0.3233 - val_loss: 0.2119 - val_mean_absolute_error: 0.3470
-Epoch 423/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2026 - mean_absolute_error: 0.3230 - val_loss: 0.2248 - val_mean_absolute_error: 0.3545
-Epoch 424/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2028 - mean_absolute_error: 0.3238 - val_loss: 0.2157 - val_mean_absolute_error: 0.3477
-Epoch 425/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2031 - mean_absolute_error: 0.3234 - val_loss: 0.2093 - val_mean_absolute_error: 0.3461
-Epoch 426/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2022 - mean_absolute_error: 0.3220 - val_loss: 0.2262 - val_mean_absolute_error: 0.3547
-Epoch 427/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2040 - mean_absolute_error: 0.3242 - val_loss: 0.2132 - val_mean_absolute_error: 0.3454
-Epoch 428/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2025 - mean_absolute_error: 0.3235 - val_loss: 0.2165 - val_mean_absolute_error: 0.3490
-Epoch 429/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2032 - mean_absolute_error: 0.3230 - val_loss: 0.2132 - val_mean_absolute_error: 0.3483
-Epoch 430/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2037 - mean_absolute_error: 0.3244 - val_loss: 0.2322 - val_mean_absolute_error: 0.3613
-Epoch 431/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2033 - mean_absolute_error: 0.3232 - val_loss: 0.2350 - val_mean_absolute_error: 0.3614
-Epoch 432/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2021 - mean_absolute_error: 0.3231 - val_loss: 0.2165 - val_mean_absolute_error: 0.3483
-Epoch 433/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2016 - mean_absolute_error: 0.3224 - val_loss: 0.2262 - val_mean_absolute_error: 0.3552
-Epoch 434/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2022 - mean_absolute_error: 0.3237 - val_loss: 0.2458 - val_mean_absolute_error: 0.3717
-Epoch 435/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2019 - mean_absolute_error: 0.3231 - val_loss: 0.2175 - val_mean_absolute_error: 0.3499
-Epoch 436/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2025 - mean_absolute_error: 0.3248 - val_loss: 0.2218 - val_mean_absolute_error: 0.3543
-Epoch 437/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2025 - mean_absolute_error: 0.3229 - val_loss: 0.2207 - val_mean_absolute_error: 0.3523
-Epoch 438/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2024 - mean_absolute_error: 0.3241 - val_loss: 0.2215 - val_mean_absolute_error: 0.3517
-Epoch 439/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2030 - mean_absolute_error: 0.3239 - val_loss: 0.2217 - val_mean_absolute_error: 0.3525
-Epoch 440/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2021 - mean_absolute_error: 0.3219 - val_loss: 0.2077 - val_mean_absolute_error: 0.3445
-Epoch 441/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2019 - mean_absolute_error: 0.3231 - val_loss: 0.2269 - val_mean_absolute_error: 0.3548
-Epoch 442/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2008 - mean_absolute_error: 0.3227 - val_loss: 0.2628 - val_mean_absolute_error: 0.3798
-Epoch 443/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2031 - mean_absolute_error: 0.3234 - val_loss: 0.2243 - val_mean_absolute_error: 0.3527
-Epoch 444/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2029 - mean_absolute_error: 0.3237 - val_loss: 0.2250 - val_mean_absolute_error: 0.3538
-Epoch 445/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2029 - mean_absolute_error: 0.3238 - val_loss: 0.2191 - val_mean_absolute_error: 0.3484
-Epoch 446/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2009 - mean_absolute_error: 0.3223 - val_loss: 0.2296 - val_mean_absolute_error: 0.3570
-Epoch 447/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2022 - mean_absolute_error: 0.3229 - val_loss: 0.2152 - val_mean_absolute_error: 0.3490
-Epoch 448/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2013 - mean_absolute_error: 0.3225 - val_loss: 0.2146 - val_mean_absolute_error: 0.3489
-Epoch 449/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2020 - mean_absolute_error: 0.3226 - val_loss: 0.2247 - val_mean_absolute_error: 0.3529
-Epoch 450/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2018 - mean_absolute_error: 0.3218 - val_loss: 0.2080 - val_mean_absolute_error: 0.3461
-Epoch 451/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2045 - mean_absolute_error: 0.3248 - val_loss: 0.2226 - val_mean_absolute_error: 0.3517
-Epoch 452/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2023 - mean_absolute_error: 0.3224 - val_loss: 0.2592 - val_mean_absolute_error: 0.3822
-Epoch 453/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2016 - mean_absolute_error: 0.3223 - val_loss: 0.2094 - val_mean_absolute_error: 0.3444
-Epoch 454/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2008 - mean_absolute_error: 0.3217 - val_loss: 0.2341 - val_mean_absolute_error: 0.3605
-Epoch 455/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2013 - mean_absolute_error: 0.3225 - val_loss: 0.2238 - val_mean_absolute_error: 0.3527
-Epoch 456/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2021 - mean_absolute_error: 0.3234 - val_loss: 0.2126 - val_mean_absolute_error: 0.3471
-Epoch 457/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2013 - mean_absolute_error: 0.3223 - val_loss: 0.2380 - val_mean_absolute_error: 0.3692
-Epoch 458/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2026 - mean_absolute_error: 0.3233 - val_loss: 0.2361 - val_mean_absolute_error: 0.3604
-Epoch 459/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2013 - mean_absolute_error: 0.3226 - val_loss: 0.2260 - val_mean_absolute_error: 0.3530
-Epoch 460/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2020 - mean_absolute_error: 0.3240 - val_loss: 0.2172 - val_mean_absolute_error: 0.3498
-Epoch 461/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.1995 - mean_absolute_error: 0.3216 - val_loss: 0.2084 - val_mean_absolute_error: 0.3440
-Epoch 462/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2023 - mean_absolute_error: 0.3233 - val_loss: 0.2293 - val_mean_absolute_error: 0.3593
-Epoch 463/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2024 - mean_absolute_error: 0.3233 - val_loss: 0.2078 - val_mean_absolute_error: 0.3432
-Epoch 464/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2022 - mean_absolute_error: 0.3229 - val_loss: 0.2176 - val_mean_absolute_error: 0.3502
-Epoch 465/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2004 - mean_absolute_error: 0.3213 - val_loss: 0.2177 - val_mean_absolute_error: 0.3517
-Epoch 466/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2010 - mean_absolute_error: 0.3222 - val_loss: 0.2177 - val_mean_absolute_error: 0.3529
-Epoch 467/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2019 - mean_absolute_error: 0.3228 - val_loss: 0.2191 - val_mean_absolute_error: 0.3536
-Epoch 468/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.1997 - mean_absolute_error: 0.3208 - val_loss: 0.2164 - val_mean_absolute_error: 0.3502
-Epoch 469/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2005 - mean_absolute_error: 0.3221 - val_loss: 0.2113 - val_mean_absolute_error: 0.3461
-Epoch 470/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2021 - mean_absolute_error: 0.3230 - val_loss: 0.2276 - val_mean_absolute_error: 0.3546
-Epoch 471/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2005 - mean_absolute_error: 0.3230 - val_loss: 0.2220 - val_mean_absolute_error: 0.3570
-Epoch 472/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2022 - mean_absolute_error: 0.3235 - val_loss: 0.2273 - val_mean_absolute_error: 0.3561
-Epoch 473/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2019 - mean_absolute_error: 0.3227 - val_loss: 0.2671 - val_mean_absolute_error: 0.3904
-Epoch 474/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2016 - mean_absolute_error: 0.3221 - val_loss: 0.2099 - val_mean_absolute_error: 0.3446
-Epoch 475/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2014 - mean_absolute_error: 0.3228 - val_loss: 0.2223 - val_mean_absolute_error: 0.3629
-Epoch 476/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2014 - mean_absolute_error: 0.3231 - val_loss: 0.2233 - val_mean_absolute_error: 0.3524
-Epoch 477/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2007 - mean_absolute_error: 0.3223 - val_loss: 0.2233 - val_mean_absolute_error: 0.3523
-Epoch 478/500
-250/250 [==============================] - 1s 2ms/step - loss: 0.2007 - mean_absolute_error: 0.3209 - val_loss: 0.2226 - val_mean_absolute_error: 0.3561
-Epoch 479/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2016 - mean_absolute_error: 0.3233 - val_loss: 0.2270 - val_mean_absolute_error: 0.3556
-Epoch 480/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2014 - mean_absolute_error: 0.3234 - val_loss: 0.2208 - val_mean_absolute_error: 0.3504
-Epoch 481/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2006 - mean_absolute_error: 0.3222 - val_loss: 0.2053 - val_mean_absolute_error: 0.3415
-Epoch 482/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.1998 - mean_absolute_error: 0.3204 - val_loss: 0.2356 - val_mean_absolute_error: 0.3625
-Epoch 483/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2001 - mean_absolute_error: 0.3217 - val_loss: 0.2166 - val_mean_absolute_error: 0.3535
-Epoch 484/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2022 - mean_absolute_error: 0.3240 - val_loss: 0.2436 - val_mean_absolute_error: 0.3679
-Epoch 485/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2003 - mean_absolute_error: 0.3215 - val_loss: 0.2218 - val_mean_absolute_error: 0.3529
-Epoch 486/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2017 - mean_absolute_error: 0.3222 - val_loss: 0.2341 - val_mean_absolute_error: 0.3605
-Epoch 487/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.1994 - mean_absolute_error: 0.3213 - val_loss: 0.2260 - val_mean_absolute_error: 0.3546
-Epoch 488/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2009 - mean_absolute_error: 0.3227 - val_loss: 0.2261 - val_mean_absolute_error: 0.3569
-Epoch 489/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2000 - mean_absolute_error: 0.3201 - val_loss: 0.2289 - val_mean_absolute_error: 0.3568
-Epoch 490/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.1996 - mean_absolute_error: 0.3208 - val_loss: 0.2077 - val_mean_absolute_error: 0.3425
-Epoch 491/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2000 - mean_absolute_error: 0.3208 - val_loss: 0.2177 - val_mean_absolute_error: 0.3495
-Epoch 492/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2009 - mean_absolute_error: 0.3224 - val_loss: 0.2149 - val_mean_absolute_error: 0.3492
-Epoch 493/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.1996 - mean_absolute_error: 0.3212 - val_loss: 0.2256 - val_mean_absolute_error: 0.3564
-Epoch 494/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2014 - mean_absolute_error: 0.3228 - val_loss: 0.2270 - val_mean_absolute_error: 0.3571
-Epoch 495/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2006 - mean_absolute_error: 0.3214 - val_loss: 0.2255 - val_mean_absolute_error: 0.3567
-Epoch 496/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.1989 - mean_absolute_error: 0.3204 - val_loss: 0.2208 - val_mean_absolute_error: 0.3530
-Epoch 497/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.1995 - mean_absolute_error: 0.3213 - val_loss: 0.2223 - val_mean_absolute_error: 0.3524
-Epoch 498/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2002 - mean_absolute_error: 0.3219 - val_loss: 0.2686 - val_mean_absolute_error: 0.3855
-Epoch 499/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.2008 - mean_absolute_error: 0.3217 - val_loss: 0.2085 - val_mean_absolute_error: 0.3438
-Epoch 500/500
-250/250 [==============================] - 1s 3ms/step - loss: 0.1994 - mean_absolute_error: 0.3209 - val_loss: 0.2203 - val_mean_absolute_error: 0.3510
-r2 =  0.80, mae =  0.77, mse =  1.12
+Epoch 1/100
+250/250 [==============================] - 2s 5ms/step - loss: 0.6888 - mean_absolute_error: 0.6227 - val_loss: 0.3194 - val_mean_absolute_error: 0.4420
+Epoch 2/100
+250/250 [==============================] - 1s 3ms/step - loss: 0.4591 - mean_absolute_error: 0.4895 - val_loss: 0.2744 - val_mean_absolute_error: 0.4052
+Epoch 3/100
+250/250 [==============================] - 1s 3ms/step - loss: 0.4023 - mean_absolute_error: 0.4559 - val_loss: 0.2615 - val_mean_absolute_error: 0.3947
+Epoch 4/100
+250/250 [==============================] - 1s 3ms/step - loss: 0.3832 - mean_absolute_error: 0.4442 - val_loss: 0.2518 - val_mean_absolute_error: 0.3878
+Epoch 5/100
+250/250 [==============================] - 1s 3ms/step - loss: 0.3651 - mean_absolute_error: 0.4332 - val_loss: 0.2546 - val_mean_absolute_error: 0.3903
+Epoch 6/100
+250/250 [==============================] - 1s 3ms/step - loss: 0.3543 - mean_absolute_error: 0.4258 - val_loss: 0.2511 - val_mean_absolute_error: 0.3867
+Epoch 7/100
+250/250 [==============================] - 1s 3ms/step - loss: 0.3427 - mean_absolute_error: 0.4195 - val_loss: 0.2425 - val_mean_absolute_error: 0.3780
+Epoch 8/100
+250/250 [==============================] - 1s 3ms/step - loss: 0.3315 - mean_absolute_error: 0.4119 - val_loss: 0.2406 - val_mean_absolute_error: 0.3760
+Epoch 9/100
+250/250 [==============================] - 1s 3ms/step - loss: 0.3234 - mean_absolute_error: 0.4072 - val_loss: 0.2512 - val_mean_absolute_error: 0.3821
+Epoch 10/100
+250/250 [==============================] - 1s 3ms/step - loss: 0.3163 - mean_absolute_error: 0.4018 - val_loss: 0.2447 - val_mean_absolute_error: 0.3793
+Epoch 11/100
+250/250 [==============================] - 1s 3ms/step - loss: 0.3111 - mean_absolute_error: 0.3991 - val_loss: 0.2480 - val_mean_absolute_error: 0.3801
+Epoch 12/100
+250/250 [==============================] - 1s 3ms/step - loss: 0.3065 - mean_absolute_error: 0.3962 - val_loss: 0.2418 - val_mean_absolute_error: 0.3780
+Epoch 13/100
+250/250 [==============================] - 1s 4ms/step - loss: 0.3019 - mean_absolute_error: 0.3921 - val_loss: 0.2411 - val_mean_absolute_error: 0.3765
+Epoch 14/100
+250/250 [==============================] - 1s 3ms/step - loss: 0.2986 - mean_absolute_error: 0.3902 - val_loss: 0.2343 - val_mean_absolute_error: 0.3752
+Epoch 15/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2956 - mean_absolute_error: 0.3881 - val_loss: 0.2273 - val_mean_absolute_error: 0.3652
+Epoch 16/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2917 - mean_absolute_error: 0.3857 - val_loss: 0.2302 - val_mean_absolute_error: 0.3698
+Epoch 17/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2887 - mean_absolute_error: 0.3834 - val_loss: 0.2319 - val_mean_absolute_error: 0.3640
+Epoch 18/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2879 - mean_absolute_error: 0.3842 - val_loss: 0.2425 - val_mean_absolute_error: 0.3774
+Epoch 19/100
+250/250 [==============================] - 1s 2ms/step - loss: 0.2877 - mean_absolute_error: 0.3835 - val_loss: 0.2364 - val_mean_absolute_error: 0.3711
+Epoch 20/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2837 - mean_absolute_error: 0.3805 - val_loss: 0.2343 - val_mean_absolute_error: 0.3721
+Epoch 21/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2817 - mean_absolute_error: 0.3792 - val_loss: 0.2420 - val_mean_absolute_error: 0.3781
+Epoch 22/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2810 - mean_absolute_error: 0.3795 - val_loss: 0.2298 - val_mean_absolute_error: 0.3682
+Epoch 23/100
+250/250 [==============================] - 1s 2ms/step - loss: 0.2786 - mean_absolute_error: 0.3768 - val_loss: 0.2275 - val_mean_absolute_error: 0.3681
+Epoch 24/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2778 - mean_absolute_error: 0.3761 - val_loss: 0.2148 - val_mean_absolute_error: 0.3563
+Epoch 25/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2762 - mean_absolute_error: 0.3745 - val_loss: 0.2274 - val_mean_absolute_error: 0.3655
+Epoch 26/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2748 - mean_absolute_error: 0.3736 - val_loss: 0.2214 - val_mean_absolute_error: 0.3608
+Epoch 27/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2723 - mean_absolute_error: 0.3730 - val_loss: 0.2293 - val_mean_absolute_error: 0.3691
+Epoch 28/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2713 - mean_absolute_error: 0.3725 - val_loss: 0.2239 - val_mean_absolute_error: 0.3608
+Epoch 29/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2702 - mean_absolute_error: 0.3708 - val_loss: 0.2352 - val_mean_absolute_error: 0.3703
+Epoch 30/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2697 - mean_absolute_error: 0.3704 - val_loss: 0.2387 - val_mean_absolute_error: 0.3741
+Epoch 31/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2680 - mean_absolute_error: 0.3679 - val_loss: 0.2083 - val_mean_absolute_error: 0.3495
+Epoch 32/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2684 - mean_absolute_error: 0.3703 - val_loss: 0.2209 - val_mean_absolute_error: 0.3587
+Epoch 33/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2678 - mean_absolute_error: 0.3697 - val_loss: 0.2253 - val_mean_absolute_error: 0.3642
+Epoch 34/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2668 - mean_absolute_error: 0.3682 - val_loss: 0.2241 - val_mean_absolute_error: 0.3660
+Epoch 35/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2652 - mean_absolute_error: 0.3677 - val_loss: 0.2162 - val_mean_absolute_error: 0.3554
+Epoch 36/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2663 - mean_absolute_error: 0.3674 - val_loss: 0.2280 - val_mean_absolute_error: 0.3647
+Epoch 37/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2637 - mean_absolute_error: 0.3669 - val_loss: 0.2195 - val_mean_absolute_error: 0.3579
+Epoch 38/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2627 - mean_absolute_error: 0.3661 - val_loss: 0.2368 - val_mean_absolute_error: 0.3739
+Epoch 39/100
+250/250 [==============================] - 1s 2ms/step - loss: 0.2628 - mean_absolute_error: 0.3652 - val_loss: 0.2157 - val_mean_absolute_error: 0.3548
+Epoch 40/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2626 - mean_absolute_error: 0.3649 - val_loss: 0.2319 - val_mean_absolute_error: 0.3674
+Epoch 41/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2615 - mean_absolute_error: 0.3653 - val_loss: 0.2284 - val_mean_absolute_error: 0.3626
+Epoch 42/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2590 - mean_absolute_error: 0.3622 - val_loss: 0.2233 - val_mean_absolute_error: 0.3602
+Epoch 43/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2602 - mean_absolute_error: 0.3627 - val_loss: 0.2642 - val_mean_absolute_error: 0.3834
+Epoch 44/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2590 - mean_absolute_error: 0.3621 - val_loss: 0.2121 - val_mean_absolute_error: 0.3512
+Epoch 45/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2590 - mean_absolute_error: 0.3635 - val_loss: 0.2398 - val_mean_absolute_error: 0.3697
+Epoch 46/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2578 - mean_absolute_error: 0.3626 - val_loss: 0.2449 - val_mean_absolute_error: 0.3775
+Epoch 47/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2573 - mean_absolute_error: 0.3620 - val_loss: 0.2142 - val_mean_absolute_error: 0.3531
+Epoch 48/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2552 - mean_absolute_error: 0.3607 - val_loss: 0.2240 - val_mean_absolute_error: 0.3602
+Epoch 49/100
+250/250 [==============================] - 1s 2ms/step - loss: 0.2556 - mean_absolute_error: 0.3610 - val_loss: 0.2705 - val_mean_absolute_error: 0.3960
+Epoch 50/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2567 - mean_absolute_error: 0.3612 - val_loss: 0.2111 - val_mean_absolute_error: 0.3514
+Epoch 51/100
+250/250 [==============================] - 1s 2ms/step - loss: 0.2557 - mean_absolute_error: 0.3602 - val_loss: 0.2363 - val_mean_absolute_error: 0.3672
+Epoch 52/100
+250/250 [==============================] - 1s 2ms/step - loss: 0.2565 - mean_absolute_error: 0.3612 - val_loss: 0.2318 - val_mean_absolute_error: 0.3637
+Epoch 53/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2537 - mean_absolute_error: 0.3584 - val_loss: 0.2191 - val_mean_absolute_error: 0.3551
+Epoch 54/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2534 - mean_absolute_error: 0.3588 - val_loss: 0.2344 - val_mean_absolute_error: 0.3685
+Epoch 55/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2515 - mean_absolute_error: 0.3576 - val_loss: 0.2470 - val_mean_absolute_error: 0.3808
+Epoch 56/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2530 - mean_absolute_error: 0.3589 - val_loss: 0.2216 - val_mean_absolute_error: 0.3572
+Epoch 57/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2501 - mean_absolute_error: 0.3565 - val_loss: 0.2210 - val_mean_absolute_error: 0.3573
+Epoch 58/100
+250/250 [==============================] - 1s 2ms/step - loss: 0.2505 - mean_absolute_error: 0.3562 - val_loss: 0.2217 - val_mean_absolute_error: 0.3583
+Epoch 59/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2509 - mean_absolute_error: 0.3570 - val_loss: 0.2056 - val_mean_absolute_error: 0.3445
+Epoch 60/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2502 - mean_absolute_error: 0.3578 - val_loss: 0.2376 - val_mean_absolute_error: 0.3720
+Epoch 61/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2507 - mean_absolute_error: 0.3574 - val_loss: 0.2092 - val_mean_absolute_error: 0.3479
+Epoch 62/100
+250/250 [==============================] - 1s 2ms/step - loss: 0.2482 - mean_absolute_error: 0.3552 - val_loss: 0.2179 - val_mean_absolute_error: 0.3542
+Epoch 63/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2484 - mean_absolute_error: 0.3574 - val_loss: 0.2214 - val_mean_absolute_error: 0.3565
+Epoch 64/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2492 - mean_absolute_error: 0.3550 - val_loss: 0.2079 - val_mean_absolute_error: 0.3474
+Epoch 65/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2469 - mean_absolute_error: 0.3538 - val_loss: 0.2325 - val_mean_absolute_error: 0.3698
+Epoch 66/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2469 - mean_absolute_error: 0.3541 - val_loss: 0.2408 - val_mean_absolute_error: 0.3778
+Epoch 67/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2483 - mean_absolute_error: 0.3550 - val_loss: 0.2317 - val_mean_absolute_error: 0.3675
+Epoch 68/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2459 - mean_absolute_error: 0.3528 - val_loss: 0.2124 - val_mean_absolute_error: 0.3504
+Epoch 69/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2463 - mean_absolute_error: 0.3541 - val_loss: 0.2116 - val_mean_absolute_error: 0.3495
+Epoch 70/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2467 - mean_absolute_error: 0.3535 - val_loss: 0.2291 - val_mean_absolute_error: 0.3637
+Epoch 71/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2459 - mean_absolute_error: 0.3525 - val_loss: 0.2089 - val_mean_absolute_error: 0.3474
+Epoch 72/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2437 - mean_absolute_error: 0.3524 - val_loss: 0.2181 - val_mean_absolute_error: 0.3551
+Epoch 73/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2451 - mean_absolute_error: 0.3529 - val_loss: 0.2238 - val_mean_absolute_error: 0.3583
+Epoch 74/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2475 - mean_absolute_error: 0.3540 - val_loss: 0.2638 - val_mean_absolute_error: 0.3934
+Epoch 75/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2440 - mean_absolute_error: 0.3532 - val_loss: 0.2195 - val_mean_absolute_error: 0.3589
+Epoch 76/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2427 - mean_absolute_error: 0.3518 - val_loss: 0.2029 - val_mean_absolute_error: 0.3423
+Epoch 77/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2430 - mean_absolute_error: 0.3528 - val_loss: 0.2221 - val_mean_absolute_error: 0.3564
+Epoch 78/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2439 - mean_absolute_error: 0.3535 - val_loss: 0.2201 - val_mean_absolute_error: 0.3561
+Epoch 79/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2435 - mean_absolute_error: 0.3525 - val_loss: 0.2442 - val_mean_absolute_error: 0.3725
+Epoch 80/100
+250/250 [==============================] - 1s 2ms/step - loss: 0.2414 - mean_absolute_error: 0.3512 - val_loss: 0.2167 - val_mean_absolute_error: 0.3525
+Epoch 81/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2421 - mean_absolute_error: 0.3517 - val_loss: 0.2300 - val_mean_absolute_error: 0.3627
+Epoch 82/100
+250/250 [==============================] - 1s 2ms/step - loss: 0.2412 - mean_absolute_error: 0.3508 - val_loss: 0.2063 - val_mean_absolute_error: 0.3461
+Epoch 83/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2421 - mean_absolute_error: 0.3503 - val_loss: 0.2063 - val_mean_absolute_error: 0.3453
+Epoch 84/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2412 - mean_absolute_error: 0.3510 - val_loss: 0.2233 - val_mean_absolute_error: 0.3578
+Epoch 85/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2394 - mean_absolute_error: 0.3498 - val_loss: 0.2138 - val_mean_absolute_error: 0.3540
+Epoch 86/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2419 - mean_absolute_error: 0.3512 - val_loss: 0.2221 - val_mean_absolute_error: 0.3574
+Epoch 87/100
+250/250 [==============================] - 1s 2ms/step - loss: 0.2406 - mean_absolute_error: 0.3495 - val_loss: 0.2574 - val_mean_absolute_error: 0.3823
+Epoch 88/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2388 - mean_absolute_error: 0.3502 - val_loss: 0.2185 - val_mean_absolute_error: 0.3538
+Epoch 89/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2400 - mean_absolute_error: 0.3495 - val_loss: 0.2208 - val_mean_absolute_error: 0.3569
+Epoch 90/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2387 - mean_absolute_error: 0.3501 - val_loss: 0.2077 - val_mean_absolute_error: 0.3466
+Epoch 91/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2393 - mean_absolute_error: 0.3490 - val_loss: 0.2122 - val_mean_absolute_error: 0.3505
+Epoch 92/100
+250/250 [==============================] - 1s 2ms/step - loss: 0.2385 - mean_absolute_error: 0.3492 - val_loss: 0.2171 - val_mean_absolute_error: 0.3542
+Epoch 93/100
+250/250 [==============================] - 1s 2ms/step - loss: 0.2377 - mean_absolute_error: 0.3477 - val_loss: 0.2249 - val_mean_absolute_error: 0.3613
+Epoch 94/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2381 - mean_absolute_error: 0.3479 - val_loss: 0.2125 - val_mean_absolute_error: 0.3528
+Epoch 95/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2380 - mean_absolute_error: 0.3480 - val_loss: 0.2355 - val_mean_absolute_error: 0.3675
+Epoch 96/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2377 - mean_absolute_error: 0.3478 - val_loss: 0.2206 - val_mean_absolute_error: 0.3556
+Epoch 97/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2371 - mean_absolute_error: 0.3471 - val_loss: 0.2095 - val_mean_absolute_error: 0.3482
+Epoch 98/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2364 - mean_absolute_error: 0.3472 - val_loss: 0.2112 - val_mean_absolute_error: 0.3484
+Epoch 99/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2374 - mean_absolute_error: 0.3478 - val_loss: 0.2249 - val_mean_absolute_error: 0.3636
+Epoch 100/100
+250/250 [==============================] - 0s 2ms/step - loss: 0.2362 - mean_absolute_error: 0.3469 - val_loss: 0.2171 - val_mean_absolute_error: 0.3577
+r2 =  0.76, mae =  0.85, mse =  1.35
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f55dfdd2110&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc5b550cc10&gt;]
 </pre></div>
 </div>
-<img alt="../_images/5e1557cc7b8b60162b88351433c81e3916753ec996102593d78c20fb298f0f4a.png" src="../_images/5e1557cc7b8b60162b88351433c81e3916753ec996102593d78c20fb298f0f4a.png" />
+<img alt="../_images/e7e9c696ebfc24a2c64775ebfa1dbef527b4ef54ad3e81c889333b1f30582d8a.png" src="../_images/e7e9c696ebfc24a2c64775ebfa1dbef527b4ef54ad3e81c889333b1f30582d8a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2093,12 +1576,13 @@ r2 =  0.80, mae =  0.77, mse =  1.12
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;loss&#39;, &#39;mean_absolute_error&#39;, &#39;val_loss&#39;, &#39;val_mean_absolute_error&#39;])
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f55e24d4d50&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc5b7e90710&gt;]
 </pre></div>
 </div>
-<img alt="../_images/8ad27c41022b688a53ed01359316e8a535406409d354d8e84df4a7f22e180a55.png" src="../_images/8ad27c41022b688a53ed01359316e8a535406409d354d8e84df4a7f22e180a55.png" />
+<img alt="../_images/57d3584006d8e940d91331df0d87c7bb01e1b383c93025e1392a46279847e120.png" src="../_images/57d3584006d8e940d91331df0d87c7bb01e1b383c93025e1392a46279847e120.png" />
 </div>
 </div>
+</section>
 </section>
 
 
