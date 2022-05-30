@@ -54,10 +54,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#what-is-a-molecule">What is a molecule?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#activity-1-working-with-structures">Activity 1: Working with Structures</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#symmetry-and-equivariances">Symmetry and Equivariances</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#break-15-min">Break (15 min.)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#zoo-of-neural-networks">Zoo of Neural Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#neural-networks-equivariances">Neural Networks &amp; Equivariances</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#activity-2-deciding-on-a-network">Activity 2: Deciding on a Network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">Break (15 min.)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#graph-neural-networks-in-depth">Graph Neural Networks In Depth</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#activity-3-basic-gnn">Activity 3: Basic GNN</a></li>
 </ul>
@@ -91,56 +89,75 @@
              
   <section class="tex2jax_ignore mathjax_ignore" id="agenda-for-day-2">
 <h1>Agenda for Day 2<a class="headerlink" href="#agenda-for-day-2" title="Permalink to this headline"></a></h1>
-<p>The following summarized planned content coverage and progression for the Day 2 Machine Learning workshop at ACS MARM 2022.</p>
+<p>Day 2 will focus on the concepts needed to understand
+modern deep learning in chemistry. We will cover the types
+of chemical data, equivariances and other inductive biases,
+modern deep learning architectures, and how to choose them.</p>
+<p>The learning objectives for day 2 are:</p>
+<ul class="simple">
+<li><p>Categorizing chemical data</p></li>
+<li><p>Identify equivariances and other inductive biases in chemical data</p></li>
+<li><p>Choose data transforms and architecture for equivariances</p></li>
+<li><p>Understand the graph neural network and its update equations</p></li>
+<li><p>Basic understanding of sequence learning and geometric learning</p></li>
+</ul>
+<p>On day 2, it’s assumed you have covered the content in day 1 or otherwise
+have a machine learning background.</p>
 <section id="what-is-a-molecule">
 <h2>What is a molecule?<a class="headerlink" href="#what-is-a-molecule" title="Permalink to this headline"></a></h2>
 <ul class="simple">
-<li><p>Graphs, line notation, coordinates, ….TODO</p></li>
+<li><p>Molecules as a graph</p></li>
+<li><p>Molecules as a line notation/string - SMILES, DeepSMILES, BigSMILES, SELFIES, InChi</p></li>
+<li><p>Molecules as a point cloud</p></li>
+<li><p>Molecules as a probability distribution</p></li>
+<li><p>Labels: properties vs atoms</p></li>
+<li><p>Other data types - formulation, periodic, etc.</p></li>
+<li><p>Cheminformatics intro - drawing, fingerprints, similarity</p></li>
 </ul>
 </section>
 <section id="activity-1-working-with-structures">
 <h2>Activity 1: Working with Structures<a class="headerlink" href="#activity-1-working-with-structures" title="Permalink to this headline"></a></h2>
-<ul class="simple">
-<li><p>rdkit, graphs, drawing, similarity</p></li>
-</ul>
+<p>In this activity, we’ll work with a set of a few thousand molecules and draw them,
+convert them to graphs, compute similarity, and enumerate chemical neighborhoods.</p>
 </section>
 <section id="symmetry-and-equivariances">
 <h2>Symmetry and Equivariances<a class="headerlink" href="#symmetry-and-equivariances" title="Permalink to this headline"></a></h2>
 <ul class="simple">
-<li><p>Features vs Labels</p></li>
+<li><p>What is an inductive bias</p></li>
+<li><p>Definition of a group, group relation</p></li>
+<li><p>Definition of major symmetries: permutation, rotation, translation, scale</p></li>
+<li><p>Treating symmetry with augmentation or data transformations</p></li>
+<li><p>Connecting symmetry to data and model</p></li>
 </ul>
+<p><strong>Break (15 min.)</strong></p>
 </section>
-<section id="break-15-min">
-<h2>Break (15 min.)<a class="headerlink" href="#break-15-min" title="Permalink to this headline"></a></h2>
-</section>
-<section id="zoo-of-neural-networks">
-<h2>Zoo of Neural Networks<a class="headerlink" href="#zoo-of-neural-networks" title="Permalink to this headline"></a></h2>
-<ul class="simple">
-<li><p>Start with MLP + descriptors</p></li>
-</ul>
+<section id="neural-networks-equivariances">
+<h2>Neural Networks &amp; Equivariances<a class="headerlink" href="#neural-networks-equivariances" title="Permalink to this headline"></a></h2>
+<ol class="arabic simple" start="0">
+<li><p>MLP</p></li>
+<li><p>Graph Neural Networks</p></li>
+<li><p>Sequence Neural Networks (RNN, Transformer)</p></li>
+<li><p>Equivariant Neural Networks</p></li>
+<li><p>Modifications for task: VAE, NFlow</p></li>
+</ol>
 </section>
 <section id="activity-2-deciding-on-a-network">
 <h2>Activity 2: Deciding on a Network<a class="headerlink" href="#activity-2-deciding-on-a-network" title="Permalink to this headline"></a></h2>
-<ul class="simple">
-<li><p>Group activity - Choose Networks for different data types</p></li>
-</ul>
-</section>
-<section id="id1">
-<h2>Break (15 min.)<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<p>Working in a group, decide on inductive biases and network
+choice for given dataset.</p>
+<p><strong>Break (15 min.)</strong></p>
 </section>
 <section id="graph-neural-networks-in-depth">
 <h2>Graph Neural Networks In Depth<a class="headerlink" href="#graph-neural-networks-in-depth" title="Permalink to this headline"></a></h2>
 <ul class="simple">
-<li><p>Basics of neural networks</p></li>
-<li><p>Intro to Keras API: model building and training</p></li>
-<li><p>Overview of options and training considerations</p></li>
+<li><p>The Kipf &amp; Welling Graph Convolutional Neural Network (GCN)</p></li>
+<li><p>Viewing as message passing (MPNN) and SchNet</p></li>
+<li><p>Readouts</p></li>
 </ul>
 </section>
 <section id="activity-3-basic-gnn">
 <h2>Activity 3: Basic GNN<a class="headerlink" href="#activity-3-basic-gnn" title="Permalink to this headline"></a></h2>
-<ul class="simple">
-<li><p>Predict Smell (?)</p></li>
-</ul>
+<p>Revisit the solubility task and predict solubility of molecules with a GNN.</p>
 </section>
 </section>
 
