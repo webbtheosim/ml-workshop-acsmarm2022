@@ -19,7 +19,7 @@
     {
       "cell_type": "markdown",
       "source": [
-        "# Day 1 Notebook"
+        "# Day 1 Notebook Intro"
       ],
       "metadata": {
         "id": "dXMCgJqAH4xA"
@@ -683,7 +683,7 @@
     {
       "cell_type": "markdown",
       "source": [
-        "## Activity 1: Chemical Data Basics\n",
+        "# Activity 1: Chemical Data Basics\n",
         "In this activity, we will be working with a dataset on the aqueous solubility  of various molecules. Our main objective will be to construct and assess the performance of simple linear model for predicting solubility. Although linear modeling is not canonically machine learning, all the concepts and approaches we consider for treating/examining the data as well as evaluating the models will be transferable to building models based on deep learning algorithms.\n",
         "\n",
         "Execute the following cell to import necessary modules and load the dataset. The data will be loaded into a Pandas dataframe named `soldata`. After, you can progress through the tasks as described."
@@ -1494,7 +1494,7 @@
     {
       "cell_type": "markdown",
       "source": [
-        "# Activity 2: Fun with Neural Networks\n",
+        "# Activity 1: Fun with Neural Networks\n",
         "\n",
         "In this activity session, we are going to use the Keras API to build simple, feed-forward deep neural networks. At the end, you will have some freedom to use the API to investigate the impact of hyperparameters and model complexity with the same solubility dataset.\n"
       ],

@@ -6,7 +6,7 @@
     "id": "G1LaNbdf49Z8"
    },
    "source": [
-    "# Day 3 Notebook: Module A"
+    "# Day 3 Notebook: Module A Intro"
    ]
   },
   {
@@ -114,7 +114,7 @@
     "id": "ewu_6ApydqPR"
    },
    "source": [
-    "## Understanding Gaussian Process Regression\n",
+    "# Activity 0: Understanding Gaussian Process Regression\n",
     "\n",
     "First, let's build some intuition surrounding GPR. We will start by considering *Multivariate Gaussians*, which can be used to describe a set of normally distributed and possibly correlated random variables. Use the cell below to draw a small number of random samples for a two-dimensional Gaussian. We will then plot these random samples in two ways."
    ]
@@ -538,7 +538,7 @@
     "id": "wejgljPSrAYD"
    },
    "source": [
-    "# Activity 0: Active Learning Challenge\n",
+    "# Team Activity: Active Learning Challenge\n",
     "\n",
     "In this activity, we will deploy *active learning* to identify a molecule that fits some specific target physical property. In specific, we will be working from a pool of molecules that can be found in the ClinTox dataset, which includes a combination of drugs that have failed clinical trials for toxicity reasons as well as drugs that are assocated with successful trials. It is a commonly used dataset for binary classification, but here, we will simply use it as a source for interesting molecular structures. Here is a summary of the challenge:\n",
     "\n",
