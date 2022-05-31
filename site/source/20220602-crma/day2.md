@@ -28,7 +28,7 @@ have a machine learning background.
 
 ## Activity 1: Working with Structures
 
-In this activity, we'll work with a set of a few thousand molecules and draw them,
+In this activity, we'll work with a set of a few molecules and draw them,
 convert them to graphs, compute similarity, and enumerate chemical neighborhoods.
 
 ## Symmetry and Equivariances
@@ -45,14 +45,20 @@ convert them to graphs, compute similarity, and enumerate chemical neighborhoods
 
 0. MLP
 1. Graph Neural Networks
-2. Sequence Neural Networks (RNN, Transformer)
-3. Equivariant Neural Networks
-4. Modifications for task: VAE, NFlow
+2. Convolutional neural networks and how to avoid them
+3. Sequence Neural Networks (RNN, Transformer)
+4. Equivariant Neural Networks
+5. Modifications that can depend on task: VAE, NFlow
 
 ## Activity 2: Deciding on a Network
 
 Working in a group, decide on inductive biases and network
-choice for given dataset.
+choice for given datasets:
+
+1. Predicting solubility from SMILES
+2. Finding the reactive site on a molecule from SMILES
+3. Predicting partial charge from coordinates
+4. Predicting electronic density from coordinates
 
 **Break (15 min.)**
 
@@ -64,4 +70,4 @@ choice for given dataset.
 
 ## Activity 3: Basic GNN
 
-Revisit the solubility task and predict solubility of molecules with a GNN.
+Revisit the solubility task and predict solubility of molecules with a GNN. See [activity here](https://dmol.pub/dl/gnn.html#kipf-welling-gcn)
