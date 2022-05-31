@@ -1,0 +1,4 @@
+rdkit-pypi
+tensorflow
+selfies
+exmol
