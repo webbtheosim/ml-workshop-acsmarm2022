@@ -29,7 +29,7 @@
     "id": "ujKMirGbac6S",
     "outputId": "b65b0f9a-59f1-48b5-9c50-8dae31f6fea6",
     "tags": [
-     "hide-output"
+     "remove-output"
     ]
    },
    "outputs": [
@@ -75,7 +75,10 @@
    "cell_type": "code",
    "execution_count": 2,
    "metadata": {
-    "id": "I7sBSQXt8xKR"
+    "id": "I7sBSQXt8xKR",
+    "tags": [
+     "remove-output"
+    ]
    },
    "outputs": [],
    "source": [
@@ -96,7 +99,10 @@
      "height": 283
     },
     "id": "7t378vrl-rzW",
-    "outputId": "d7ad98af-97f8-493f-8f13-4d5299450d38"
+    "outputId": "d7ad98af-97f8-493f-8f13-4d5299450d38",
+    "tags": [
+     "hide-output"
+    ]
    },
    "outputs": [
     {
@@ -163,7 +169,10 @@
      "height": 300
     },
     "id": "7_SNDdhf-7De",
-    "outputId": "0b6ae016-1b13-4aae-d657-f8b76e688e28"
+    "outputId": "0b6ae016-1b13-4aae-d657-f8b76e688e28",
+    "tags": [
+     "remove-output"
+    ]
    },
    "outputs": [
     {
@@ -192,8 +201,10 @@
     "xline= np.array(range(Nmax+1))**0.5\n",
     "f    = lambda x, th: th[0] + th[1]*x\n",
     "\n",
+    "#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n",
     "# fill in parameters\n",
-    "thetas = np.array([[0,8./30]]).T # this maps to a 2x1\n",
+    "thetas = np.array([[VALUE1,VALUE2]]).T # this maps to a 2x1\n",
+    "#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n",
     "\n",
     "# make predictions using function\n",
     "yline = f(xline,thetas)\n",
@@ -237,7 +248,10 @@
      "height": 287
     },
     "id": "OJJe9g5UxDgs",
-    "outputId": "22e2dc15-3301-4dd6-88c7-c69b7698f6af"
+    "outputId": "22e2dc15-3301-4dd6-88c7-c69b7698f6af",
+    "tags": [
+     "remove-output"
+    ]
    },
    "outputs": [
     {
@@ -286,12 +300,15 @@
     "\n",
     "  return fig,ax1,ax2\n",
     "\n",
+    "#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n",
     "#Define grid over which to calculate J\n",
     "N = 50\n",
-    "theta0Rng = [-5,5]\n",
-    "theta1Rng = [-0.5,1.5]\n",
+    "theta0Rng = [AAA,BBB]\n",
+    "theta1Rng = [CCC,DDD]\n",
     "theta0s = np.linspace(theta0Rng[0],theta0Rng[1],N)\n",
     "theta1s = np.linspace(theta1Rng[0],theta1Rng[1],N)\n",
+    "#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n",
+    "\n",
     "\n",
     "#Initialize E as a matrix to store cost function values\n",
     "E = np.zeros((N,N))\n",
@@ -322,7 +339,10 @@
    "cell_type": "code",
    "execution_count": 6,
    "metadata": {
-    "id": "cxnSLUYr6V7O"
+    "id": "cxnSLUYr6V7O",
+    "tags": [
+     "remove-output"
+    ]
    },
    "outputs": [],
    "source": [
@@ -382,7 +402,10 @@
      "height": 601
     },
     "id": "16NRjWb59PyN",
-    "outputId": "377a2e69-8b49-4048-9b59-dfafee1a678f"
+    "outputId": "377a2e69-8b49-4048-9b59-dfafee1a678f",
+    "tags": [
+     "hide-output"
+    ]
    },
    "outputs": [
     {
@@ -524,7 +547,10 @@
      "height": 601
     },
     "id": "3OETq-SGrdDc",
-    "outputId": "afb5e801-f2be-46c0-e22b-98ab727b3ff4"
+    "outputId": "afb5e801-f2be-46c0-e22b-98ab727b3ff4",
+    "tags": [
+     "remove-output"
+    ]
    },
    "outputs": [
     {
@@ -568,8 +594,22 @@
     }
    ],
    "source": [
-    "# create train vs. test split (here it is a 50/50 split)\n",
-    "X_tr, X_te, y_tr, y_te = train_test_split(X,y,test_size = 0.5, shuffle = True,random_state=0)\n",
+    "# create train vs. test split \n",
+    "#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n",
+    "# write code to use the function train_test_split in scikit learn\n",
+    "# examine the shape of the output arrays and see how they compare\n",
+    "# to the original data structures X and y\n",
+    "# you will want to name the variables as follows\n",
+    "# X_tr --> features for training data\n",
+    "# y_tr --> labels for training data\n",
+    "# X_te --> features for test data\n",
+    "# y_te --> labels for test data\n",
+    "\n",
+    "\n",
+    "\n",
+    "#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n",
+    "\n",
+    "\n",
     "\n",
     "thetaGD, E_tr, E_te = Grad_Descent(X_tr,y_tr,th0,8e-6,nIters,X_te,y_te)\n",
     "print(\"theta_0 = {:>8.4f}\".format(thetaGD[0,0]))\n",
@@ -660,7 +700,10 @@
    "cell_type": "code",
    "execution_count": 19,
    "metadata": {
-    "id": "XVpxKuYRnulW"
+    "id": "XVpxKuYRnulW",
+    "tags": [
+     "remove-output"
+    ]
    },
    "outputs": [],
    "source": [
@@ -697,7 +740,10 @@
      "height": 386
     },
     "id": "UEDtgtrKeX1S",
-    "outputId": "97e213bf-f4e6-4f19-bc14-dd9a6406081c"
+    "outputId": "97e213bf-f4e6-4f19-bc14-dd9a6406081c",
+    "tags": [
+     "hide-output"
+    ]
    },
    "outputs": [
     {
@@ -1054,7 +1100,10 @@
      "height": 285
     },
     "id": "kUpAwi00gxtN",
-    "outputId": "24650fc1-68d6-4962-b9b5-ec7d9b41cf4e"
+    "outputId": "24650fc1-68d6-4962-b9b5-ec7d9b41cf4e",
+    "tags": [
+     "hide-output"
+    ]
    },
    "outputs": [
     {
@@ -1069,8 +1118,11 @@
     }
    ],
    "source": [
-    "sns.distplot(soldata.Solubility)\n",
-    "plt.show()\n"
+    "#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n",
+    "\n",
+    "\n",
+    "#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n",
+    "plt.show()"
    ]
   },
   {
@@ -1096,7 +1148,10 @@
      "height": 548
     },
     "id": "gC1mcEEdoiHG",
-    "outputId": "dafb6fe7-ee9d-4958-dd02-33725432ff29"
+    "outputId": "dafb6fe7-ee9d-4958-dd02-33725432ff29",
+    "tags": [
+     "hide-output"
+    ]
    },
    "outputs": [
     {
@@ -1115,8 +1170,9 @@
     "feature_names = soldata.columns[features_start_at:]\n",
     "\n",
     "# code for pair correlations\n",
-    "subset = [n for n in feature_names if np.random.random()<0.333]\n",
-    "sns.pairplot(soldata[subset])\n",
+    "#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n",
+    "\n",
+    "#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n",
     "plt.show()\n"
    ]
   },
@@ -1129,7 +1185,10 @@
      "height": 869
     },
     "id": "nYDV2VcduqlI",
-    "outputId": "4003647c-c207-49ed-da23-f39b202b4522"
+    "outputId": "4003647c-c207-49ed-da23-f39b202b4522",
+    "tags": [
+     "remove-output"
+    ]
    },
    "outputs": [
     {
@@ -1180,7 +1239,8 @@
    },
    "source": [
     "## How good is the model?\n",
-    "Determine and evaluate the performance of a linear model. You can compare your results with that of the \"exact\" least-squares result afforded by linear algebra. \n"
+    "Determine and evaluate the performance of a linear model. You can compare your results with that of the \"exact\" least-squares result afforded by linear algebra. You may wish to use the LinearRegression model from scikit-learn: \n",
+    "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html"
    ]
   },
   {
@@ -1192,7 +1252,11 @@
      "height": 272
     },
     "id": "tCoAJA2_n1tP",
-    "outputId": "1d726801-9c6d-4b22-992f-a62d238e4e45"
+    "outputId": "1d726801-9c6d-4b22-992f-a62d238e4e45",
+    "tags": [
+     "hide-output",
+     "hide-input"
+    ]
    },
    "outputs": [
     {
@@ -1286,6 +1350,8 @@
     "from sklearn.preprocessing    import StandardScaler\n",
     "\n",
     "# We will estimate the model accuracy using cross-validation\n",
+    "y  = np.array(soldata.Solubility[:])\n",
+    "X  = np.array(soldata[feature_names])\n",
     "k  = 5\n",
     "kf = KFold(n_splits=k,shuffle=True,random_state=None)\n",
     "r2 = np.zeros([k])\n",
@@ -1297,14 +1363,13 @@
     "    yi_tr = y[iTrain]\n",
     "    yi_te = y[iTest]\n",
     "\n",
-    "    # feature scaling (here using standard scaling)\n",
-    "    scaler = StandardScaler()\n",
-    "    scaler.fit(Xi_tr)\n",
-    "    Xi_tr_sc = scaler.transform(Xi_tr)\n",
+    "    #$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n",
+    "    # perform feature scaling \n",
     "\n",
-    "    # linear regression\n",
-    "    model  = LinearRegression().fit(Xi_tr_sc, yi_tr)\n",
-    "    yihat_te = model.predict(scaler.transform(Xi_te))\n",
+    "    # create and test linear regression model\n",
+    "\n",
+    "    #$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n",
+    "    \n",
     "    r2[i] = r2_score(yi_te,yihat_te)\n",
     "    ax.plot(yi_te,yihat_te,marker='o',linestyle=\"\",markersize=8,color=colors[i],markeredgecolor='k', alpha = 0.5)\n",
     "ax.set_aspect('equal', adjustable='box')\n",
@@ -1325,7 +1390,9 @@
     "## Regularization\n",
     "In the previous cells, we considered a model using all possible features, but earlier inspection of the data suggests that some of the features are highly correlated. The implication is that we might obtain a *simpler* model without any significant loss in accuracy were we to use a different set of features.\n",
     "\n",
-    "As a first pass towards something akin to feature selection, we will examine the impact of regularization on the model parameters. We discussed L1 and L2 regularization. Use the cells below to examine how using these regularization terms impacts the model parameters (i.e., coefficients).\n",
+    "As a first pass towards something akin to feature selection, we will examine the impact of regularization on the model parameters. We discussed L1 and L2 regularization. Use the cells below to examine how using these regularization terms impacts the model parameters (i.e., coefficients). The use of L1 and L2 regularization is sometimes expressed as \"Lasso\" or \"Ridge\" regression respectively. There are implementations of these available on scikit-learn:\n",
+    "+ https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html\n",
+    "+ https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html\n",
     "\n",
     "For simplicity, we will just use a simple train/test split. Examine the performance on the test set for the different methods and how this and the produced coefficients are impacted by the regularization weighting."
    ]
@@ -1338,6 +1405,7 @@
      "base_uri": "https://localhost:8080/",
      "height": 413
     },
+    "collapsed": true,
     "id": "dvicLLRuByUT",
     "outputId": "bf108039-5eae-448d-f8b9-fe9d9d6b941b"
    },
@@ -1373,20 +1441,23 @@
     "scaler.fit(X_tr)\n",
     "X_tr_sc = scaler.transform(X_tr)\n",
     "\n",
+    "#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n",
     "# create and test model with simple linear regression\n",
-    "model_L0  = LinearRegression().fit(X_tr_sc, y_tr)\n",
-    "yhat_L0   = model_L0.predict(scaler.transform(X_te))\n",
-    "r2_L0     = r2_score(y_te,yhat_L0)\n",
+    "model_L0  = \n",
+    "yhat_L0   = \n",
+    "r2_L0     =\n",
     "\n",
     "# create and test model with L1 regularization\n",
-    "model_L1  = Lasso(alpha=my_alpha).fit(X_tr_sc, y_tr)\n",
-    "yhat_L1   = model_L1.predict(scaler.transform(X_te))\n",
-    "r2_L1     = r2_score(y_te,yhat_L1)\n",
+    "model_L1  = \n",
+    "yhat_L1   = \n",
+    "r2_L1     = \n",
     "\n",
     "# create and test model with L2 regularization\n",
-    "model_L2  = Ridge(alpha=my_alpha).fit(X_tr_sc, y_tr)\n",
-    "yhat_L2   = model_L2.predict(scaler.transform(X_te))\n",
-    "r2_L2     = r2_score(y_te,yhat_L2)\n",
+    "model_L2  = \n",
+    "yhat_L2   = \n",
+    "r2_L2     = \n",
+    "#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n",
+    "\n",
     "\n",
     "# plot and compare coefficients\n",
     "fig, ax = plt.subplots()\n",
@@ -1410,38 +1481,25 @@
    },
    "source": [
     "## Feature Selection\n",
-    "From previous results and analysis, we can probably conclude that we do not need all of the features for an accurate model. We mentioned a variety of feature selection methods. Here, we'll use a simple greedy correlation filter to remove \"redundant\" features. \n"
+    "From previous results and analysis, we can probably conclude that we do not need all of the features for an accurate model. We mentioned a variety of feature selection methods. Here, we'll use a simple greedy correlation filter to remove \"redundant\" features. Comment the code below between the indicated region to ensure comprehension. How does the result compare to any of the regularization methods? Does this make sense?"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 27,
+   "execution_count": null,
    "metadata": {
     "colab": {
      "base_uri": "https://localhost:8080/"
     },
     "id": "dPj2tJA6ktMZ",
-    "outputId": "85e2a9fd-928a-44e9-e0e9-9a79c1c1eac4"
+    "outputId": "85e2a9fd-928a-44e9-e0e9-9a79c1c1eac4",
+    "tags": [
+     "remove-output"
+    ]
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "Removing feature NumValenceElectrons with correlation of 0.993 with HeavyAtomCount\n",
-      "Removing feature LabuteASA with correlation of 0.983 with HeavyAtomCount\n",
-      "Removing feature HeavyAtomCount with correlation of 0.975 with MolMR\n",
-      "Removing feature MolMR with correlation of 0.919 with MolWt\n",
-      "Removing feature NumAliphaticRings with correlation of 0.903 with NumSaturatedRings\n",
-      "Removing feature TPSA with correlation of 0.900 with NumHAcceptors\n",
-      "Removing feature NumHeteroatoms with correlation of 0.890 with NumHAcceptors\n",
-      "Removing feature BertzCT with correlation of 0.861 with MolWt\n",
-      "0.42663105761132647\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
-    "# \n",
+    "#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n",
     "rmax        = 0.8\n",
     "subset      = [n for n in feature_names]\n",
     "while True:\n",
@@ -1454,8 +1512,9 @@
     "    break\n",
     "  rem_n = subset.pop(jmax)\n",
     "  print(\"Removing feature {} with correlation of {:>5.3f} with {}\".format(rem_n,absr[imax,jmax],subset[imax]))\n",
-    "\n",
     "Xsub = np.array(soldata[subset])\n",
+    "#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n",
+    "\n",
     "\n",
     "# create train vs. test split\n",
     "Xsub_tr, Xsub_te, y_tr, y_te = train_test_split(Xsub,y,test_size = 0.8, random_state = 1)\n",
@@ -1487,7 +1546,10 @@
    "cell_type": "code",
    "execution_count": 28,
    "metadata": {
-    "id": "qj4QdOj9Hz0M"
+    "id": "qj4QdOj9Hz0M",
+    "tags": [
+     "remove-output"
+    ]
    },
    "outputs": [],
    "source": [
@@ -1524,7 +1586,10 @@
      "base_uri": "https://localhost:8080/"
     },
     "id": "ZKXqIZOTJupO",
-    "outputId": "f2bfff9d-6c72-43d0-8bec-3a1ea6096b95"
+    "outputId": "f2bfff9d-6c72-43d0-8bec-3a1ea6096b95",
+    "tags": [
+     "hide-output"
+    ]
    },
    "outputs": [
     {
@@ -1588,7 +1653,10 @@
      "height": 717
     },
     "id": "7bTV7scxJwHp",
-    "outputId": "21cca718-21a5-4fc1-a499-a7c8bb9c15c9"
+    "outputId": "21cca718-21a5-4fc1-a499-a7c8bb9c15c9",
+    "tags": [
+     "hide-output"
+    ]
    },
    "outputs": [
     {
@@ -1656,7 +1724,7 @@
    },
    "source": [
     "## Return of the Solubility Dataset\n",
-    "So, now we are going to try and apply what we have learned to create a neural network that can predict solubility from chemical descriptors of a molecule.  "
+    "So, now we are going to try and apply what we have learned to create a neural network that can predict solubility from chemical descriptors of a molecule. *How many features are there to describe each molecule?*"
    ]
   },
   {
@@ -1667,7 +1735,10 @@
      "base_uri": "https://localhost:8080/"
     },
     "id": "d2IBdSbTOM2T",
-    "outputId": "4c08f47b-db3e-49ae-cb8b-2fefcd4c623c"
+    "outputId": "4c08f47b-db3e-49ae-cb8b-2fefcd4c623c",
+    "tags": [
+     "remove-output"
+    ]
    },
    "outputs": [
     {
@@ -1690,8 +1761,7 @@
     "# note the reshape on y above, which forces the structure to a matrix/2d array\n",
     "# this is the form that will be expected by Keras\n",
     "# the first index to an array corresponds to a specific example\n",
-    "# the size of the second index is the dimensionality\n",
-    "print(X.shape,y.shape)"
+    "# the size of the second index is the dimensionality"
    ]
   },
   {
@@ -1700,7 +1770,8 @@
     "id": "HJWaIxqdXi2N"
    },
    "source": [
-    "## Data Preprocessing"
+    "## A deep neural network to predict solubility\n",
+    "Use the cell below to build a neural network to predict solubility from the input features obtained from the .csv. Play around with the architecture to gain some intuition for the predictive capabilities of the network? How small of a network can you make that still yields \"good\" results (say, $r^2 > 0.7$)?"
    ]
   },
   {
@@ -1969,6 +2040,7 @@
     "Xsc = inScaler.transform(X)  # these are the scaled features\n",
     "ysc = outScaler.transform(y) # these are the scaled labels\n",
     "\n",
+    "#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n",
     "model  = keras.Sequential() # this initializes our simple model, but it doesn't have anhything in it!\n",
     "hidden1= layers.Dense(32,activation=\"relu\") # here we create 20-neuron layer with relu activation\n",
     "hidden2= layers.Dense(5,activation=\"relu\")  # this is a 5-neuron layer, again with relu\n",
@@ -1978,12 +2050,14 @@
     "model.add(out)\n",
     "model.build((None,Xsc.shape[1])) # this last line specifies the input shape; there are lots of ways to do this\n",
     "model.summary()\n",
+    "#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n",
     "keras.utils.plot_model(model,\"model.png\",show_shapes=True)\n",
     "\n",
     "# now we compile the model and train it\n",
     "model.compile(optimizer=\"SGD\",loss=\"mean_squared_error\",metrics=[\"mean_absolute_error\"])\n",
     "hist = model.fit(x=Xsc,y=ysc,epochs=100,validation_split=0.2)\n",
     "\n",
+    "# make predictions\n",
     "ypredsc = model.predict(Xsc) \n",
     "ypred   = outScaler.inverse_transform(ypredsc)\n",
     "plt.plot(y,ypred,\".\")\n",
@@ -2000,6 +2074,14 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Learning curves\n",
+    "We can monitor the history of training and inspect it to get a sense of convergence/underfitting/overfitting during optimization. Do you think the current model is overfit?"
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": 34,
    "metadata": {
@@ -2008,7 +2090,10 @@
      "height": 303
     },
     "id": "A5MpmMTCZBHJ",
-    "outputId": "20a915c3-2fb6-43a4-988b-36ec45dc1108"
+    "outputId": "20a915c3-2fb6-43a4-988b-36ec45dc1108",
+    "tags": [
+     "remove-output"
+    ]
    },
    "outputs": [
     {
@@ -2044,7 +2129,8 @@
     "loss = hist.history['loss']\n",
     "val_loss = hist.history['val_loss']\n",
     "plt.plot(loss,'-k')\n",
-    "plt.plot(val_loss,':r')"
+    "plt.plot(val_loss,':r')\n",
+    "plt.show()"
    ]
   },
   {

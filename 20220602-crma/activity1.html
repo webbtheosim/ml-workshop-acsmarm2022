@@ -644,19 +644,7 @@ Q 164.7 131.2, 167.1 131.2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ArgumentError</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
-<span class="nn">Input In [13],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">m1</span> <span class="o">=</span> <span class="n">get_molecule</span><span class="p">(</span><span class="s1">&#39;aspirin&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">m2</span> <span class="o">=</span> <span class="n">get_molecule</span><span class="p">(</span><span class="s1">&#39;benzene&#39;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">fp1</span> <span class="o">=</span>  <span class="n">AllChem</span><span class="o">.</span><span class="n">GetMorganFingerprint</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">fp2</span> <span class="o">=</span>  <span class="n">AllChem</span><span class="o">.</span><span class="n">GetMorganFingerprint</span><span class="p">(</span><span class="n">m2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">dist</span> <span class="o">=</span> <span class="n">TanimotoSimilarity</span><span class="p">(</span><span class="n">fp1</span><span class="p">,</span> <span class="n">fp2</span><span class="p">)</span>
-
-<span class="ne">ArgumentError</span>: Python argument types in
-    <span class="n">rdkit</span><span class="o">.</span><span class="n">Chem</span><span class="o">.</span><span class="n">rdMolDescriptors</span><span class="o">.</span><span class="n">GetMorganFingerprint</span><span class="p">(</span><span class="n">NoneType</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
-<span class="n">did</span> <span class="ow">not</span> <span class="n">match</span> <span class="n">C</span><span class="o">++</span> <span class="n">signature</span><span class="p">:</span>
-    <span class="n">GetMorganFingerprint</span><span class="p">(</span><span class="n">RDKit</span><span class="p">::</span><span class="n">ROMol</span> <span class="n">mol</span><span class="p">,</span> <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">radius</span><span class="p">,</span> <span class="n">boost</span><span class="p">::</span><span class="n">python</span><span class="p">::</span><span class="n">api</span><span class="p">::</span><span class="nb">object</span> <span class="n">invariants</span><span class="o">=</span><span class="p">[],</span> <span class="n">boost</span><span class="p">::</span><span class="n">python</span><span class="p">::</span><span class="n">api</span><span class="p">::</span><span class="nb">object</span> <span class="n">fromAtoms</span><span class="o">=</span><span class="p">[],</span> <span class="nb">bool</span> <span class="n">useChirality</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="nb">bool</span> <span class="n">useBondTypes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">bool</span> <span class="n">useFeatures</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="nb">bool</span> <span class="n">useCounts</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">boost</span><span class="p">::</span><span class="n">python</span><span class="p">::</span><span class="n">api</span><span class="p">::</span><span class="nb">object</span> <span class="n">bitInfo</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">bool</span> <span class="n">includeRedundantEnvironments</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>similarity 0.1276595744680851
 </pre></div>
 </div>
 </div>
@@ -687,7 +675,11 @@ Q 164.7 131.2, 167.1 131.2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2c5f7690ef1aaca877b479ac8cfffd091bdbf10433626bbc23619abfff40d29e.svg" src="../_images/2c5f7690ef1aaca877b479ac8cfffd091bdbf10433626bbc23619abfff40d29e.svg" /></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/rdkit/Chem/Draw/IPythonConsole.py:252: UserWarning: Truncating the list of molecules to be displayed to 50. Change the maxMols value to display more.
+  warnings.warn(
+</pre></div>
+</div>
+<img alt="../_images/ff5a000b2078022d69eee0e3ade3eb901e8abea10b83790ffd9dca38a8116cb5.svg" src="../_images/ff5a000b2078022d69eee0e3ade3eb901e8abea10b83790ffd9dca38a8116cb5.svg" /></div>
 </div>
 </section>
 </section>
