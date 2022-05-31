@@ -1,4 +1,4 @@
-# Day 1 
+# Agenda for Day 1 
 The following summarized planned content coverage and progression for the Day 1 Machine Learning workshop at ACS MARM 2022.
 
 ## Overview & Environment Setup (15 min.)
