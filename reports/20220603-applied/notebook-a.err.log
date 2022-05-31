@@ -17,29 +17,28 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# Modules
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.spatial.distance import cdist
-from sklearn.gaussian_process.kernels import RBF
-from sklearn.gaussian_process   import GaussianProcessRegressor
-from sklearn import preprocessing
-import pandas as pd
-from rdkit import Chem
-from rdkit.Chem import PandasTools as PT
-from mordred import Calculator, descriptors
-from mordred.error import Missing
+the_kernel = RBF(length_scale=0.1,length_scale_bounds="fixed")
+the_model  = GaussianProcessRegressor(kernel=the_kernel)
+the_model.fit(x,y)
+fmean,fstd = the_model.predict(xs,return_std=True)
+mean_plus   = fmean[:,0] + 1*fstd
+mean_minus  = fmean[:,0] - 1*fstd
+
+# plotting
+fig,axs = make_plot(Vs,Ps,x,y)
+make_plot_posterior(axs,fmean,mean_minus,mean_plus)
+plt.show()
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Input [0;32mIn [2][0m, in [0;36m<cell line: 3>[0;34m()[0m
-[1;32m      1[0m [38;5;66;03m# Modules[39;00m
-[1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
-[0;32m----> 3[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
-[1;32m      4[0m [38;5;28;01mfrom[39;00m [38;5;21;01mscipy[39;00m[38;5;21;01m.[39;00m[38;5;21;01mspatial[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdistance[39;00m [38;5;28;01mimport[39;00m cdist
-[1;32m      5[0m [38;5;28;01mfrom[39;00m [38;5;21;01msklearn[39;00m[38;5;21;01m.[39;00m[38;5;21;01mgaussian_process[39;00m[38;5;21;01m.[39;00m[38;5;21;01mkernels[39;00m [38;5;28;01mimport[39;00m RBF
+[0;31mIndexError[0m                                Traceback (most recent call last)
+Input [0;32mIn [7][0m, in [0;36m<cell line: 5>[0;34m()[0m
+[1;32m      3[0m the_model[38;5;241m.[39mfit(x,y)
+[1;32m      4[0m fmean,fstd [38;5;241m=[39m the_model[38;5;241m.[39mpredict(xs,return_std[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
+[0;32m----> 5[0m mean_plus   [38;5;241m=[39m [43mfmean[49m[43m[[49m[43m:[49m[43m,[49m[38;5;241;43m0[39;49m[43m][49m [38;5;241m+[39m [38;5;241m1[39m[38;5;241m*[39mfstd
+[1;32m      6[0m mean_minus  [38;5;241m=[39m fmean[:,[38;5;241m0[39m] [38;5;241m-[39m [38;5;241m1[39m[38;5;241m*[39mfstd
+[1;32m      8[0m [38;5;66;03m# plotting[39;00m
 
-[0;31mModuleNotFoundError[0m: No module named 'matplotlib'
-ModuleNotFoundError: No module named 'matplotlib'
+[0;31mIndexError[0m: too many indices for array: array is 1-dimensional, but 2 were indexed
+IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
 
