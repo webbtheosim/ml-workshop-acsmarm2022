@@ -1,5 +1,7 @@
 ## ML Workshops at ACS MARM: June 1-4, 2022
 
+[See course materials here](https://webbtheosim.github.io/ml-workshop-acsmarm2022/)
+
 ### Overview
 The materials provided herein are prepared for a trio of ~three-hour workshops that provide a "crash course" on machine learning in the context of chemistry. Within the taxonomy of machine learning algorithms, the content focuses primarily on supervised learning tasks coupled to more chemically oriented examples. A high-level summary of the topics/goals of each workshop "day" is provided below. 
 
