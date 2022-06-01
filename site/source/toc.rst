@@ -13,3 +13,4 @@ acsmarm 2022
     0220602-crma/activity3.ipynb
     20220603-applied/day3.md
     20220603-applied/notebook-a.ipynb
+    20220603-applied/notebook-b.ipynb
