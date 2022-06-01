@@ -55,10 +55,12 @@
 <li class="toctree-l1"><a class="reference internal" href="notebook-a.html">Day 3 Notebook: Module A Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebook-a.html#activity-1-understanding-gaussian-process-regression">Activity 1: Understanding Gaussian Process Regression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebook-a.html#team-activity-active-learning-challenge">Team Activity: Active Learning Challenge</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Explaining A Black Box Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#counterfacutal-explanations">Counterfacutal explanations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#explain-using-substructures">Explain using substructures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#explaining-using-classical-descriptors">Explaining using classical descriptors</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Explaining A Black Box Model</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#counterfacutal-explanations">Counterfacutal explanations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#explain-using-substructures">Explain using substructures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#explaining-using-classical-descriptors">Explaining using classical descriptors</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -302,60 +304,15 @@ width='450px' height='150px' viewBox='0 0 450 150'>
 </svg>
 </div></div>
 </div>
-</section>
 <section id="counterfacutal-explanations">
-<h1>Counterfacutal explanations<a class="headerlink" href="#counterfacutal-explanations" title="Permalink to this headline"></a></h1>
+<h2>Counterfacutal explanations<a class="headerlink" href="#counterfacutal-explanations" title="Permalink to this headline"></a></h2>
 <p>Let’s now explain the model - pretending we don’t know how it works - using counterfactuals</p>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">exmol</span>
 
 <span class="n">instance</span> <span class="o">=</span> <span class="s1">&#39;CCCCCCO&#39;</span>
 <span class="n">space</span> <span class="o">=</span> <span class="n">exmol</span><span class="o">.</span><span class="n">sample_space</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">batched</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0/3000 [00:00&lt;?, ?it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🥌STONED🥌 Mutations: 1:   0%|          | 0/3000 [00:00&lt;?, ?it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🥌STONED🥌 Mutations: 1:  50%|█████     | 1500/3000 [00:00&lt;00:00, 2509.19it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🥌STONED🥌 Mutations: 2:  50%|█████     | 1500/3000 [00:00&lt;00:00, 2509.19it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🥌STONED🥌 Mutations: 2: 100%|██████████| 3000/3000 [00:01&lt;00:00, 2460.41it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🥌STONED🥌 Filtering: 100%|██████████| 3000/3000 [00:01&lt;00:00, 2460.41it/s]   
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🥌STONED🥌 Done: 100%|██████████| 3000/3000 [00:01&lt;00:00, 2460.41it/s]     
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>😀Calling your model function😀: 100%|██████████| 3000/3000 [00:01&lt;00:00, 2460.41it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>😀Calling your model function😀:   0%|          | 0/697 [00:00&lt;?, ?it/s]              
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🔭Projecting...🔭:   0%|          | 0/697 [00:00&lt;?, ?it/s]              
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🥰Finishing up🥰: 100%|██████████| 697.0/697 [00:00&lt;00:00, 2436.90it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🤘Done🤘: 100%|██████████| 697.0/697 [00:00&lt;00:00, 2235.67it/s]        
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🤘Done🤘: 100%|██████████| 697.0/697 [00:00&lt;00:00, 2229.27it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -369,7 +326,7 @@ width='450px' height='150px' viewBox='0 0 450 150'>
 </div>
 </section>
 <section id="explain-using-substructures">
-<h1>Explain using substructures<a class="headerlink" href="#explain-using-substructures" title="Permalink to this headline"></a></h1>
+<h2>Explain using substructures<a class="headerlink" href="#explain-using-substructures" title="Permalink to this headline"></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## How can we explain with substructures?</span>
@@ -379,7 +336,7 @@ width='450px' height='150px' viewBox='0 0 450 150'>
 </div>
 </section>
 <section id="explaining-using-classical-descriptors">
-<h1>Explaining using classical descriptors<a class="headerlink" href="#explaining-using-classical-descriptors" title="Permalink to this headline"></a></h1>
+<h2>Explaining using classical descriptors<a class="headerlink" href="#explaining-using-classical-descriptors" title="Permalink to this headline"></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## How can we explain with classical descriptors?</span>
@@ -387,6 +344,7 @@ width='450px' height='150px' viewBox='0 0 450 150'>
 </div>
 </div>
 </div>
+</section>
 </section>
 
 
