@@ -24,7 +24,8 @@
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Day 3 Notebook: Module A Intro" href="notebook-a.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -42,7 +43,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Materials for ML Workshops at ACS MARM: June 1-4, 2022</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../20220601-intro/day1.html">Agenda for Day 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../20220601-intro/notebook.html">Day 1 Notebook Intro</a></li>
@@ -54,6 +55,10 @@
 <li class="toctree-l1"><a class="reference internal" href="notebook-a.html">Day 3 Notebook: Module A Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebook-a.html#activity-1-understanding-gaussian-process-regression">Activity 1: Understanding Gaussian Process Regression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebook-a.html#team-activity-active-learning-challenge">Team Activity: Active Learning Challenge</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Explaining A Black Box Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#counterfacutal-explanations">Counterfacutal explanations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#explain-using-substructures">Explain using substructures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#explaining-using-classical-descriptors">Explaining using classical descriptors</a></li>
 </ul>
 
         </div>
@@ -317,37 +322,37 @@ width='450px' height='150px' viewBox='0 0 450 150'>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🥌STONED🥌 Mutations: 1:   0%|          | 0/3000 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🥌STONED🥌 Mutations: 1:  50%|█████     | 1500/3000 [00:00&lt;00:00, 2514.33it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🥌STONED🥌 Mutations: 1:  50%|█████     | 1500/3000 [00:00&lt;00:00, 2509.19it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🥌STONED🥌 Mutations: 2:  50%|█████     | 1500/3000 [00:00&lt;00:00, 2514.33it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🥌STONED🥌 Mutations: 2:  50%|█████     | 1500/3000 [00:00&lt;00:00, 2509.19it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🥌STONED🥌 Mutations: 2: 100%|██████████| 3000/3000 [00:01&lt;00:00, 2486.22it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🥌STONED🥌 Mutations: 2: 100%|██████████| 3000/3000 [00:01&lt;00:00, 2460.41it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🥌STONED🥌 Filtering: 100%|██████████| 3000/3000 [00:01&lt;00:00, 2486.22it/s]   
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🥌STONED🥌 Filtering: 100%|██████████| 3000/3000 [00:01&lt;00:00, 2460.41it/s]   
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🥌STONED🥌 Done: 100%|██████████| 3000/3000 [00:01&lt;00:00, 2486.22it/s]     
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🥌STONED🥌 Done: 100%|██████████| 3000/3000 [00:01&lt;00:00, 2460.41it/s]     
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>😀Calling your model function😀: 100%|██████████| 3000/3000 [00:01&lt;00:00, 2486.22it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>😀Calling your model function😀: 100%|██████████| 3000/3000 [00:01&lt;00:00, 2460.41it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>😀Calling your model function😀:   0%|          | 0/678 [00:00&lt;?, ?it/s]              
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>😀Calling your model function😀:   0%|          | 0/697 [00:00&lt;?, ?it/s]              
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🔭Projecting...🔭:   0%|          | 0/678 [00:00&lt;?, ?it/s]              
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🔭Projecting...🔭:   0%|          | 0/697 [00:00&lt;?, ?it/s]              
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🥰Finishing up🥰: 100%|██████████| 678.0/678 [00:00&lt;00:00, 2525.41it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🥰Finishing up🥰: 100%|██████████| 697.0/697 [00:00&lt;00:00, 2436.90it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🤘Done🤘: 100%|██████████| 678.0/678 [00:00&lt;00:00, 2237.09it/s]        
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🤘Done🤘: 100%|██████████| 697.0/697 [00:00&lt;00:00, 2235.67it/s]        
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🤘Done🤘: 100%|██████████| 678.0/678 [00:00&lt;00:00, 2220.12it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🤘Done🤘: 100%|██████████| 697.0/697 [00:00&lt;00:00, 2229.27it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -387,7 +392,9 @@ width='450px' height='150px' viewBox='0 0 450 150'>
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="notebook-a.html" class="btn btn-neutral float-left" title="Day 3 Notebook: Module A Intro" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 
