@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>&lt;no title&gt; &mdash; acsmarm  documentation</title>
+  <title>Activity 3: Implementing a graph convolutional neural network &mdash; acsmarm  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
@@ -22,6 +22,8 @@
         <script>let toggleOpenOnPrint = 'true';</script>
         <script src="../_static/togglebutton.js"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -44,7 +46,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Materials for ML Workshops at ACS MARM: June 1-4, 2022</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../20220601-intro/day1.html">Day 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../20220601-intro/notebook.html">Day 1 Notebook Intro</a></li>
@@ -55,6 +57,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../20220601-intro/notebook.html#activity-3-fun-with-neural-networks">Activity 3: Fun with Neural Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="day2.html">Day 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="activity1.html">Activity 1: Working with molecular data</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Activity 3: Implementing a graph convolutional neural network</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#computing-the-convolution">Computing the convolution</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../20220603-applied/day3.html">Day 3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../20220603-applied/notebook-a.html">Day 3 Notebook: Module A Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../20220603-applied/notebook-a.html#setup-of-python-environment">Setup of Python Environment</a></li>
@@ -77,7 +83,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../toc.html" class="icon icon-home"></a> &raquo;</li>
-      <li>&lt;no title&gt;</li>
+      <li>Activity 3: Implementing a graph convolutional neural network</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/webbtheosim/ml-workshop-acsmarm2022/blob/main/site/source/20220602-crma/activity3.ipynb" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -87,7 +93,119 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
+  <section id="activity-3-implementing-a-graph-convolutional-neural-network">
+<h1>Activity 3: Implementing a graph convolutional neural network<a class="headerlink" href="#activity-3-implementing-a-graph-convolutional-neural-network" title="Permalink to this headline"></a></h1>
+<p>The cell below converts a name of a molecule into a graph (nodes, edges).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">AllChem</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">Draw</span>
+<span class="kn">from</span> <span class="nn">rdkit.rdBase</span> <span class="kn">import</span> <span class="n">BlockLogs</span>
+<span class="kn">from</span> <span class="nn">rdkit.DataStructs.cDataStructs</span> <span class="kn">import</span> <span class="n">TanimotoSimilarity</span> 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># turn off rdkit warnings</span>
+<span class="n">block</span> <span class="o">=</span> <span class="n">BlockLogs</span><span class="p">()</span>
+
+<span class="c1"># use SVGs and make molecules fill image rather than all be same scale</span>
+<span class="n">Draw</span><span class="o">.</span><span class="n">IPythonConsole</span><span class="o">.</span><span class="n">ipython_useSVG</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">Draw</span><span class="o">.</span><span class="n">IPythonConsole</span><span class="o">.</span><span class="n">drawOptions</span><span class="o">.</span><span class="n">drawMolsSameScale</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">def</span> <span class="nf">get_cids</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Search pubchem and return best matching record</span>
+<span class="sd">    &quot;&quot;&quot;</span>  
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/</span><span class="si">{}</span><span class="s1">/cids/TXT&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">cids</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cids</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">cids</span>
+<span class="k">def</span> <span class="nf">get_record</span><span class="p">(</span><span class="n">cid</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get pubchem record for a given cid and returns molecule as rdkit</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/</span><span class="si">{}</span><span class="s1">/record/SDF&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cid</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromMolBlock</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">mol</span>
+
+<span class="k">def</span> <span class="nf">get_molecule</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Search pubchem and return best matching record</span>
+<span class="sd">    &quot;&quot;&quot;</span>  
+    <span class="n">cids</span> <span class="o">=</span> <span class="n">get_cids</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">cids</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">n_results</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">get_record</span><span class="p">(</span><span class="n">cids</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">get_record</span><span class="p">(</span><span class="n">cid</span><span class="p">)</span> <span class="k">for</span> <span class="n">cid</span> <span class="ow">in</span> <span class="n">cids</span><span class="p">[:</span><span class="n">n_results</span><span class="p">]]</span>
+        
+<span class="k">def</span> <span class="nf">str2graph</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Convert text to graph via pubchem look-up</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">get_molecule</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">AddHs</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    <span class="n">order_string</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">Chem</span><span class="o">.</span><span class="n">rdchem</span><span class="o">.</span><span class="n">BondType</span><span class="o">.</span><span class="n">SINGLE</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="n">Chem</span><span class="o">.</span><span class="n">rdchem</span><span class="o">.</span><span class="n">BondType</span><span class="o">.</span><span class="n">DOUBLE</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="n">Chem</span><span class="o">.</span><span class="n">rdchem</span><span class="o">.</span><span class="n">BondType</span><span class="o">.</span><span class="n">TRIPLE</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="n">Chem</span><span class="o">.</span><span class="n">rdchem</span><span class="o">.</span><span class="n">BondType</span><span class="o">.</span><span class="n">AROMATIC</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">()))</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">m</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">():</span>
+        <span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">GetIdx</span><span class="p">(),</span> <span class="n">i</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()]</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="n">adj</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">m</span><span class="o">.</span><span class="n">GetBonds</span><span class="p">():</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">j</span><span class="o">.</span><span class="n">GetBeginAtomIdx</span><span class="p">(),</span> <span class="n">j</span><span class="o">.</span><span class="n">GetEndAtomIdx</span><span class="p">())</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">j</span><span class="o">.</span><span class="n">GetBeginAtomIdx</span><span class="p">(),</span> <span class="n">j</span><span class="o">.</span><span class="n">GetEndAtomIdx</span><span class="p">())</span>
+        <span class="n">adj</span><span class="p">[</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">adj</span><span class="p">[</span><span class="n">v</span><span class="p">,</span> <span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">adj</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nodes</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">str2graph</span><span class="p">(</span><span class="s1">&#39;octane&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="computing-the-convolution">
+<h2>Computing the convolution<a class="headerlink" href="#computing-the-convolution" title="Permalink to this headline"></a></h2>
+<p>Recall the equation for the GCN:</p>
+<div class="math notranslate nohighlight">
+\[
+v_{il} = \sigma\left(\frac{1}{d_i}e_{ij}v_{jk}w_{lk}\right)
+\]</div>
+<p>See if you can fill in the missing details in the code below. Think about what the new shape should be!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">F</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="c1"># one-hot vector size (100) by feature number (F)</span>
+<span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">tanh</span>
+<span class="n">degree</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">new_nodes</span> <span class="o">=</span> <span class="o">....</span>
+</pre></div>
+</div>
+</section>
+</section>
+
 
            </div>
           </div>

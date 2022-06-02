@@ -1,17 +1,150 @@
 {
  "cells": [
   {
+   "cell_type": "markdown",
+   "id": "60c0eea2",
+   "metadata": {},
+   "source": [
+    "## Activity 3: Implementing a graph convolutional neural network\n",
+    "\n",
+    "The cell below converts a name of a molecule into a graph (nodes, edges). "
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": null,
    "id": "aadf6308",
    "metadata": {},
    "outputs": [],
-   "source": []
+   "source": [
+    "import requests\n",
+    "from rdkit import Chem\n",
+    "from rdkit.Chem import AllChem\n",
+    "from rdkit.Chem import Draw\n",
+    "from rdkit.rdBase import BlockLogs\n",
+    "from rdkit.DataStructs.cDataStructs import TanimotoSimilarity \n",
+    "import numpy as np\n",
+    "\n",
+    "# turn off rdkit warnings\n",
+    "block = BlockLogs()\n",
+    "\n",
+    "# use SVGs and make molecules fill image rather than all be same scale\n",
+    "Draw.IPythonConsole.ipython_useSVG = True\n",
+    "Draw.IPythonConsole.drawOptions.drawMolsSameScale = False\n",
+    "\n",
+    "def get_cids(text):\n",
+    "    \"\"\"\n",
+    "    Search pubchem and return best matching record\n",
+    "    \"\"\"  \n",
+    "    url = 'https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/{}/cids/TXT'.format(text)\n",
+    "    response = requests.get(url)\n",
+    "    cids = response.text.split()\n",
+    "    if len(cids) == 0:\n",
+    "        return None\n",
+    "    else:\n",
+    "        return cids\n",
+    "def get_record(cid):\n",
+    "    \"\"\"\n",
+    "    Get pubchem record for a given cid and returns molecule as rdkit\n",
+    "    \"\"\"\n",
+    "    url = 'https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{}/record/SDF'.format(cid)\n",
+    "    response = requests.get(url)\n",
+    "    mol = Chem.MolFromMolBlock(response.text)\n",
+    "    return mol\n",
+    "\n",
+    "def get_molecule(text, n_results=1):\n",
+    "    \"\"\"\n",
+    "    Search pubchem and return best matching record\n",
+    "    \"\"\"  \n",
+    "    cids = get_cids(text)\n",
+    "    if cids is None:\n",
+    "        return None\n",
+    "    else:\n",
+    "        if n_results == 1:\n",
+    "            return get_record(cids[0])\n",
+    "        else:\n",
+    "            return [get_record(cid) for cid in cids[:n_results]]\n",
+    "        \n",
+    "def str2graph(text):\n",
+    "    \"\"\"Convert text to graph via pubchem look-up\n",
+    "    \"\"\"\n",
+    "    m = get_molecule(text)\n",
+    "    m = Chem.AddHs(m)\n",
+    "    order_string = {\n",
+    "        Chem.rdchem.BondType.SINGLE: 1,\n",
+    "        Chem.rdchem.BondType.DOUBLE: 2,\n",
+    "        Chem.rdchem.BondType.TRIPLE: 3,\n",
+    "        Chem.rdchem.BondType.AROMATIC: 4,\n",
+    "    }\n",
+    "    N = len(list(m.GetAtoms()))\n",
+    "    nodes = np.zeros((N, 100))\n",
+    "    for i in m.GetAtoms():\n",
+    "        nodes[i.GetIdx(), i.GetAtomicNum()] = 1\n",
+    "\n",
+    "    adj = np.zeros((N, N))\n",
+    "    for j in m.GetBonds():\n",
+    "        u = min(j.GetBeginAtomIdx(), j.GetEndAtomIdx())\n",
+    "        v = max(j.GetBeginAtomIdx(), j.GetEndAtomIdx())\n",
+    "        adj[u, v] = 1\n",
+    "        adj[v, u] = 1\n",
+    "    return nodes, adj"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "b5502e1b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "nodes, edges = str2graph('octane')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "081305f7",
+   "metadata": {},
+   "source": [
+    "### Computing the convolution\n",
+    "\n",
+    "Recall the equation for the GCN:\n",
+    "\n",
+    "$$\n",
+    "v_{il} = \\sigma\\left(\\frac{1}{d_i}e_{ij}v_{jk}w_{lk}\\right)\n",
+    "$$\n",
+    "\n",
+    "See if you can fill in the missing details in the code below. Think about what the new shape should be!"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "98cedef5",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "F = 4\n",
+    "\n",
+    "# one-hot vector size (100) by feature number (F)\n",
+    "weights = np.random.randn(100, F)\n",
+    "sigma = np.math.tanh\n",
+    "degree = np.sum(edges, axis=0)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e738f149",
+   "metadata": {},
+   "source": [
+    "```py\n",
+    "new_nodes = ....\n",
+    "```"
+   ]
   }
  ],
  "metadata": {
   "kernelspec": {
-   "display_name": "Python 3",
+   "display_name": "Python 3 (ipykernel)",
    "language": "python",
    "name": "python3"
   },
