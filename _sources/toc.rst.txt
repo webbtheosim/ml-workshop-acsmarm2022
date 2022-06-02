@@ -2,7 +2,7 @@ acsmarm 2022
 ==============
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :glob:
 
     index.md
