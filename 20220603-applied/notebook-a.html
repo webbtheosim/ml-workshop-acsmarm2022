@@ -28,7 +28,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Explaining A Black Box Model" href="notebook-b.html" />
-    <link rel="prev" title="Agenda for Day 3" href="day3.html" /> 
+    <link rel="prev" title="Day 3" href="day3.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -48,17 +48,17 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Materials for ML Workshops at ACS MARM: June 1-4, 2022</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../20220601-intro/day1.html">Agenda for Day 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../20220601-intro/day1.html">Day 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../20220601-intro/notebook.html">Day 1 Notebook Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../20220601-intro/notebook.html#initial-setup-of-python-environment">Initial Setup of Python Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../20220601-intro/notebook.html#activity-1-concepts-with-linear-regression">Activity 1: Concepts with Linear Regression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../20220601-intro/notebook.html#activity-2-chemical-data-basics">Activity 2: Chemical Data Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../20220601-intro/notebook.html#summary-of-tasks">Summary of Tasks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../20220601-intro/notebook.html#activity-3-fun-with-neural-networks">Activity 3: Fun with Neural Networks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../20220602-crma/day2.html">Agenda for Day 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="day3.html">Agenda for Day 3</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Day 3 Notebook: Module A Intro</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#setup-of-python-environment">Setup of Python Environment</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../20220602-crma/day2.html">Day 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="day3.html">Day 3</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Day 3 Notebook: Module A Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#setup-of-python-environment">Setup of Python Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#activity-1-understanding-gaussian-process-regression">Activity 1: Understanding Gaussian Process Regression</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#example-gpr-with-van-der-waals-eos">Example GPR with Van der Waals EOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#scikit-learn-gpr-implementation">scikit-learn GPR Implementation</a></li>
@@ -101,10 +101,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section class="tex2jax_ignore mathjax_ignore" id="day-3-notebook-module-a-intro">
+  <section id="day-3-notebook-module-a-intro">
 <h1>Day 3 Notebook: Module A Intro<a class="headerlink" href="#day-3-notebook-module-a-intro" title="Permalink to this headline"></a></h1>
+</section>
 <section id="setup-of-python-environment">
-<h2>Setup of Python Environment<a class="headerlink" href="#setup-of-python-environment" title="Permalink to this headline"></a></h2>
+<h1>Setup of Python Environment<a class="headerlink" href="#setup-of-python-environment" title="Permalink to this headline"></a></h1>
 <p>For this notebook, we will need a few more modules that are not native to Google Colab. Run the cell below to install these. <code class="docutils literal notranslate"><span class="pre">rdkit</span></code> is a generally useful cheminformatics software. <code class="docutils literal notranslate"><span class="pre">mordred</span></code> is a module that enables calculation of molecular descriptors and pairs well with <code class="docutils literal notranslate"><span class="pre">rdkit</span></code>. <code class="docutils literal notranslate"><span class="pre">leruli</span></code> is a web service that offers real-time structure and property predictions.</p>
 <p>During the workshop, you may not actually use <code class="docutils literal notranslate"><span class="pre">mordred</span></code> as the calculation of descriptors (there are ~1500) can take awhile for all the molecular structures, but it is worth checking out.</p>
 <div class="cell tag_hide-output docutils container">
@@ -125,32 +126,7 @@ Requirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.8.12/x64/l
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading leruli-22.1.6-py2.py3-none-any.whl (13 kB)
-Requirement already satisfied: tabulate in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from leruli) (0.8.9)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting aiohttp
-  Downloading aiohttp-3.8.1-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (1.3 MB)
-?25l
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/1.3 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━ <span class=" -Color -Color-Green">1.1/1.3 MB</span> <span class=" -Color -Color-Red">31.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.3/1.3 MB</span> <span class=" -Color -Color-Red">27.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: Click&gt;=7.0 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from leruli) (8.1.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting aiobotocore
-  Downloading aiobotocore-2.3.2.tar.gz (104 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/104.8 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">104.8/104.8 kB</span> <span class=" -Color -Color-Red">26.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l- done
-?25hRequirement already satisfied: requests in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from leruli) (2.27.1)
+Requirement already satisfied: Click&gt;=7.0 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from leruli) (8.1.3)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting docker
@@ -158,85 +134,116 @@ Requirement already satisfied: tabulate in /opt/hostedtoolcache/Python/3.8.12/x6
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading docker-5.0.3-py2.py3-none-any.whl (146 kB)
 ?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/146.2 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">146.2/146.2 kB</span> <span class=" -Color -Color-Red">30.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hRequirement already satisfied: tqdm&gt;=4.62.0 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from leruli) (4.64.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting minio
-  Downloading minio-7.1.8-py3-none-any.whl (75 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/75.9 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">75.9/75.9 kB</span> <span class=" -Color -Color-Red">15.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">92.2/146.2 kB</span> <span class=" -Color -Color-Red">3.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">146.2/146.2 kB</span> <span class=" -Color -Color-Red">3.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting aiohttp
+  Downloading aiohttp-3.8.1-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (1.3 MB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/1.3 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.5/1.3 MB</span> <span class=" -Color -Color-Red">16.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.3/1.3 MB</span> <span class=" -Color -Color-Red">18.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting minio
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading minio-7.1.8-py3-none-any.whl (75 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/75.9 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">75.9/75.9 kB</span> <span class=" -Color -Color-Red">29.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: tabulate in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from leruli) (0.8.9)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting aiobotocore
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading aiobotocore-2.3.2.tar.gz (104 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/104.8 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">104.8/104.8 kB</span> <span class=" -Color -Color-Red">38.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+?25hRequirement already satisfied: tqdm&gt;=4.62.0 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from leruli) (4.64.0)
+Requirement already satisfied: requests in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from leruli) (2.27.1)
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting botocore&lt;1.24.22,&gt;=1.24.21
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading botocore-1.24.21-py3-none-any.whl (8.6 MB)
+  Downloading botocore-1.24.21-py3-none-any.whl (8.6 MB)
 ?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/8.6 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.2/8.6 MB</span> <span class=" -Color -Color-Red">97.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━ <span class=" -Color -Color-Green">7.6/8.6 MB</span> <span class=" -Color -Color-Red">109.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4.2/8.6 MB</span> <span class=" -Color -Color-Red">126.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">8.6/8.6 MB</span> <span class=" -Color -Color-Red">110.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">8.6/8.6 MB</span> <span class=" -Color -Color-Red">76.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">8.5/8.6 MB</span> <span class=" -Color -Color-Red">124.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">8.6/8.6 MB</span> <span class=" -Color -Color-Red">89.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: wrapt&gt;=1.10.10 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from aiobotocore-&gt;leruli) (1.14.1)
-Collecting aioitertools&gt;=0.5.1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting aioitertools&gt;=0.5.1
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading aioitertools-0.10.0-py3-none-any.whl (23 kB)
-Collecting aiosignal&gt;=1.1.2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading aiosignal-1.2.0-py3-none-any.whl (8.2 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting frozenlist&gt;=1.1.1
-  Downloading frozenlist-1.3.0-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (158 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/158.7 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">158.7/158.7 kB</span> <span class=" -Color -Color-Red">40.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hRequirement already satisfied: attrs&gt;=17.3.0 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from aiohttp-&gt;leruli) (21.4.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting async-timeout&lt;5.0,&gt;=4.0.0a3
   Downloading async_timeout-4.0.2-py3-none-any.whl (5.8 kB)
-Requirement already satisfied: charset-normalizer&lt;3.0,&gt;=2.0 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from aiohttp-&gt;leruli) (2.0.12)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting yarl&lt;2.0,&gt;=1.0
-  Downloading yarl-1.7.2-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (308 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/308.6 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">308.6/308.6 kB</span> <span class=" -Color -Color-Red">56.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting multidict&lt;7.0,&gt;=4.5
   Downloading multidict-6.0.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (121 kB)
-?25l
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/121.3 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">121.3/121.3 kB</span> <span class=" -Color -Color-Red">42.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/121.3 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">121.3/121.3 kB</span> <span class=" -Color -Color-Red">16.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting frozenlist&gt;=1.1.1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading frozenlist-1.3.0-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (158 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/158.7 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">158.7/158.7 kB</span> <span class=" -Color -Color-Red">57.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: charset-normalizer&lt;3.0,&gt;=2.0 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from aiohttp-&gt;leruli) (2.0.12)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting aiosignal&gt;=1.1.2
+  Downloading aiosignal-1.2.0-py3-none-any.whl (8.2 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting yarl&lt;2.0,&gt;=1.0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading yarl-1.7.2-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (308 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/308.6 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">308.6/308.6 kB</span> <span class=" -Color -Color-Red">77.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: attrs&gt;=17.3.0 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from aiohttp-&gt;leruli) (21.4.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting websocket-client&gt;=0.32.0
   Downloading websocket_client-1.3.2-py3-none-any.whl (54 kB)
 ?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/54.3 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">54.3/54.3 kB</span> <span class=" -Color -Color-Red">13.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">54.3/54.3 kB</span> <span class=" -Color -Color-Red">23.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from requests-&gt;leruli) (1.26.9)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from requests-&gt;leruli) (3.3)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from requests-&gt;leruli) (3.3)
 Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from requests-&gt;leruli) (2022.5.18.1)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from requests-&gt;leruli) (1.26.9)
 Requirement already satisfied: typing_extensions&gt;=4.0 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from aioitertools&gt;=0.5.1-&gt;aiobotocore-&gt;leruli) (4.2.0)
 </pre></div>
 </div>
@@ -254,11 +261,8 @@ Building wheels for collected packages: aiobotocore
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for aiobotocore (setup.py) ... ?25l-
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-?25h  Created wheel for aiobotocore: filename=aiobotocore-2.3.2-py3-none-any.whl size=111105 sha256=d9cc3bde48f87cd4ff14ac61a57615ee02bf6c2361e57c5c009535ce5010107b
+?25h  Created wheel for aiobotocore: filename=aiobotocore-2.3.2-py3-none-any.whl size=111105 sha256=668b8da9d554eda2fb1ea63a5e6fd83790dbac3849eaf40c65a9864be363094d
   Stored in directory: /home/runner/.cache/pip/wheels/a8/3e/17/5739e2e58ff33991e6e89c90880e843bf4fa04fceadb1f4fd8
 Successfully built aiobotocore
 </pre></div>
@@ -276,50 +280,49 @@ Successfully built aiobotocore
 ?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/128.8 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">128.8/128.8 kB</span> <span class=" -Color -Color-Red">5.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━ <span class=" -Color -Color-Green">92.2/128.8 kB</span> <span class=" -Color -Color-Red">3.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">128.8/128.8 kB</span> <span class=" -Color -Color-Red">2.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l-
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l- done
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-?25hRequirement already satisfied: six==1.* in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from mordred[full]) (1.16.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25hRequirement already satisfied: six==1.* in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from mordred[full]) (1.16.0)
 Requirement already satisfied: numpy==1.* in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from mordred[full]) (1.22.4)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting networkx==2.*
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading networkx-2.8.2-py3-none-any.whl (2.0 MB)
+  Downloading networkx-2.8.2-py3-none-any.whl (2.0 MB)
 ?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/2.0 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.1/2.0 MB</span> <span class=" -Color -Color-Red">40.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.0/2.0 MB</span> <span class=" -Color -Color-Red">31.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.5/2.0 MB</span> <span class=" -Color -Color-Red">14.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━ <span class=" -Color -Color-Green">1.6/2.0 MB</span> <span class=" -Color -Color-Red">24.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.0/2.0 MB</span> <span class=" -Color -Color-Red">25.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pandas
-  Downloading pandas-1.4.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.7 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading pandas-1.4.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.7 MB)
 ?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/11.7 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.4/11.7 MB</span> <span class=" -Color -Color-Red">103.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">7.4/11.7 MB</span> <span class=" -Color -Color-Red">107.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4.6/11.7 MB</span> <span class=" -Color -Color-Red">137.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━ <span class=" -Color -Color-Green">8.6/11.7 MB</span> <span class=" -Color -Color-Red">125.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">11.7/11.7 MB</span> <span class=" -Color -Color-Red">115.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">11.7/11.7 MB</span> <span class=" -Color -Color-Red">73.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">11.7/11.7 MB</span> <span class=" -Color -Color-Red">123.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">11.7/11.7 MB</span> <span class=" -Color -Color-Red">88.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tqdm in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from mordred[full]) (4.64.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytz&gt;=2020.1 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from pandas-&gt;mordred[full]) (2022.1)
+Requirement already satisfied: pytz&gt;=2020.1 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from pandas-&gt;mordred[full]) (2022.1)
 Requirement already satisfied: python-dateutil&gt;=2.8.1 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from pandas-&gt;mordred[full]) (2.8.2)
 Building wheels for collected packages: mordred
 </pre></div>
@@ -327,14 +330,9 @@ Building wheels for collected packages: mordred
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for mordred (setup.py) ... ?25l-
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-?25h  Created wheel for mordred: filename=mordred-1.2.0-py3-none-any.whl size=176722 sha256=dfcdd4ecca2130755c707c001d5badb422c91f511f23e10e4b97d1a83a7a2626
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Stored in directory: /home/runner/.cache/pip/wheels/20/88/41/5d873c9b55dc7479f0b9951c2161d7b09be193e7228ea27309
+?25h  Created wheel for mordred: filename=mordred-1.2.0-py3-none-any.whl size=176722 sha256=8d1f009abdcd7da95f3fc2f9f2873625e1004c96b1136d998b8005fabe3fee3b
+  Stored in directory: /home/runner/.cache/pip/wheels/20/88/41/5d873c9b55dc7479f0b9951c2161d7b09be193e7228ea27309
 Successfully built mordred
 </pre></div>
 </div>
@@ -365,8 +363,7 @@ Successfully built mordred
 </div>
 </div>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="activity-1-understanding-gaussian-process-regression">
+<section id="activity-1-understanding-gaussian-process-regression">
 <h1>Activity 1: Understanding Gaussian Process Regression<a class="headerlink" href="#activity-1-understanding-gaussian-process-regression" title="Permalink to this headline"></a></h1>
 <p>First, let’s build some intuition surrounding GPR. We will start by considering <em>Multivariate Gaussians</em>, which can be used to describe a set of normally distributed and possibly correlated random variables. Use the cell below to draw a small number of random samples for a two-dimensional Gaussian. We will then plot these random samples in two ways.</p>
 <div class="cell docutils container">
@@ -406,7 +403,7 @@ Successfully built mordred
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0bd20b6f279a8e8858d105031300ad5a70b4e9af15db56077bb669129cdf416e.png" src="../_images/0bd20b6f279a8e8858d105031300ad5a70b4e9af15db56077bb669129cdf416e.png" />
+<img alt="../_images/2bea950166572526d9dccce42b385b6a2d903ece6618b378466d7112e90d9c9d.png" src="../_images/2bea950166572526d9dccce42b385b6a2d903ece6618b378466d7112e90d9c9d.png" />
 </div>
 </div>
 <p>Now, we let’s consider more complex situation: a <em>30-dimensional</em> Gaussian. Of course, we will not show the underlying distribution but use the “line view” to illustrate the samples. We will choose to represent the covariance as
@@ -442,7 +439,7 @@ $<span class="math notranslate nohighlight">\(k(x_i,x_j) = \exp \left[-\frac{(x_
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e2f3976e16629d6fbdd39f813b989c84abbd5f955c5298646706526eefd3092e.png" src="../_images/e2f3976e16629d6fbdd39f813b989c84abbd5f955c5298646706526eefd3092e.png" />
+<img alt="../_images/ea16f5e171cd53d8e670981fc1558a47da79e1ee23cc8a6ab36f2a4c0681a1b6.png" src="../_images/ea16f5e171cd53d8e670981fc1558a47da79e1ee23cc8a6ab36f2a4c0681a1b6.png" />
 </div>
 </div>
 <section id="example-gpr-with-van-der-waals-eos">
@@ -520,7 +517,7 @@ $<span class="math notranslate nohighlight">\(k(x_i,x_j) = \exp \left[-\frac{(x_
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d4a7992dc0b1ef62bce9c5892dc0c3765606a770b77b5d34fc61d65ee603f11a.png" src="../_images/d4a7992dc0b1ef62bce9c5892dc0c3765606a770b77b5d34fc61d65ee603f11a.png" />
+<img alt="../_images/510217f1a7350b1fd5a726833b89e85dc284c6330a721016fc07417382a8c05e.png" src="../_images/510217f1a7350b1fd5a726833b89e85dc284c6330a721016fc07417382a8c05e.png" />
 </div>
 </div>
 <p>The above presumes noise-free observations and also uses a naive formulation scheme with direct sampling to obtain our results. The posterior mean and variance can actually be obtained directly as we will show next. First run the cell below leaving <code class="docutils literal notranslate"><span class="pre">sigma_n</span></code> to be 0 (i.e., noise-free) and compare the results with the previous cell. Then, run again by changing the value of the noise to get a feel for how noisy observations impact the GP.</p>
@@ -566,7 +563,7 @@ $<span class="math notranslate nohighlight">\(k(x_i,x_j) = \exp \left[-\frac{(x_
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/df9196d4a458fc1d593ebe3e839b3e7078868250262d6aea5e3553f08461b110.png" src="../_images/df9196d4a458fc1d593ebe3e839b3e7078868250262d6aea5e3553f08461b110.png" />
+<img alt="../_images/61e0a996537ef3b6db96dca13199e6c93bfe824bfde7c1141bdeec3310d04476.png" src="../_images/61e0a996537ef3b6db96dca13199e6c93bfe824bfde7c1141bdeec3310d04476.png" />
 </div>
 </div>
 </section>
@@ -637,7 +634,7 @@ $<span class="math notranslate nohighlight">\(k(x_i,x_j) = \exp \left[-\frac{(x_
 <p>That looks better! In the cell above, we show when building the <code class="docutils literal notranslate"><span class="pre">GaussianProcessRegressor</span></code> how you can specify whether your label should be normalized with the <code class="docutils literal notranslate"><span class="pre">normalize_y</span></code> option. Go ahead and add this flag with <code class="docutils literal notranslate"><span class="pre">True</span></code> to the cell where we unintentionally assumed a zero-mean prior and see how this now compares with the result just generated.</p>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="team-activity-active-learning-challenge">
+<section id="team-activity-active-learning-challenge">
 <h1>Team Activity: Active Learning Challenge<a class="headerlink" href="#team-activity-active-learning-challenge" title="Permalink to this headline"></a></h1>
 <p>In this activity, we will deploy <em>active learning</em> to identify a molecule that fits some specific target physical property. In specific, we will be working from a pool of molecules that can be found in the ClinTox dataset, which includes a combination of drugs that have failed clinical trials for toxicity reasons as well as drugs that are assocated with successful trials. It is a commonly used dataset for binary classification, but here, we will simply use it as a source for interesting molecular structures. Here is a summary of the challenge:</p>
 <ul class="simple">
@@ -1119,7 +1116,7 @@ Here we have it:
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="day3.html" class="btn btn-neutral float-left" title="Agenda for Day 3" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="day3.html" class="btn btn-neutral float-left" title="Day 3" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="notebook-b.html" class="btn btn-neutral float-right" title="Explaining A Black Box Model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

@@ -6,7 +6,7 @@
     "id": "dXMCgJqAH4xA"
    },
    "source": [
-    "# Day 1 Notebook Intro"
+    "## Day 1 Notebook Intro"
    ]
   },
   {
@@ -59,7 +59,7 @@
     "id": "kYn0aVQe-nhy"
    },
    "source": [
-    "# Activity 1: Concepts with Linear Regression\n",
+    "## Activity 1: Concepts with Linear Regression\n",
     "Many of the important concepts in supervised machine learning can be appreciated by a solid understanding of linear regression, which we all probably encountered early on -- like elementary school. We are going to work through a linear regression task in a fashion  to appreciate many of the basic mechanics that underlie deep learning. \n",
     "\n",
     "To start, we will pull a dataset generated in a recent paper that explores the use of machine learning to predict polymer properties. The label  that we extract (and our target for prediction) will be the radius of gyration ($R_g$), which provides a measure of an object's size, for some simulated intrinsically disordered proteins. \n",
@@ -150,7 +150,7 @@
     "id": "TmmyqHV0qWLk"
    },
    "source": [
-    "## Examining a human hypothesis \n",
+    "### Examining a human hypothesis \n",
     "At first glance, it certainly seems that there is reasonable linear correlation between our input and labels. \n",
     "\n",
     "We are going to consider a function of the form\n",
@@ -229,7 +229,7 @@
     "id": "4ac2Zd_n0PRZ"
    },
    "source": [
-    "## More formal optimization\n",
+    "### More formal optimization\n",
     "Probably your human-intuited fit yields a pretty darn good description of the data, but we'll try to do better.\n",
     "\n",
     "The ``training'' of neural networks is really about *optimization* where the objective is to minimze a *loss* function that describes a disparity between the model predictions and the ground truth of some set of labels.\n",
@@ -330,7 +330,7 @@
     "id": "k2AC2NGY8x0J"
    },
    "source": [
-    "## Gradient Descent\n",
+    "### Gradient Descent\n",
     "\n",
     "Next, we will implement gradient descent to find an optimal set of parameters. For this type of linear model, it is possible to obtain the requisite derivative of the loss function with respect to the parameters analytically. I have used that solution below. "
    ]
@@ -480,7 +480,7 @@
     "id": "ZRMNEz0nqYbm"
    },
    "source": [
-    "## Linear algebraic solution\n",
+    "### Linear algebraic solution\n",
     "If run for enough iterations, the solution obtained from gradient descent should outperform our human-intuited estimated model, even if just slightly. Because this is least-squares linear regression, we can also compare our solution with that obtained via linear algebra. \n",
     "\n"
    ]
@@ -532,7 +532,7 @@
     "id": "u72gGX_-tYox"
    },
    "source": [
-    "## Using train/test splits\n",
+    "### Using train/test splits\n",
     "In our example so far, we did something, which is not generally good practice in machine learning: the data we used to train/optimize the model was the same data that we ultimately tested on. Because of the simplicity of the model that we have here, we are not at significant risk of overfitting, but it is better if we can assess the model using data that was held-out or unseen during training.\n",
     "\n",
     "In the following cells, we will demonstrate the use of some convenient functions from scikit-learn that allow us to create a simple train/test split of our data."
@@ -642,7 +642,7 @@
     "id": "Eiw8-bvp84AC"
    },
    "source": [
-    "## Cross-validation\n",
+    "### Cross-validation\n",
     "An important consideration is how the choices that we make when constructing a model *impact* the model. Some of these choice may include things like hyperparameters associated with training (e.g., the number of training iterations and learning rate) or the actual constitution of our training data. If possible, we would like to mitigate any biases or deficiencies that we introduce in this fashion. Cross-validation provides one framework that can facililitate robustness with respect to the model training and our reporting of its results.  \n",
     "\n",
     "In the next cells, we will perform $k$-fold cross-validation to provide a better estimate of prospective model performance. "
@@ -725,7 +725,7 @@
     "id": "3lvtFwwydUXf"
    },
    "source": [
-    "# Activity 2: Chemical Data Basics\n",
+    "## Activity 2: Chemical Data Basics\n",
     "In this activity, we will be working with a dataset on the aqueous solubility  of various molecules. Our main objective will be to construct and assess the performance of simple linear model for predicting solubility. Although linear modeling is not canonically machine learning, all the concepts and approaches we consider for treating/examining the data as well as evaluating the models will be transferable to building models based on deep learning algorithms.\n",
     "\n",
     "Execute the following cell to import necessary modules and load the dataset. The data will be loaded into a Pandas dataframe named `soldata`. After, you can progress through the tasks as described."
@@ -1067,7 +1067,7 @@
     "id": "qjlX0VmKj7m5"
    },
    "source": [
-    "## Dataset Exploration\n",
+    "### Dataset Exploration\n",
     "One of the first things you should do for any ML task is simply get a feel for the data. As an end goal, we know we want to ***predict solubility***. Thus, ***solubility*** is our ***label*** for a regression task, and we will try model this as a function of molecular descriptors of a molecule; these are used to construct prospective ***input feature vectors*** that represent the molecule.\n",
     "\n",
     "## Summary of Tasks\n",
@@ -1084,7 +1084,7 @@
     "id": "ndQLuvnHomKC"
    },
    "source": [
-    "## What does the data look like?\n",
+    "### What does the data look like?\n",
     "Plot the distribution of solubility values. Is there anything notable about its shape or range?\n",
     "\n",
     "Useful function: Useful function: sns.distplot\n",
@@ -1224,7 +1224,7 @@
     "id": "TEGzdF9GYogT"
    },
    "source": [
-    "## Feature scaling\n",
+    "### Feature scaling\n",
     "Based on the disparate magnitudes of the possible features, we will perform a transformation of the input features to ensure everything has a similar \"scale.\"\n",
     "\n",
     "We will use standard scaling here. Although I will not represent that this is the *best* choice for scaling, it is simple/safe to implement. \n",
@@ -1238,7 +1238,7 @@
     "id": "ub37wuVbxr32"
    },
    "source": [
-    "## How good is the model?\n",
+    "### How good is the model?\n",
     "Determine and evaluate the performance of a linear model. You can compare your results with that of the \"exact\" least-squares result afforded by linear algebra. You may wish to use the LinearRegression model from scikit-learn: \n",
     "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html"
    ]
@@ -1387,7 +1387,7 @@
     "id": "kYIszG29WI-U"
    },
    "source": [
-    "## Regularization\n",
+    "### Regularization\n",
     "In the previous cells, we considered a model using all possible features, but earlier inspection of the data suggests that some of the features are highly correlated. The implication is that we might obtain a *simpler* model without any significant loss in accuracy were we to use a different set of features.\n",
     "\n",
     "As a first pass towards something akin to feature selection, we will examine the impact of regularization on the model parameters. We discussed L1 and L2 regularization. Use the cells below to examine how using these regularization terms impacts the model parameters (i.e., coefficients). The use of L1 and L2 regularization is sometimes expressed as \"Lasso\" or \"Ridge\" regression respectively. There are implementations of these available on scikit-learn:\n",
@@ -1480,7 +1480,7 @@
     "id": "HMw8vWekvu25"
    },
    "source": [
-    "## Feature Selection\n",
+    "### Feature Selection\n",
     "From previous results and analysis, we can probably conclude that we do not need all of the features for an accurate model. We mentioned a variety of feature selection methods. Here, we'll use a simple greedy correlation filter to remove \"redundant\" features. Comment the code below between the indicated region to ensure comprehension. How does the result compare to any of the regularization methods? Does this make sense?"
    ]
   },
@@ -1537,7 +1537,7 @@
     "id": "_mUSmzD2Hxpy"
    },
    "source": [
-    "# Activity 3: Fun with Neural Networks\n",
+    "## Activity 3: Fun with Neural Networks\n",
     "\n",
     "In this activity session, we are going to use the Keras API to build simple, feed-forward deep neural networks. At the end, you will have some freedom to use the API to investigate the impact of hyperparameters and model complexity with the same solubility dataset.\n"
    ]
@@ -1574,7 +1574,7 @@
     "id": "jP5Eo4mIJoDN"
    },
    "source": [
-    "## Building models with the Sequential API\n",
+    "### Building models with the Sequential API\n",
     "We will start with the \"sequential\" model, which is really easy to use! You can play around with the different parameters and check the output with the .summary() method. **Can you make sense of the number of parameters that are reported???**"
    ]
   },
@@ -1640,7 +1640,7 @@
     "id": "cpfxzrHUKkgv"
    },
    "source": [
-    "## Building models with Functional API\n",
+    "### Building models with Functional API\n",
     "We will also demonstrate the functional API. The functional API is more flexible than the Sequential API and permits you more control over the architecture. By contrast, `Sequential` models can only be fully connected, feed forward. "
    ]
   },
@@ -1723,7 +1723,7 @@
     "id": "5T3kL7fcO9Ix"
    },
    "source": [
-    "## Return of the Solubility Dataset\n",
+    "### Return of the Solubility Dataset\n",
     "So, now we are going to try and apply what we have learned to create a neural network that can predict solubility from chemical descriptors of a molecule. *How many features are there to describe each molecule?*"
    ]
   },
@@ -1770,7 +1770,7 @@
     "id": "HJWaIxqdXi2N"
    },
    "source": [
-    "## A deep neural network to predict solubility\n",
+    "### A deep neural network to predict solubility\n",
     "Use the cell below to build a neural network to predict solubility from the input features obtained from the .csv. Play around with the architecture to gain some intuition for the predictive capabilities of the network? How small of a network can you make that still yields \"good\" results (say, $r^2 > 0.7$)?"
    ]
   },
@@ -2077,7 +2077,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## Learning curves\n",
+    "### Learning curves\n",
     "We can monitor the history of training and inspect it to get a sense of convergence/underfitting/overfitting during optimization. Do you think the current model is overfit?"
    ]
   },

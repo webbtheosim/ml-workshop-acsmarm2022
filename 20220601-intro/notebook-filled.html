@@ -26,9 +26,7 @@
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Day 2" href="../20220602-crma/day2.html" />
-    <link rel="prev" title="Day 1" href="day1.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -46,40 +44,15 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Materials for ML Workshops at ACS MARM: June 1-4, 2022</a></li>
 <li class="toctree-l1"><a class="reference internal" href="day1.html">Day 1</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Day 1 Notebook Intro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#initial-setup-of-python-environment">Initial Setup of Python Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#activity-1-concepts-with-linear-regression">Activity 1: Concepts with Linear Regression</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#examining-a-human-hypothesis">Examining a human hypothesis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#more-formal-optimization">More formal optimization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#gradient-descent">Gradient Descent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#linear-algebraic-solution">Linear algebraic solution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#using-train-test-splits">Using train/test splits</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cross-validation">Cross-validation</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#activity-2-chemical-data-basics">Activity 2: Chemical Data Basics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#dataset-exploration">Dataset Exploration</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#summary-of-tasks">Summary of Tasks</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#what-does-the-data-look-like">What does the data look like?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#feature-scaling">Feature scaling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-good-is-the-model">How good is the model?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#regularization">Regularization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#feature-selection">Feature Selection</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#activity-3-fun-with-neural-networks">Activity 3: Fun with Neural Networks</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#building-models-with-the-sequential-api">Building models with the Sequential API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#building-models-with-functional-api">Building models with Functional API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#return-of-the-solubility-dataset">Return of the Solubility Dataset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#a-deep-neural-network-to-predict-solubility">A deep neural network to predict solubility</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#learning-curves">Learning curves</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="notebook.html">Day 1 Notebook Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebook.html#initial-setup-of-python-environment">Initial Setup of Python Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebook.html#activity-1-concepts-with-linear-regression">Activity 1: Concepts with Linear Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebook.html#activity-2-chemical-data-basics">Activity 2: Chemical Data Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebook.html#summary-of-tasks">Summary of Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebook.html#activity-3-fun-with-neural-networks">Activity 3: Fun with Neural Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../20220602-crma/day2.html">Day 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../20220603-applied/day3.html">Day 3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../20220603-applied/notebook-a.html">Day 3 Notebook: Module A Intro</a></li>
@@ -105,7 +78,7 @@
       <li><a href="../toc.html" class="icon icon-home"></a> &raquo;</li>
       <li>Day 1 Notebook Intro</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/webbtheosim/ml-workshop-acsmarm2022/blob/main/site/source/20220601-intro/notebook.ipynb" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/webbtheosim/ml-workshop-acsmarm2022/blob/main/site/source/20220601-intro/notebook-filled.ipynb" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -113,29 +86,36 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="day-1-notebook-intro">
+  <section class="tex2jax_ignore mathjax_ignore" id="day-1-notebook-intro">
 <h1>Day 1 Notebook Intro<a class="headerlink" href="#day-1-notebook-intro" title="Permalink to this headline"></a></h1>
-</section>
 <section id="initial-setup-of-python-environment">
-<h1>Initial Setup of Python Environment<a class="headerlink" href="#initial-setup-of-python-environment" title="Permalink to this headline"></a></h1>
+<h2>Initial Setup of Python Environment<a class="headerlink" href="#initial-setup-of-python-environment" title="Permalink to this headline"></a></h2>
 <p>Over the course of the next few days, we will rely on a number of python modules. Google Colaboratory comes equipped with a large number of these modules, but there are a few that we need that are not provided by default. Run the cells below to install these modules. You can optionally comment out modules that are only necessary for specific days that you will not be attending.</p>
-<div class="cell tag_remove-output docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get non-default modules</span>
 <span class="o">!</span>pip install rdkit-pypi
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: rdkit-pypi in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (2022.3.2.1)
+Requirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from rdkit-pypi) (1.22.4)
+Requirement already satisfied: Pillow in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from rdkit-pypi) (9.1.1)
+</pre></div>
+</div>
+</div>
 </div>
 </section>
-<section id="activity-1-concepts-with-linear-regression">
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="activity-1-concepts-with-linear-regression">
 <h1>Activity 1: Concepts with Linear Regression<a class="headerlink" href="#activity-1-concepts-with-linear-regression" title="Permalink to this headline"></a></h1>
 <p>Many of the important concepts in supervised machine learning can be appreciated by a solid understanding of linear regression, which we all probably encountered early on – like elementary school. We are going to work through a linear regression task in a fashion  to appreciate many of the basic mechanics that underlie deep learning.</p>
 <p>To start, we will pull a dataset generated in a recent paper that explores the use of machine learning to predict polymer properties. The label  that we extract (and our target for prediction) will be the radius of gyration (<span class="math notranslate nohighlight">\(R_g\)</span>), which provides a measure of an object’s size, for some simulated intrinsically disordered proteins.</p>
 <p>A well known result from polymer physics is that <span class="math notranslate nohighlight">\(R_g \propto M^{0.5}\)</span>, where <span class="math notranslate nohighlight">\(M\)</span> is the number of some statistically uncorrelated sub-units in the polymer; the same result arises in the context of diffusion/random walks.</p>
 <p>In the following, we will examine how well the data on <span class="math notranslate nohighlight">\(R_g\)</span> can be described by a simple linear model with <span class="math notranslate nohighlight">\(N^{0.5}\)</span> as our input feature (<span class="math notranslate nohighlight">\(N\)</span> will be the number of residues in the protein, which we do not generally expect to be a statistically uncorrelated sub-unit)</p>
 <p>Run the cell below to obtain and view the data.</p>
-<div class="cell tag_remove-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># modules for this activity</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -146,8 +126,21 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># modules for this activity</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+</pre></div>
 </div>
-<div class="cell tag_hide-output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_raw_data</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
   <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
@@ -186,17 +179,15 @@
 <div class="math notranslate nohighlight">
 \[R_g = \theta_0 + \theta_1 N^{0.5}\]</div>
 <p>Can you look at the plot to “guess” values of these parameters? Complete the cell below and explore some “hypotheses”.</p>
-<div class="cell tag_remove-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># basic set up</span>
 <span class="n">Nmax</span> <span class="o">=</span> <span class="mi">900</span>
 <span class="n">xline</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">Nmax</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">**</span><span class="mf">0.5</span>
 <span class="n">f</span>    <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">th</span><span class="p">:</span> <span class="n">th</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">th</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">x</span>
 
-<span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
 <span class="c1"># fill in parameters</span>
-<span class="n">thetas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">VALUE1</span><span class="p">,</span><span class="n">VALUE2</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span> <span class="c1"># this maps to a 2x1</span>
-<span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
+<span class="n">thetas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mf">8.</span><span class="o">/</span><span class="mi">30</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span> <span class="c1"># this maps to a 2x1</span>
 
 <span class="c1"># make predictions using function</span>
 <span class="n">yline</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">xline</span><span class="p">,</span><span class="n">thetas</span><span class="p">)</span>
@@ -216,6 +207,12 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/d7a1110fa051fb953c6a57a5185aa22bca09c9b33ecd130edd90ff3a51c33f04.png" src="../_images/d7a1110fa051fb953c6a57a5185aa22bca09c9b33ecd130edd90ff3a51c33f04.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>r2 = 0.930, MSE = 0.088, MAE = 0.162
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="more-formal-optimization">
@@ -224,7 +221,7 @@
 <p>The ``training’’ of neural networks is really about <em>optimization</em> where the objective is to minimze a <em>loss</em> function that describes a disparity between the model predictions and the ground truth of some set of labels.</p>
 <p>When we first encounter linear regression, our optimization is usually in the `least-squares’ sense; that is, our loss function is the mean-squared error over our observations. The problem of linear least-squares regression can be ``exactly’’ solved using techniques from linear algebra, but that is not so much the domain of machine learning. Therefore, we will approach a solution using gradient descent optimization, which is more akin to what is needed fro training a neural network.</p>
 <p>Below we define and examine our loss function (a mean-squared error) over our parameter space (considering the whole dataset). We also place a star at the position of the hypothesis that we generated in the previous cell. Is it close to the minimum?</p>
-<div class="cell tag_remove-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">loss</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">theta</span><span class="p">):</span>
   <span class="sd">&#39;&#39;&#39; Function to calculate cost function assuming a hypothesis of form y^ = X*theta</span>
@@ -258,15 +255,12 @@
 
   <span class="k">return</span> <span class="n">fig</span><span class="p">,</span><span class="n">ax1</span><span class="p">,</span><span class="n">ax2</span>
 
-<span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
 <span class="c1">#Define grid over which to calculate J</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">50</span>
-<span class="n">theta0Rng</span> <span class="o">=</span> <span class="p">[</span><span class="n">AAA</span><span class="p">,</span><span class="n">BBB</span><span class="p">]</span>
-<span class="n">theta1Rng</span> <span class="o">=</span> <span class="p">[</span><span class="n">CCC</span><span class="p">,</span><span class="n">DDD</span><span class="p">]</span>
+<span class="n">theta0Rng</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">theta1Rng</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">1.5</span><span class="p">]</span>
 <span class="n">theta0s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">theta0Rng</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">theta0Rng</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">N</span><span class="p">)</span>
 <span class="n">theta1s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">theta1Rng</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">theta1Rng</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">N</span><span class="p">)</span>
-<span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
-
 
 <span class="c1">#Initialize E as a matrix to store cost function values</span>
 <span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">))</span>
@@ -283,12 +277,15 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/ad397570fd46e55109076bf137a275d3fb99b3e82d69259ebff2130d2111360c.png" src="../_images/ad397570fd46e55109076bf137a275d3fb99b3e82d69259ebff2130d2111360c.png" />
+</div>
 </div>
 </section>
 <section id="gradient-descent">
 <h2>Gradient Descent<a class="headerlink" href="#gradient-descent" title="Permalink to this headline"></a></h2>
 <p>Next, we will implement gradient descent to find an optimal set of parameters. For this type of linear model, it is possible to obtain the requisite derivative of the loss function with respect to the parameters analytically. I have used that solution below.</p>
-<div class="cell tag_remove-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">E2loss</span><span class="p">(</span><span class="n">yhat</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">yhat</span><span class="p">)[:]</span><span class="o">-</span><span class="n">y</span><span class="p">[:])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
@@ -331,7 +328,7 @@
 </div>
 </div>
 <p>Next, we’ll actually run the gradient descent code for a specified number of iterations and observe the outcome. We are also specifying a value of a ``learning’’ rate, which is a so-called hyperparmeter in our model training/optimization.</p>
-<div class="cell tag_hide-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">th0</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mf">1.</span><span class="p">],[</span><span class="mf">.75</span><span class="p">]])</span>
 <span class="n">nIters</span> <span class="o">=</span> <span class="mi">5000</span>
@@ -407,24 +404,10 @@ r2 = 0.941, MSE =  0.08822, MAE = 0.152
 <h2>Using train/test splits<a class="headerlink" href="#using-train-test-splits" title="Permalink to this headline"></a></h2>
 <p>In our example so far, we did something, which is not generally good practice in machine learning: the data we used to train/optimize the model was the same data that we ultimately tested on. Because of the simplicity of the model that we have here, we are not at significant risk of overfitting, but it is better if we can assess the model using data that was held-out or unseen during training.</p>
 <p>In the following cells, we will demonstrate the use of some convenient functions from scikit-learn that allow us to create a simple train/test split of our data.</p>
-<div class="cell tag_remove-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create train vs. test split </span>
-<span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
-<span class="c1"># write code to use the function train_test_split in scikit learn</span>
-<span class="c1"># examine the shape of the output arrays and see how they compare</span>
-<span class="c1"># to the original data structures X and y</span>
-<span class="c1"># you will want to name the variables as follows</span>
-<span class="c1"># X_tr --&gt; features for training data</span>
-<span class="c1"># y_tr --&gt; labels for training data</span>
-<span class="c1"># X_te --&gt; features for test data</span>
-<span class="c1"># y_te --&gt; labels for test data</span>
-
-
-
-<span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
-
-
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create train vs. test split (here it is a 50/50 split)</span>
+<span class="n">X_tr</span><span class="p">,</span> <span class="n">X_te</span><span class="p">,</span> <span class="n">y_tr</span><span class="p">,</span> <span class="n">y_te</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">shuffle</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="n">thetaGD</span><span class="p">,</span> <span class="n">E_tr</span><span class="p">,</span> <span class="n">E_te</span> <span class="o">=</span> <span class="n">Grad_Descent</span><span class="p">(</span><span class="n">X_tr</span><span class="p">,</span><span class="n">y_tr</span><span class="p">,</span><span class="n">th0</span><span class="p">,</span><span class="mf">8e-6</span><span class="p">,</span><span class="n">nIters</span><span class="p">,</span><span class="n">X_te</span><span class="p">,</span><span class="n">y_te</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;theta_0 = </span><span class="si">{:&gt;8.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">thetaGD</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]))</span>
@@ -449,6 +432,17 @@ r2 = 0.941, MSE =  0.08822, MAE = 0.152
 <span class="n">mae</span>   <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_te</span><span class="p">,</span><span class="n">yhat</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;r2 = </span><span class="si">{:&gt;5.3f}</span><span class="s2">, MSE = </span><span class="si">{:&gt;8.5f}</span><span class="s2">, MAE = </span><span class="si">{:&gt;5.3f}</span><span class="s2">&quot;</span>\
       <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r2</span><span class="p">,</span><span class="n">rmse</span><span class="p">,</span><span class="n">mae</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>theta_0 =  -0.0787
+theta_1 =   0.2878
+</pre></div>
+</div>
+<img alt="../_images/a49405ad43173b8aed294957b1352cb9bda59f98860757d9d777b8196ad07a49.png" src="../_images/a49405ad43173b8aed294957b1352cb9bda59f98860757d9d777b8196ad07a49.png" />
+<img alt="../_images/4267a7ecd55c37a67109bc86e8d73f6641db0781389cce3a2c577be75fd73fbc.png" src="../_images/4267a7ecd55c37a67109bc86e8d73f6641db0781389cce3a2c577be75fd73fbc.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>r2 = 0.930, MSE =  0.08822, MAE = 0.158
 </pre></div>
 </div>
 </div>
@@ -492,7 +486,7 @@ mse= 0.152 +/- 0.004
 </div>
 </div>
 </div>
-<div class="cell tag_remove-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">rdkit</span><span class="o">,</span> <span class="nn">rdkit.Chem</span><span class="o">,</span> <span class="nn">rdkit.Chem.Draw</span>
@@ -510,25 +504,22 @@ mse= 0.152 +/- 0.004
 </div>
 </section>
 </section>
-<section id="activity-2-chemical-data-basics">
+<section class="tex2jax_ignore mathjax_ignore" id="activity-2-chemical-data-basics">
 <h1>Activity 2: Chemical Data Basics<a class="headerlink" href="#activity-2-chemical-data-basics" title="Permalink to this headline"></a></h1>
 <p>In this activity, we will be working with a dataset on the aqueous solubility  of various molecules. Our main objective will be to construct and assess the performance of simple linear model for predicting solubility. Although linear modeling is not canonically machine learning, all the concepts and approaches we consider for treating/examining the data as well as evaluating the models will be transferable to building models based on deep learning algorithms.</p>
 <p>Execute the following cell to import necessary modules and load the dataset. The data will be loaded into a Pandas dataframe named <code class="docutils literal notranslate"><span class="pre">soldata</span></code>. After, you can progress through the tasks as described.</p>
-<div class="cell tag_hide-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the data from dmol-book</span>
 <span class="n">soldata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
     <span class="s2">&quot;https://github.com/whitead/dmol-book/raw/master/data/curated-solubility-dataset.csv&quot;</span>
 <span class="p">)</span>
-<span class="n">soldata</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">soldata</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">
-  <div id="df-bbda20c2-119b-4df7-85c0-db17d4ac6a84">
-    <div class="colab-df-container">
-      <div>
+<div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -578,7 +569,7 @@ mse= 0.152 +/- 0.004
       <td>SZEMGTQCPRNXEG-UHFFFAOYSA-M</td>
       <td>[Br-].CCCCCCCCCCCCCCCCCC[N+](C)(C)C</td>
       <td>-3.616127</td>
-      <td>0.0</td>
+      <td>0.000000</td>
       <td>1</td>
       <td>G1</td>
       <td>392.510</td>
@@ -602,7 +593,7 @@ mse= 0.152 +/- 0.004
       <td>GPYLCFQEKPUWLD-UHFFFAOYSA-N</td>
       <td>O=C1Nc2cccc3cccc1c23</td>
       <td>-3.254767</td>
-      <td>0.0</td>
+      <td>0.000000</td>
       <td>1</td>
       <td>G1</td>
       <td>169.183</td>
@@ -626,7 +617,7 @@ mse= 0.152 +/- 0.004
       <td>AVPYQKSLYISFPO-UHFFFAOYSA-N</td>
       <td>Clc1ccc(C=O)cc1</td>
       <td>-2.177078</td>
-      <td>0.0</td>
+      <td>0.000000</td>
       <td>1</td>
       <td>G1</td>
       <td>140.569</td>
@@ -650,7 +641,7 @@ mse= 0.152 +/- 0.004
       <td>XTUPUYCJWKHGSW-UHFFFAOYSA-L</td>
       <td>[Zn++].CC(c1ccccc1)c2cc(C(C)c3ccccc3)c(O)c(c2)...</td>
       <td>-3.924409</td>
-      <td>0.0</td>
+      <td>0.000000</td>
       <td>1</td>
       <td>G1</td>
       <td>756.226</td>
@@ -674,7 +665,7 @@ mse= 0.152 +/- 0.004
       <td>FAUAZXVRLVIARB-UHFFFAOYSA-N</td>
       <td>C1OC1CN(CC2CO2)c3ccc(Cc4ccc(cc4)N(CC5CO5)CC6CO...</td>
       <td>-4.662065</td>
-      <td>0.0</td>
+      <td>0.000000</td>
       <td>1</td>
       <td>G1</td>
       <td>422.525</td>
@@ -690,138 +681,178 @@ mse= 0.152 +/- 0.004
       <td>1.084427e+00</td>
       <td>769.899934</td>
     </tr>
+    <tr>
+      <th>5</th>
+      <td>A-10</td>
+      <td>vinyltoluene</td>
+      <td>InChI=1S/C9H10/c1-3-9-6-4-5-8(2)7-9/h3-7H,1H2,2H3</td>
+      <td>JZHGRUMIRATHIU-UHFFFAOYSA-N</td>
+      <td>Cc1cccc(C=C)c1</td>
+      <td>-3.123150</td>
+      <td>0.000000</td>
+      <td>1</td>
+      <td>G1</td>
+      <td>118.179</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>46.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.00</td>
+      <td>55.836626</td>
+      <td>3.070761e+00</td>
+      <td>211.033225</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>A-11</td>
+      <td>3-(3-ethylcyclopentyl)propanoic acid</td>
+      <td>InChI=1S/C10H18O2/c1-2-8-3-4-9(7-8)5-6-10(11)1...</td>
+      <td>WVRFSLWCFASCIS-UHFFFAOYSA-N</td>
+      <td>CCC1CCC(CCC(O)=O)C1</td>
+      <td>-3.286116</td>
+      <td>0.000000</td>
+      <td>1</td>
+      <td>G1</td>
+      <td>170.252</td>
+      <td>...</td>
+      <td>4.0</td>
+      <td>70.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>37.30</td>
+      <td>73.973655</td>
+      <td>2.145839e+00</td>
+      <td>153.917569</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>A-12</td>
+      <td>11,16,17,21-tetrahydroxypregna-1,4-diene-3,20-...</td>
+      <td>InChI=1S/C21H28O6/c1-19-6-5-12(23)7-11(19)3-4-...</td>
+      <td>SEKYBDYVXDAYPY-UHFFFAOYSA-N</td>
+      <td>CC12CC(O)C3C(CCC4=CC(=O)C=CC34C)C1CC(O)C2(O)C(...</td>
+      <td>-2.664549</td>
+      <td>0.000000</td>
+      <td>1</td>
+      <td>G1</td>
+      <td>376.449</td>
+      <td>...</td>
+      <td>2.0</td>
+      <td>148.0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>115.06</td>
+      <td>158.135542</td>
+      <td>1.776978e+00</td>
+      <td>755.770792</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>A-14</td>
+      <td>bis(4-fluorophenyl)methanone</td>
+      <td>InChI=1S/C13H8F2O/c14-11-5-1-9(2-6-11)13(16)10...</td>
+      <td>LSQARZALBDFYQZ-UHFFFAOYSA-N</td>
+      <td>Fc1ccc(cc1)C(=O)c2ccc(F)cc2</td>
+      <td>-4.396652</td>
+      <td>0.431513</td>
+      <td>2</td>
+      <td>G3</td>
+      <td>218.202</td>
+      <td>...</td>
+      <td>2.0</td>
+      <td>80.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>17.07</td>
+      <td>91.346032</td>
+      <td>2.315628e+00</td>
+      <td>452.960733</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>A-15</td>
+      <td>1-[2-(benzoyloxy)propoxy]propan-2-yl benzoate ...</td>
+      <td>InChI=1S/C20H22O5/c21-19(17-9-3-1-4-10-17)24-1...</td>
+      <td>BYQDGAVOOHIJQS-UHFFFAOYSA-N</td>
+      <td>O=C(OCCCOCCCOC(=O)c1ccccc1)c2ccccc2</td>
+      <td>-4.595503</td>
+      <td>0.118551</td>
+      <td>2</td>
+      <td>G3</td>
+      <td>342.391</td>
+      <td>...</td>
+      <td>10.0</td>
+      <td>132.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>61.83</td>
+      <td>147.071714</td>
+      <td>1.447050e+00</td>
+      <td>582.150793</td>
+    </tr>
   </tbody>
 </table>
-<p>5 rows × 26 columns</p>
-</div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-bbda20c2-119b-4df7-85c0-db17d4ac6a84')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-        
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-       width="24px">
-    <path d="M0 0h24v24H0V0z" fill="none"/>
-    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
-  </svg>
-      </button>
-      
-  <style>
-    .colab-df-container {
-      display:flex;
-      flex-wrap:wrap;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-      <script>
-        const buttonEl =
-          document.querySelector('#df-bbda20c2-119b-4df7-85c0-db17d4ac6a84 button.colab-df-convert');
-        buttonEl.style.display =
-          google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-        async function convertToInteractive(key) {
-          const element = document.querySelector('#df-bbda20c2-119b-4df7-85c0-db17d4ac6a84');
-          const dataTable =
-            await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                     [key], {});
-          if (!dataTable) return;
-
-          const docLinkHtml = 'Like what you see? Visit the ' +
-            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-            + ' to learn more about interactive tables.';
-          element.innerHTML = '';
-          dataTable['output_type'] = 'display_data';
-          await google.colab.output.renderOutput(dataTable, element);
-          const docLink = document.createElement('div');
-          docLink.innerHTML = docLinkHtml;
-          element.appendChild(docLink);
-        }
-      </script>
-    </div>
-  </div>
-  </div></div>
+<p>10 rows × 26 columns</p>
+</div></div></div>
 </div>
 <section id="dataset-exploration">
 <h2>Dataset Exploration<a class="headerlink" href="#dataset-exploration" title="Permalink to this headline"></a></h2>
 <p>One of the first things you should do for any ML task is simply get a feel for the data. As an end goal, we know we want to <em><strong>predict solubility</strong></em>. Thus, <em><strong>solubility</strong></em> is our <em><strong>label</strong></em> for a regression task, and we will try model this as a function of molecular descriptors of a molecule; these are used to construct prospective <em><strong>input feature vectors</strong></em> that represent the molecule.</p>
 </section>
-</section>
 <section id="summary-of-tasks">
-<h1>Summary of Tasks<a class="headerlink" href="#summary-of-tasks" title="Permalink to this headline"></a></h1>
+<h2>Summary of Tasks<a class="headerlink" href="#summary-of-tasks" title="Permalink to this headline"></a></h2>
 <p>A. Take a moment to familiarize yourself with the modules that are imported in the previous cell. Then, look at the organization of the DataFrame, the first lines of which are shown above.</p>
 <p>B. Plot the distribution of solubility values. Is there anything notable about its shape or range?</p>
 <p>C. Examine pair correlations amongst possible input features. Are any descriptors highly correlated? How do the scale of the features compare?</p>
+</section>
 <section id="what-does-the-data-look-like">
 <h2>What does the data look like?<a class="headerlink" href="#what-does-the-data-look-like" title="Permalink to this headline"></a></h2>
 <p>Plot the distribution of solubility values. Is there anything notable about its shape or range?</p>
 <p>Useful function: Useful function: sns.distplot
 https://seaborn.pydata.org/generated/seaborn.distplot.html</p>
-<div class="cell tag_hide-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
-
-
-<span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">soldata</span><span class="o">.</span><span class="n">Solubility</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/99ecfc3971d7795b45e5e0d94b42fedd1155629d77b7168ec1d24bbff20628ca.png" src="../_images/99ecfc3971d7795b45e5e0d94b42fedd1155629d77b7168ec1d24bbff20628ca.png" />
+<img alt="../_images/ca89240efe5a23269342ec3908d6bfb2426c53ed71b23e627fc9f750efe5db9a.png" src="../_images/ca89240efe5a23269342ec3908d6bfb2426c53ed71b23e627fc9f750efe5db9a.png" />
 </div>
 </div>
 <p>Examine pair correlations amongst possible input features. Are any descriptors highly correlated? How do the scale of the features compare? What about correlation with the <em><strong>Solubility</strong></em>?</p>
 <p>Useful function: sns.pairplot
 https://seaborn.pydata.org/generated/seaborn.pairplot.html</p>
 <p>Note that if you run pairplot over all features, it may take awhile to run. You may wish to only examine a subset for this reason.</p>
-<div class="cell tag_hide-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">features_start_at</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">soldata</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;MolWt&quot;</span><span class="p">)</span>
 <span class="n">feature_names</span> <span class="o">=</span> <span class="n">soldata</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">features_start_at</span><span class="p">:]</span>
 
 <span class="c1"># code for pair correlations</span>
-<span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
-
-<span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
+<span class="n">subset</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">feature_names</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span><span class="o">&lt;</span><span class="mf">0.5</span><span class="p">]</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">soldata</span><span class="p">[</span><span class="n">subset</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7324e9b3755ebfa4d3de92e69b0effd915606f292d03424cdf0a114587c51714.png" src="../_images/7324e9b3755ebfa4d3de92e69b0effd915606f292d03424cdf0a114587c51714.png" />
+<img alt="../_images/05d87b9513f4b68b316a5577b25a1d2b36a6a86cd1812ba386ebddb77afa2160.png" src="../_images/05d87b9513f4b68b316a5577b25a1d2b36a6a86cd1812ba386ebddb77afa2160.png" />
 </div>
 </div>
-<div class="cell tag_remove-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># code for looking at pair correlations with Solubility</span>
 <span class="n">num_cols</span> <span class="o">=</span> <span class="mi">3</span>
@@ -839,6 +870,9 @@ https://seaborn.pydata.org/generated/seaborn.pairplot.html</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/a05f49c84a6f9f356a3bcbabdf99b86509d2a6a619eec01f53bf210af03c595c.png" src="../_images/a05f49c84a6f9f356a3bcbabdf99b86509d2a6a619eec01f53bf210af03c595c.png" />
+</div>
 </div>
 </section>
 <section id="feature-scaling">
@@ -849,9 +883,8 @@ https://seaborn.pydata.org/generated/seaborn.pairplot.html</p>
 </section>
 <section id="how-good-is-the-model">
 <h2>How good is the model?<a class="headerlink" href="#how-good-is-the-model" title="Permalink to this headline"></a></h2>
-<p>Determine and evaluate the performance of a linear model. You can compare your results with that of the “exact” least-squares result afforded by linear algebra. You may wish to use the LinearRegression model from scikit-learn:
-https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html</p>
-<div class="cell tag_hide-output tag_hide-input docutils container">
+<p>Determine and evaluate the performance of a linear model. You can compare your results with that of the “exact” least-squares result afforded by linear algebra.</p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># extract data set</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">soldata</span><span class="o">.</span><span class="n">Solubility</span><span class="p">[:])</span>
@@ -873,7 +906,7 @@ https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearReg
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c2765b12834b077f8c88c61a47ff8e749dfdadac694a70e6d3e835027c2b3f54.png" src="../_images/c2765b12834b077f8c88c61a47ff8e749dfdadac694a70e6d3e835027c2b3f54.png" />
+<img alt="../_images/e14c381c4b7383d491d1cf02297c8aefd9d6b7726df44f986b4f38de9ed94903.png" src="../_images/e14c381c4b7383d491d1cf02297c8aefd9d6b7726df44f986b4f38de9ed94903.png" />
 </div>
 </div>
 <div class="cell tag_remove-output docutils container">
@@ -884,8 +917,6 @@ https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearReg
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span>    <span class="kn">import</span> <span class="n">StandardScaler</span>
 
 <span class="c1"># We will estimate the model accuracy using cross-validation</span>
-<span class="n">y</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">soldata</span><span class="o">.</span><span class="n">Solubility</span><span class="p">[:])</span>
-<span class="n">X</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">soldata</span><span class="p">[</span><span class="n">feature_names</span><span class="p">])</span>
 <span class="n">k</span>  <span class="o">=</span> <span class="mi">5</span>
 <span class="n">kf</span> <span class="o">=</span> <span class="n">KFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="n">k</span><span class="p">,</span><span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">r2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">k</span><span class="p">])</span>
@@ -897,13 +928,14 @@ https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearReg
     <span class="n">yi_tr</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">iTrain</span><span class="p">]</span>
     <span class="n">yi_te</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">iTest</span><span class="p">]</span>
 
-    <span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
-    <span class="c1"># perform feature scaling </span>
+    <span class="c1"># feature scaling (here using standard scaling)</span>
+    <span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+    <span class="n">scaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xi_tr</span><span class="p">)</span>
+    <span class="n">Xi_tr_sc</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">Xi_tr</span><span class="p">)</span>
 
-    <span class="c1"># create and test linear regression model</span>
-
-    <span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
-    
+    <span class="c1"># linear regression</span>
+    <span class="n">model</span>    <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xi_tr_sc</span><span class="p">,</span> <span class="n">yi_tr</span><span class="p">)</span>
+    <span class="n">yihat_te</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">Xi_te</span><span class="p">))</span>
     <span class="n">r2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">yi_te</span><span class="p">,</span><span class="n">yihat_te</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">yi_te</span><span class="p">,</span><span class="n">yihat_te</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span>
@@ -921,11 +953,7 @@ https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearReg
 <section id="regularization">
 <h2>Regularization<a class="headerlink" href="#regularization" title="Permalink to this headline"></a></h2>
 <p>In the previous cells, we considered a model using all possible features, but earlier inspection of the data suggests that some of the features are highly correlated. The implication is that we might obtain a <em>simpler</em> model without any significant loss in accuracy were we to use a different set of features.</p>
-<p>As a first pass towards something akin to feature selection, we will examine the impact of regularization on the model parameters. We discussed L1 and L2 regularization. Use the cells below to examine how using these regularization terms impacts the model parameters (i.e., coefficients). The use of L1 and L2 regularization is sometimes expressed as “Lasso” or “Ridge” regression respectively. There are implementations of these available on scikit-learn:</p>
-<ul class="simple">
-<li><p>https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html</p></li>
-<li><p>https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html</p></li>
-</ul>
+<p>As a first pass towards something akin to feature selection, we will examine the impact of regularization on the model parameters. We discussed L1 and L2 regularization. Use the cells below to examine how using these regularization terms impacts the model parameters (i.e., coefficients).</p>
 <p>For simplicity, we will just use a simple train/test split. Examine the performance on the test set for the different methods and how this and the produced coefficients are impacted by the regularization weighting.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -940,23 +968,20 @@ https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearReg
 <span class="n">scaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_tr</span><span class="p">)</span>
 <span class="n">X_tr_sc</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_tr</span><span class="p">)</span>
 
-<span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
 <span class="c1"># create and test model with simple linear regression</span>
-<span class="n">model_L0</span>  <span class="o">=</span> 
-<span class="n">yhat_L0</span>   <span class="o">=</span> 
-<span class="n">r2_L0</span>     <span class="o">=</span>
+<span class="n">model_L0</span>  <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_tr_sc</span><span class="p">,</span> <span class="n">y_tr</span><span class="p">)</span>
+<span class="n">yhat_L0</span>   <span class="o">=</span> <span class="n">model_L0</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_te</span><span class="p">))</span>
+<span class="n">r2_L0</span>     <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_te</span><span class="p">,</span><span class="n">yhat_L0</span><span class="p">)</span>
 
 <span class="c1"># create and test model with L1 regularization</span>
-<span class="n">model_L1</span>  <span class="o">=</span> 
-<span class="n">yhat_L1</span>   <span class="o">=</span> 
-<span class="n">r2_L1</span>     <span class="o">=</span> 
+<span class="n">model_L1</span>  <span class="o">=</span> <span class="n">Lasso</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="n">my_alpha</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_tr_sc</span><span class="p">,</span> <span class="n">y_tr</span><span class="p">)</span>
+<span class="n">yhat_L1</span>   <span class="o">=</span> <span class="n">model_L1</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_te</span><span class="p">))</span>
+<span class="n">r2_L1</span>     <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_te</span><span class="p">,</span><span class="n">yhat_L1</span><span class="p">)</span>
 
 <span class="c1"># create and test model with L2 regularization</span>
-<span class="n">model_L2</span>  <span class="o">=</span> 
-<span class="n">yhat_L2</span>   <span class="o">=</span> 
-<span class="n">r2_L2</span>     <span class="o">=</span> 
-<span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
-
+<span class="n">model_L2</span>  <span class="o">=</span> <span class="n">Ridge</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="n">my_alpha</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_tr_sc</span><span class="p">,</span> <span class="n">y_tr</span><span class="p">)</span>
+<span class="n">yhat_L2</span>   <span class="o">=</span> <span class="n">model_L2</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_te</span><span class="p">))</span>
+<span class="n">r2_L2</span>     <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_te</span><span class="p">,</span><span class="n">yhat_L2</span><span class="p">)</span>
 
 <span class="c1"># plot and compare coefficients</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
@@ -975,7 +1000,7 @@ https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearReg
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d4d76bc818e2aa273811a0791f48e2ee40ec1a34846591e645d7138d77c15da5.png" src="../_images/d4d76bc818e2aa273811a0791f48e2ee40ec1a34846591e645d7138d77c15da5.png" />
+<img alt="../_images/29f2aec7ee07659f69a73c413fa5807f91578f843d71bfd84cd34100a14bbb0b.png" src="../_images/29f2aec7ee07659f69a73c413fa5807f91578f843d71bfd84cd34100a14bbb0b.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Coefficients of determination are..
 L0:    0.468, L1:    0.420, L2:    0.467
 </pre></div>
@@ -985,10 +1010,10 @@ L0:    0.468, L1:    0.420, L2:    0.467
 </section>
 <section id="feature-selection">
 <h2>Feature Selection<a class="headerlink" href="#feature-selection" title="Permalink to this headline"></a></h2>
-<p>From previous results and analysis, we can probably conclude that we do not need all of the features for an accurate model. We mentioned a variety of feature selection methods. Here, we’ll use a simple greedy correlation filter to remove “redundant” features. Comment the code below between the indicated region to ensure comprehension. How does the result compare to any of the regularization methods? Does this make sense?</p>
-<div class="cell tag_remove-output docutils container">
+<p>From previous results and analysis, we can probably conclude that we do not need all of the features for an accurate model. We mentioned a variety of feature selection methods. Here, we’ll use a simple greedy correlation filter to remove “redundant” features.</p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># </span>
 <span class="n">rmax</span>        <span class="o">=</span> <span class="mf">0.8</span>
 <span class="n">subset</span>      <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">feature_names</span><span class="p">]</span>
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
@@ -1001,9 +1026,8 @@ L0:    0.468, L1:    0.420, L2:    0.467
     <span class="k">break</span>
   <span class="n">rem_n</span> <span class="o">=</span> <span class="n">subset</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">jmax</span><span class="p">)</span>
   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Removing feature </span><span class="si">{}</span><span class="s2"> with correlation of </span><span class="si">{:&gt;5.3f}</span><span class="s2"> with </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rem_n</span><span class="p">,</span><span class="n">absr</span><span class="p">[</span><span class="n">imax</span><span class="p">,</span><span class="n">jmax</span><span class="p">],</span><span class="n">subset</span><span class="p">[</span><span class="n">imax</span><span class="p">]))</span>
-<span class="n">Xsub</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">soldata</span><span class="p">[</span><span class="n">subset</span><span class="p">])</span>
-<span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
 
+<span class="n">Xsub</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">soldata</span><span class="p">[</span><span class="n">subset</span><span class="p">])</span>
 
 <span class="c1"># create train vs. test split</span>
 <span class="n">Xsub_tr</span><span class="p">,</span> <span class="n">Xsub_te</span><span class="p">,</span> <span class="n">y_tr</span><span class="p">,</span> <span class="n">y_te</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">Xsub</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
@@ -1021,13 +1045,26 @@ L0:    0.468, L1:    0.420, L2:    0.467
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Removing feature NumValenceElectrons with correlation of 0.993 with HeavyAtomCount
+Removing feature LabuteASA with correlation of 0.983 with HeavyAtomCount
+Removing feature HeavyAtomCount with correlation of 0.975 with MolMR
+Removing feature MolMR with correlation of 0.919 with MolWt
+Removing feature NumAliphaticRings with correlation of 0.903 with NumSaturatedRings
+Removing feature TPSA with correlation of 0.900 with NumHAcceptors
+Removing feature NumHeteroatoms with correlation of 0.890 with NumHAcceptors
+Removing feature BertzCT with correlation of 0.861 with MolWt
+0.42663105761132647
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
-<section id="activity-3-fun-with-neural-networks">
+<section class="tex2jax_ignore mathjax_ignore" id="activity-3-fun-with-neural-networks">
 <h1>Activity 3: Fun with Neural Networks<a class="headerlink" href="#activity-3-fun-with-neural-networks" title="Permalink to this headline"></a></h1>
 <p>In this activity session, we are going to use the Keras API to build simple, feed-forward deep neural networks. At the end, you will have some freedom to use the API to investigate the impact of hyperparameters and model complexity with the same solubility dataset.</p>
-<div class="cell tag_remove-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>  <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1049,7 +1086,7 @@ L0:    0.468, L1:    0.420, L2:    0.467
 <section id="building-models-with-the-sequential-api">
 <h2>Building models with the Sequential API<a class="headerlink" href="#building-models-with-the-sequential-api" title="Permalink to this headline"></a></h2>
 <p>We will start with the “sequential” model, which is really easy to use! You can play around with the different parameters and check the output with the .summary() method. <strong>Can you make sense of the number of parameters that are reported???</strong></p>
-<div class="cell tag_hide-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create Model Container</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;myFirstModel&quot;</span><span class="p">)</span>
@@ -1095,7 +1132,7 @@ _________________________________________________________________
 <section id="building-models-with-functional-api">
 <h2>Building models with Functional API<a class="headerlink" href="#building-models-with-functional-api" title="Permalink to this headline"></a></h2>
 <p>We will also demonstrate the functional API. The functional API is more flexible than the Sequential API and permits you more control over the architecture. By contrast, <code class="docutils literal notranslate"><span class="pre">Sequential</span></code> models can only be fully connected, feed forward.</p>
-<div class="cell tag_hide-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define Layers</span>
 <span class="n">inputLayer</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,))</span>
@@ -1146,8 +1183,8 @@ _________________________________________________________________
 </section>
 <section id="return-of-the-solubility-dataset">
 <h2>Return of the Solubility Dataset<a class="headerlink" href="#return-of-the-solubility-dataset" title="Permalink to this headline"></a></h2>
-<p>So, now we are going to try and apply what we have learned to create a neural network that can predict solubility from chemical descriptors of a molecule. <em>How many features are there to describe each molecule?</em></p>
-<div class="cell tag_remove-output docutils container">
+<p>So, now we are going to try and apply what we have learned to create a neural network that can predict solubility from chemical descriptors of a molecule.</p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load and extract the data from dmol-book</span>
 <span class="n">soldata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
@@ -1161,14 +1198,19 @@ _________________________________________________________________
 <span class="c1"># this is the form that will be expected by Keras</span>
 <span class="c1"># the first index to an array corresponds to a specific example</span>
 <span class="c1"># the size of the second index is the dimensionality</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(9982, 17) (9982, 1)
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="a-deep-neural-network-to-predict-solubility">
-<h2>A deep neural network to predict solubility<a class="headerlink" href="#a-deep-neural-network-to-predict-solubility" title="Permalink to this headline"></a></h2>
-<p>Use the cell below to build a neural network to predict solubility from the input features obtained from the .csv. Play around with the architecture to gain some intuition for the predictive capabilities of the network? How small of a network can you make that still yields “good” results (say, <span class="math notranslate nohighlight">\(r^2 &gt; 0.7\)</span>)?</p>
+<section id="data-preprocessing">
+<h2>Data Preprocessing<a class="headerlink" href="#data-preprocessing" title="Permalink to this headline"></a></h2>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inScaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span> <span class="c1"># scaler for features</span>
@@ -1178,7 +1220,6 @@ _________________________________________________________________
 <span class="n">Xsc</span> <span class="o">=</span> <span class="n">inScaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>  <span class="c1"># these are the scaled features</span>
 <span class="n">ysc</span> <span class="o">=</span> <span class="n">outScaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="c1"># these are the scaled labels</span>
 
-<span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
 <span class="n">model</span>  <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span> <span class="c1"># this initializes our simple model, but it doesn&#39;t have anhything in it!</span>
 <span class="n">hidden1</span><span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span><span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">)</span> <span class="c1"># here we create 20-neuron layer with relu activation</span>
 <span class="n">hidden2</span><span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">)</span>  <span class="c1"># this is a 5-neuron layer, again with relu</span>
@@ -1188,14 +1229,12 @@ _________________________________________________________________
 <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
 <span class="n">model</span><span class="o">.</span><span class="n">build</span><span class="p">((</span><span class="kc">None</span><span class="p">,</span><span class="n">Xsc</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="c1"># this last line specifies the input shape; there are lots of ways to do this</span>
 <span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
-<span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
 <span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">plot_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="s2">&quot;model.png&quot;</span><span class="p">,</span><span class="n">show_shapes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># now we compile the model and train it</span>
 <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s2">&quot;SGD&quot;</span><span class="p">,</span><span class="n">loss</span><span class="o">=</span><span class="s2">&quot;mean_squared_error&quot;</span><span class="p">,</span><span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mean_absolute_error&quot;</span><span class="p">])</span>
-<span class="n">hist</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Xsc</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">ysc</span><span class="p">,</span><span class="n">epochs</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">hist</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Xsc</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">ysc</span><span class="p">,</span><span class="n">epochs</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span><span class="n">callbacks</span><span class="o">=</span><span class="p">[])</span>
 
-<span class="c1"># make predictions</span>
 <span class="n">ypredsc</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xsc</span><span class="p">)</span> 
 <span class="n">ypred</span>   <span class="o">=</span> <span class="n">outScaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">ypredsc</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">ypred</span><span class="p">,</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
@@ -1437,20 +1476,24 @@ r2 =  0.76, mae =  0.85, mse =  1.35
 <img alt="../_images/e7e9c696ebfc24a2c64775ebfa1dbef527b4ef54ad3e81c889333b1f30582d8a.png" src="../_images/e7e9c696ebfc24a2c64775ebfa1dbef527b4ef54ad3e81c889333b1f30582d8a.png" />
 </div>
 </div>
-</section>
-<section id="learning-curves">
-<h2>Learning curves<a class="headerlink" href="#learning-curves" title="Permalink to this headline"></a></h2>
-<p>We can monitor the history of training and inspect it to get a sense of convergence/underfitting/overfitting during optimization. Do you think the current model is overfit?</p>
-<div class="cell tag_remove-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">hist</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 <span class="n">loss</span> <span class="o">=</span> <span class="n">hist</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">]</span>
 <span class="n">val_loss</span> <span class="o">=</span> <span class="n">hist</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_loss&#39;</span><span class="p">]</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span><span class="s1">&#39;-k&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">val_loss</span><span class="p">,</span><span class="s1">&#39;:r&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;loss&#39;, &#39;mean_absolute_error&#39;, &#39;val_loss&#39;, &#39;val_mean_absolute_error&#39;])
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc5b7e90710&gt;]
+</pre></div>
+</div>
+<img alt="../_images/57d3584006d8e940d91331df0d87c7bb01e1b383c93025e1392a46279847e120.png" src="../_images/57d3584006d8e940d91331df0d87c7bb01e1b383c93025e1392a46279847e120.png" />
 </div>
 </div>
 </section>
@@ -1459,10 +1502,7 @@ r2 =  0.76, mae =  0.85, mse =  1.35
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="day1.html" class="btn btn-neutral float-left" title="Day 1" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../20220602-crma/day2.html" class="btn btn-neutral float-right" title="Day 2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 

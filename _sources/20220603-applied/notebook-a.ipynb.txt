@@ -6,7 +6,7 @@
     "id": "G1LaNbdf49Z8"
    },
    "source": [
-    "# Day 3 Notebook: Module A Intro"
+    "## Day 3 Notebook: Module A Intro"
    ]
   },
   {
@@ -114,7 +114,7 @@
     "id": "ewu_6ApydqPR"
    },
    "source": [
-    "# Activity 1: Understanding Gaussian Process Regression\n",
+    "## Activity 1: Understanding Gaussian Process Regression\n",
     "\n",
     "First, let's build some intuition surrounding GPR. We will start by considering *Multivariate Gaussians*, which can be used to describe a set of normally distributed and possibly correlated random variables. Use the cell below to draw a small number of random samples for a two-dimensional Gaussian. We will then plot these random samples in two ways."
    ]
@@ -247,7 +247,7 @@
     "id": "YifDjAO3wyVP"
    },
    "source": [
-    "## Example GPR with Van der Waals EOS\n",
+    "### Example GPR with Van der Waals EOS\n",
     "Now, let's see if we can generate a few \"observations,\" and then sample the posterior. Let's assume our true function is something we know, like the Van der Waals equation of state:\n",
     "\n",
     "$$P_r = \\frac{8}{3}\\frac{T_r}{V_r - \\frac{1}{3}}-\\frac{3}{V_r^2}$$\n",
@@ -425,7 +425,7 @@
     "id": "kVrGWlXDx8Ht"
    },
    "source": [
-    "## scikit-learn GPR Implementation\n",
+    "### scikit-learn GPR Implementation\n",
     "Now, we will simply repeat the exercise but using built-in functions from `scikit-learn` to do the GPR. There are many other python packages that support GPR. `scikit-learn` provides a good and simple GPR implementation, but if one desires more advanced capabilities, customizability, and performance -- another package may be preferred."
    ]
   },
@@ -538,7 +538,7 @@
     "id": "wejgljPSrAYD"
    },
    "source": [
-    "# Team Activity: Active Learning Challenge\n",
+    "## Team Activity: Active Learning Challenge\n",
     "\n",
     "In this activity, we will deploy *active learning* to identify a molecule that fits some specific target physical property. In specific, we will be working from a pool of molecules that can be found in the ClinTox dataset, which includes a combination of drugs that have failed clinical trials for toxicity reasons as well as drugs that are assocated with successful trials. It is a commonly used dataset for binary classification, but here, we will simply use it as a source for interesting molecular structures. Here is a summary of the challenge:\n",
     "\n",
@@ -553,7 +553,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## Pre-processing\n",
+    "### Pre-processing\n",
     "For the workshop, we have done a number of curation and pre-processing steps ahead of time. You can view code relevant to these steps below, but you need not run it. The most time-consuming portion is just running `mordred` to compute all the chemical descriptors for everything within the dataset. At a \"meta\" level, we also needed to exclude a number of chemical structures that were not processible by `leruli`. \n",
     "\n",
     "Relevant files generated pre-workshop:\n",
@@ -763,7 +763,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## Using leruli\n",
+    "### Using leruli\n",
     "In active learning, we are typically making measurements iteratively. To mimic taking measurements, we will make calls to `leruli` to grab values of $$T_b$$, which we will treat as the \"ground truth\" label for any given molecule. Examine and run the cell below to understand how to query `leruli` for a physical property using a SMILES representation of the molecular graph. We will use the boiling point as the property; note that the units returned from `leruli` are in Celsius."
    ]
   },
@@ -851,7 +851,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## GPR Kernel\n",
+    "### GPR Kernel\n",
     "\n",
     "Because the mathematics underlying GPR are pretty linear (in a literal sense), perhaps the most critical decision that one makes is the choice of kernel, which describes the covariance amongst random variables. The kernel and its parameters are the *hyperparameters* for GPR.\n",
     "\n",
@@ -892,7 +892,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "##  Acquisition functions\n",
+    "###  Acquisition functions\n",
     "In active learning, we define an acquisition function that enables us to identify the next \"best\" measurement; the notion of best is obviously subject to change based on the choice of acquisition function. In the cell below, we are going to define to write code to compute two different acquisition functions that we discussed, the **upper confidence bound** and **expected improvement** acquisition functions.\n"
    ]
   },
@@ -935,7 +935,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## Data Preparation and Target Definition\n",
+    "### Data Preparation and Target Definition\n",
     "Examine, modify, and run the cells below to prepare for our challenge! Our goal will be to find a molecule that has a boiling temperature close to 250 K. \n",
     "\n",
     "Critically, we are loading a .csv that has already measured ~50 boiling temperatures for some randomly selected molecules in the ClinTox dataset. In the .csv, points that are labeled with \"-1000\" are currently unknown. \n",
@@ -991,7 +991,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## Active learning loop\n",
+    "### Active learning loop\n",
     "In the cell below, we have set up a framework for conducting the active learning exercise. \n",
     "\n",
     "Examine and complete the cell below. While testing you may want to replace the `while` loop with a `for` loop that can only execute one or two times. \n",
@@ -1165,7 +1165,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## Performance of the GPR model during active learning\n",
+    "### Performance of the GPR model during active learning\n",
     "\n",
     "One thing that may be sometimes surprising is that the accuracy of models during active learning campaigns may actually be somewhat low, and yet our targets are still achieved. In such scenarios, we consider the value of the surrogate model to be predictive *enough* to point us in the right direction. Another thing to consider during active learning is that our training set is *heavily* biased. Should we even expect it to generalize well? When might we?\n",
     "\n",
