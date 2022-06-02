@@ -17,22 +17,29 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-Chem.AllChem.EmbedMolecule(mol)
+m1 = get_molecule('aspirin')
+m2 = get_molecule('benzene')
+fp1 =  AllChem.GetMorganFingerprint(m1, 2)
+fp2 =  AllChem.GetMorganFingerprint(m2, 2)
+dist = TanimotoSimilarity(fp1, fp2)
+print('similarity', dist)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mArgumentError[0m                             Traceback (most recent call last)
-Input [0;32mIn [11][0m, in [0;36m<cell line: 1>[0;34m()[0m
-[0;32m----> 1[0m [43mChem[49m[38;5;241;43m.[39;49m[43mAllChem[49m[38;5;241;43m.[39;49m[43mEmbedMolecule[49m[43m([49m[43mmol[49m[43m)[49m
+Input [0;32mIn [13][0m, in [0;36m<cell line: 3>[0;34m()[0m
+[1;32m      1[0m m1 [38;5;241m=[39m get_molecule([38;5;124m'[39m[38;5;124maspirin[39m[38;5;124m'[39m)
+[1;32m      2[0m m2 [38;5;241m=[39m get_molecule([38;5;124m'[39m[38;5;124mbenzene[39m[38;5;124m'[39m)
+[0;32m----> 3[0m fp1 [38;5;241m=[39m  [43mAllChem[49m[38;5;241;43m.[39;49m[43mGetMorganFingerprint[49m[43m([49m[43mm1[49m[43m,[49m[43m [49m[38;5;241;43m2[39;49m[43m)[49m
+[1;32m      4[0m fp2 [38;5;241m=[39m  AllChem[38;5;241m.[39mGetMorganFingerprint(m2, [38;5;241m2[39m)
+[1;32m      5[0m dist [38;5;241m=[39m TanimotoSimilarity(fp1, fp2)
 
 [0;31mArgumentError[0m: Python argument types in
-    rdkit.Chem.rdDistGeom.EmbedMolecule(NoneType)
+    rdkit.Chem.rdMolDescriptors.GetMorganFingerprint(NoneType, int)
 did not match C++ signature:
-    EmbedMolecule(RDKit::ROMol {lvalue} mol, RDKit::DGeomHelpers::EmbedParameters {lvalue} params)
-    EmbedMolecule(RDKit::ROMol {lvalue} mol, unsigned int maxAttempts=0, int randomSeed=-1, bool clearConfs=True, bool useRandomCoords=False, double boxSizeMult=2.0, bool randNegEig=True, unsigned int numZeroFail=1, boost::python::dict {lvalue} coordMap={}, double forceTol=0.001, bool ignoreSmoothingFailures=False, bool enforceChirality=True, bool useExpTorsionAnglePrefs=True, bool useBasicKnowledge=True, bool printExpTorsionAngles=False, bool useSmallRingTorsions=False, bool useMacrocycleTorsions=False, unsigned int ETversion=1)
+    GetMorganFingerprint(RDKit::ROMol mol, unsigned int radius, boost::python::api::object invariants=[], boost::python::api::object fromAtoms=[], bool useChirality=False, bool useBondTypes=True, bool useFeatures=False, bool useCounts=True, boost::python::api::object bitInfo=None, bool includeRedundantEnvironments=False)
 ArgumentError: Python argument types in
-    rdkit.Chem.rdDistGeom.EmbedMolecule(NoneType)
+    rdkit.Chem.rdMolDescriptors.GetMorganFingerprint(NoneType, int)
 did not match C++ signature:
-    EmbedMolecule(RDKit::ROMol {lvalue} mol, RDKit::DGeomHelpers::EmbedParameters {lvalue} params)
-    EmbedMolecule(RDKit::ROMol {lvalue} mol, unsigned int maxAttempts=0, int randomSeed=-1, bool clearConfs=True, bool useRandomCoords=False, double boxSizeMult=2.0, bool randNegEig=True, unsigned int numZeroFail=1, boost::python::dict {lvalue} coordMap={}, double forceTol=0.001, bool ignoreSmoothingFailures=False, bool enforceChirality=True, bool useExpTorsionAnglePrefs=True, bool useBasicKnowledge=True, bool printExpTorsionAngles=False, bool useSmallRingTorsions=False, bool useMacrocycleTorsions=False, unsigned int ETversion=1)
+    GetMorganFingerprint(RDKit::ROMol mol, unsigned int radius, boost::python::api::object invariants=[], boost::python::api::object fromAtoms=[], bool useChirality=False, bool useBondTypes=True, bool useFeatures=False, bool useCounts=True, boost::python::api::object bitInfo=None, bool includeRedundantEnvironments=False)
 

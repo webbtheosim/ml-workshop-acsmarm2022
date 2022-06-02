@@ -110,7 +110,7 @@
 <h1>Setup of Python Environment<a class="headerlink" href="#setup-of-python-environment" title="Permalink to this headline"></a></h1>
 <p>For this notebook, we will need a few more modules that are not native to Google Colab. Run the cell below to install these. <code class="docutils literal notranslate"><span class="pre">rdkit</span></code> is a generally useful cheminformatics software. <code class="docutils literal notranslate"><span class="pre">mordred</span></code> is a module that enables calculation of molecular descriptors and pairs well with <code class="docutils literal notranslate"><span class="pre">rdkit</span></code>. <code class="docutils literal notranslate"><span class="pre">leruli</span></code> is a web service that offers real-time structure and property predictions.</p>
 <p>During the workshop, you may not actually use <code class="docutils literal notranslate"><span class="pre">mordred</span></code> as the calculation of descriptors (there are ~1500) can take awhile for all the molecular structures, but it is worth checking out.</p>
-<div class="cell tag_hide-output docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install rdkit-pypi
 <span class="o">!</span>pip install leruli
@@ -118,222 +118,8 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: rdkit-pypi in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (2022.3.2.1)
-Requirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from rdkit-pypi) (1.22.4)
-Requirement already satisfied: Pillow in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from rdkit-pypi) (9.1.1)
-</pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting leruli
-  Downloading leruli-22.1.6-py2.py3-none-any.whl (13 kB)
-Requirement already satisfied: tqdm&gt;=4.62.0 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from leruli) (4.64.0)
-Requirement already satisfied: requests in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from leruli) (2.27.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting aiobotocore
-  Downloading aiobotocore-2.3.2.tar.gz (104 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/104.8 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">104.8/104.8 kB</span> <span class=" -Color -Color-Red">20.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25hCollecting aiohttp
-  Downloading aiohttp-3.8.1-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (1.3 MB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/1.3 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.3/1.3 MB</span> <span class=" -Color -Color-Red">62.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting docker
-  Downloading docker-5.0.3-py2.py3-none-any.whl (146 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/146.2 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">146.2/146.2 kB</span> <span class=" -Color -Color-Red">30.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hRequirement already satisfied: tabulate in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from leruli) (0.8.9)
-Requirement already satisfied: Click&gt;=7.0 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from leruli) (8.1.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting minio
-  Downloading minio-7.1.8-py3-none-any.whl (75 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/75.9 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">75.9/75.9 kB</span> <span class=" -Color -Color-Red">18.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting botocore&lt;1.24.22,&gt;=1.24.21
-  Downloading botocore-1.24.21-py3-none-any.whl (8.6 MB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/8.6 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.5/8.6 MB</span> <span class=" -Color -Color-Red">107.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━ <span class=" -Color -Color-Green">7.7/8.6 MB</span> <span class=" -Color -Color-Red">111.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">8.6/8.6 MB</span> <span class=" -Color -Color-Red">110.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">8.6/8.6 MB</span> <span class=" -Color -Color-Red">73.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: wrapt&gt;=1.10.10 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from aiobotocore-&gt;leruli) (1.14.1)
-Collecting aioitertools&gt;=0.5.1
-  Downloading aioitertools-0.10.0-py3-none-any.whl (23 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: attrs&gt;=17.3.0 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from aiohttp-&gt;leruli) (21.4.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting frozenlist&gt;=1.1.1
-  Downloading frozenlist-1.3.0-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (158 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/158.7 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">158.7/158.7 kB</span> <span class=" -Color -Color-Red">34.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting multidict&lt;7.0,&gt;=4.5
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading multidict-6.0.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (121 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/121.3 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">121.3/121.3 kB</span> <span class=" -Color -Color-Red">28.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting yarl&lt;2.0,&gt;=1.0
-  Downloading yarl-1.7.2-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (308 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/308.6 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">308.6/308.6 kB</span> <span class=" -Color -Color-Red">44.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hCollecting aiosignal&gt;=1.1.2
-  Downloading aiosignal-1.2.0-py3-none-any.whl (8.2 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting async-timeout&lt;5.0,&gt;=4.0.0a3
-  Downloading async_timeout-4.0.2-py3-none-any.whl (5.8 kB)
-Requirement already satisfied: charset-normalizer&lt;3.0,&gt;=2.0 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from aiohttp-&gt;leruli) (2.0.12)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting websocket-client&gt;=0.32.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading websocket_client-1.3.2-py3-none-any.whl (54 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/54.3 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">54.3/54.3 kB</span> <span class=" -Color -Color-Red">13.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hRequirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from requests-&gt;leruli) (3.3)
-Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from requests-&gt;leruli) (1.26.9)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from requests-&gt;leruli) (2022.5.18.1)
-Requirement already satisfied: typing_extensions&gt;=4.0 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from aioitertools&gt;=0.5.1-&gt;aiobotocore-&gt;leruli) (4.2.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting jmespath&lt;2.0.0,&gt;=0.7.1
-  Downloading jmespath-1.0.0-py3-none-any.whl (23 kB)
-Requirement already satisfied: python-dateutil&lt;3.0.0,&gt;=2.1 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from botocore&lt;1.24.22,&gt;=1.24.21-&gt;aiobotocore-&gt;leruli) (2.8.2)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from python-dateutil&lt;3.0.0,&gt;=2.1-&gt;botocore&lt;1.24.22,&gt;=1.24.21-&gt;aiobotocore-&gt;leruli) (1.16.0)
-Building wheels for collected packages: aiobotocore
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for aiobotocore (setup.py) ... ?25l-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-?25h  Created wheel for aiobotocore: filename=aiobotocore-2.3.2-py3-none-any.whl size=111105 sha256=d4cae8461adcad5a171558b21d52058e07467b3ce65e12bdf2f561d061c4b97a
-  Stored in directory: /home/runner/.cache/pip/wheels/a8/3e/17/5739e2e58ff33991e6e89c90880e843bf4fa04fceadb1f4fd8
-Successfully built aiobotocore
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: websocket-client, multidict, minio, jmespath, frozenlist, async-timeout, aioitertools, yarl, docker, botocore, aiosignal, aiohttp, aiobotocore, leruli
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed aiobotocore-2.3.2 aiohttp-3.8.1 aioitertools-0.10.0 aiosignal-1.2.0 async-timeout-4.0.2 botocore-1.24.21 docker-5.0.3 frozenlist-1.3.0 jmespath-1.0.0 leruli-22.1.6 minio-7.1.8 multidict-6.0.2 websocket-client-1.3.2 yarl-1.7.2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting mordred[full]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading mordred-1.2.0.tar.gz (128 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/128.8 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">128.8/128.8 kB</span> <span class=" -Color -Color-Red">19.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-?25hRequirement already satisfied: six==1.* in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from mordred[full]) (1.16.0)
-Requirement already satisfied: numpy==1.* in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from mordred[full]) (1.22.4)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting networkx==2.*
-  Downloading networkx-2.8.2-py3-none-any.whl (2.0 MB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/2.0 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">2.0/2.0 MB</span> <span class=" -Color -Color-Red">86.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.0/2.0 MB</span> <span class=" -Color -Color-Red">54.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pandas
-  Downloading pandas-1.4.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.7 MB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/11.7 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.2/11.7 MB</span> <span class=" -Color -Color-Red">95.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6.4/11.7 MB</span> <span class=" -Color -Color-Red">92.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━ <span class=" -Color -Color-Green">10.1/11.7 MB</span> <span class=" -Color -Color-Red">96.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">11.7/11.7 MB</span> <span class=" -Color -Color-Red">97.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">11.7/11.7 MB</span> <span class=" -Color -Color-Red">65.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tqdm in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from mordred[full]) (4.64.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-dateutil&gt;=2.8.1 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from pandas-&gt;mordred[full]) (2.8.2)
-Requirement already satisfied: pytz&gt;=2020.1 in /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages (from pandas-&gt;mordred[full]) (2022.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Building wheels for collected packages: mordred
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for mordred (setup.py) ... ?25l-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-?25h  Created wheel for mordred: filename=mordred-1.2.0-py3-none-any.whl size=176722 sha256=dcd1bef83a2021bd5d109a011442cd235e9b74fbc32b1f1de47c23958c96baa5
-  Stored in directory: /home/runner/.cache/pip/wheels/20/88/41/5d873c9b55dc7479f0b9951c2161d7b09be193e7228ea27309
-Successfully built mordred
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: networkx, pandas, mordred
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed mordred-1.2.0 networkx-2.8.2 pandas-1.4.2
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Modules</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -355,7 +141,7 @@ Successfully built mordred
 <section id="activity-1-understanding-gaussian-process-regression">
 <h1>Activity 1: Understanding Gaussian Process Regression<a class="headerlink" href="#activity-1-understanding-gaussian-process-regression" title="Permalink to this headline"></a></h1>
 <p>First, let’s build some intuition surrounding GPR. We will start by considering <em>Multivariate Gaussians</em>, which can be used to describe a set of normally distributed and possibly correlated random variables. Use the cell below to draw a small number of random samples for a two-dimensional Gaussian. We will then plot these random samples in two ways.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span> <span class="c1"># sets up a random number generator</span>
 <span class="n">ndim</span><span class="o">=</span> <span class="mi">2</span>
@@ -392,12 +178,12 @@ Successfully built mordred
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b992ddc6146b053ff4bf5c6a205977aa1a4c6b1649095a7e1bfd3b61637afb68.png" src="../_images/b992ddc6146b053ff4bf5c6a205977aa1a4c6b1649095a7e1bfd3b61637afb68.png" />
+<img alt="../_images/361a2d7c9fb87f2baf496da3f8afad9a8906fc0a88579bed61864b9cb0fc222e.png" src="../_images/361a2d7c9fb87f2baf496da3f8afad9a8906fc0a88579bed61864b9cb0fc222e.png" />
 </div>
 </div>
 <p>Now, we let’s consider more complex situation: a <em>30-dimensional</em> Gaussian. Of course, we will not show the underlying distribution but use the “line view” to illustrate the samples. We will choose to represent the covariance as
 $<span class="math notranslate nohighlight">\(k(x_i,x_j) = \exp \left[-\frac{(x_i-x_j)^2}{2} \right]\)</span>$. How does this compare to the covariance from the previous cell?</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">covkernel</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span><span class="n">xj</span><span class="p">,</span><span class="n">l</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
     <span class="n">dij</span><span class="o">=</span> <span class="n">cdist</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span><span class="n">xj</span><span class="p">,</span><span class="n">metric</span><span class="o">=</span><span class="s1">&#39;euclidean&#39;</span><span class="p">)</span> <span class="c1"># returns matrix of pairwise distances</span>
@@ -428,7 +214,7 @@ $<span class="math notranslate nohighlight">\(k(x_i,x_j) = \exp \left[-\frac{(x_
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/179f4cc82d3dda1f6d93ee7959642408cd9130cd596d97d5f6dd1b8152068e8a.png" src="../_images/179f4cc82d3dda1f6d93ee7959642408cd9130cd596d97d5f6dd1b8152068e8a.png" />
+<img alt="../_images/0f2c2436d1b3cebd24eab45f14a4ba3f6805237cef2128c5093e23e15b96aafc.png" src="../_images/0f2c2436d1b3cebd24eab45f14a4ba3f6805237cef2128c5093e23e15b96aafc.png" />
 </div>
 </div>
 <section id="example-gpr-with-van-der-waals-eos">
@@ -437,7 +223,7 @@ $<span class="math notranslate nohighlight">\(k(x_i,x_j) = \exp \left[-\frac{(x_
 <div class="math notranslate nohighlight">
 \[P_r = \frac{8}{3}\frac{T_r}{V_r - \frac{1}{3}}-\frac{3}{V_r^2}\]</div>
 <p>To keep this problem in a physically reasonable range, we will suppose <span class="math notranslate nohighlight">\(T_r = 0.85\)</span> and examine <span class="math notranslate nohighlight">\(V_r\)</span> over the range of 0.5 to 4. In the following, we can include fewer or more observations to illustrate how our uncertainty changes.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vdw_P</span><span class="p">(</span><span class="n">Tr</span><span class="p">,</span><span class="n">Vr</span><span class="p">):</span>
     <span class="n">term1</span> <span class="o">=</span> <span class="mf">8.</span><span class="o">*</span><span class="n">Tr</span><span class="o">/</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">Vr</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
@@ -506,11 +292,11 @@ $<span class="math notranslate nohighlight">\(k(x_i,x_j) = \exp \left[-\frac{(x_
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9a76afc32abc1632dd8a022ee9bd8ea7fccb86ce9f6bc135c2071f7ca258deb0.png" src="../_images/9a76afc32abc1632dd8a022ee9bd8ea7fccb86ce9f6bc135c2071f7ca258deb0.png" />
+<img alt="../_images/065b9fb3a16675f65253a499d29ddaab010c8886beac88ec31a0d6110d733d2a.png" src="../_images/065b9fb3a16675f65253a499d29ddaab010c8886beac88ec31a0d6110d733d2a.png" />
 </div>
 </div>
 <p>The above presumes noise-free observations and also uses a naive formulation scheme with direct sampling to obtain our results. The posterior mean and variance can actually be obtained directly as we will show next. First run the cell below leaving <code class="docutils literal notranslate"><span class="pre">sigma_n</span></code> to be 0 (i.e., noise-free) and compare the results with the previous cell. Then, run again by changing the value of the noise to get a feel for how noisy observations impact the GP.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># new targets with noise:</span>
 <span class="n">sigma_n</span> <span class="o">=</span> <span class="mf">0.0</span>
@@ -518,6 +304,7 @@ $<span class="math notranslate nohighlight">\(k(x_i,x_j) = \exp \left[-\frac{(x_
 <span class="c1"># add noise to previous observations</span>
 <span class="n">y</span>    <span class="o">=</span> <span class="n">vdw_P</span><span class="p">(</span><span class="n">Tr</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="n">sigma_n</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="n">nobs</span><span class="p">)[:,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
 <span class="n">yavg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">std</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 
 <span class="c1"># conventional algorithm</span>
 <span class="n">length</span>  <span class="o">=</span> <span class="mf">0.1</span>
@@ -541,8 +328,8 @@ $<span class="math notranslate nohighlight">\(k(x_i,x_j) = \exp \left[-\frac{(x_
 <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">kxxs</span><span class="p">,</span><span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">fvar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">kxsxs</span> <span class="o">-</span> <span class="n">v</span><span class="o">.</span><span class="n">T</span><span class="nd">@v</span><span class="p">)</span>
 <span class="n">fstd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">fvar</span><span class="p">)</span>
-<span class="n">mean_plus</span>   <span class="o">=</span> <span class="n">fmean</span> <span class="o">+</span> <span class="mi">1</span><span class="o">*</span><span class="n">fstd</span>
-<span class="n">mean_minus</span>  <span class="o">=</span> <span class="n">fmean</span> <span class="o">-</span> <span class="mi">1</span><span class="o">*</span><span class="n">fstd</span>
+<span class="n">mean_plus</span>   <span class="o">=</span> <span class="n">fmean</span> <span class="o">+</span> <span class="mi">1</span><span class="o">*</span><span class="n">fstd</span><span class="o">*</span><span class="n">std</span>
+<span class="n">mean_minus</span>  <span class="o">=</span> <span class="n">fmean</span> <span class="o">-</span> <span class="mi">1</span><span class="o">*</span><span class="n">fstd</span><span class="o">*</span><span class="n">std</span>
 
 <span class="c1">#plotting</span>
 <span class="n">fig</span><span class="p">,</span><span class="n">axs</span> <span class="o">=</span> <span class="n">make_plot</span><span class="p">(</span><span class="n">Vs</span><span class="p">,</span><span class="n">Ps</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
@@ -552,14 +339,14 @@ $<span class="math notranslate nohighlight">\(k(x_i,x_j) = \exp \left[-\frac{(x_
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/75e7231251197ca35f5f16ff863ef8497d25f5cac475c698c95a95bc0c6da843.png" src="../_images/75e7231251197ca35f5f16ff863ef8497d25f5cac475c698c95a95bc0c6da843.png" />
+<img alt="../_images/64a4dc474e548686c8d3b84a3e70e8cc450318d13cad9d67123eb3d99840328b.png" src="../_images/64a4dc474e548686c8d3b84a3e70e8cc450318d13cad9d67123eb3d99840328b.png" />
 </div>
 </div>
 </section>
 <section id="scikit-learn-gpr-implementation">
 <h2>scikit-learn GPR Implementation<a class="headerlink" href="#scikit-learn-gpr-implementation" title="Permalink to this headline"></a></h2>
 <p>Now, we will simply repeat the exercise but using built-in functions from <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> to do the GPR. There are many other python packages that support GPR. <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> provides a good and simple GPR implementation, but if one desires more advanced capabilities, customizability, and performance – another package may be preferred.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">the_kernel</span> <span class="o">=</span> <span class="n">RBF</span><span class="p">(</span><span class="n">length_scale</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span><span class="n">length_scale_bounds</span><span class="o">=</span><span class="s2">&quot;fixed&quot;</span><span class="p">)</span>
 <span class="n">the_model</span>  <span class="o">=</span> <span class="n">GaussianProcessRegressor</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="n">the_kernel</span><span class="p">)</span>
@@ -591,24 +378,26 @@ $<span class="math notranslate nohighlight">\(k(x_i,x_j) = \exp \left[-\frac{(x_
 </div>
 </div>
 <p>Notice that using scikit-learn it presumes that the mean should be zero! This highlights a need that we should probably normalized our data. Recent version of scikit learn allow you to specify whether the data should be normalized during GPR when you build the Regressor. My opinion is that you should handle this yourself so you have a firm idea as to what is happening with your data. We will demonstrate this by using a little bit of preprocessing…</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scaler</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="o">.</span><span class="n">StandardScaler</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 <span class="n">yscaled</span><span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> 
 <span class="c1"># to keep the comparison similar to before, we will </span>
 <span class="c1"># also account for scaling to unit standard deviation</span>
 <span class="c1"># newer versions of scikit-learn can use the option with_std = False</span>
-<span class="c1"># but mine does not have this, and I do not want to update it right now</span>
 
 <span class="c1"># fit to transformed y data, then inverse_transform</span>
 <span class="n">the_kernel</span> <span class="o">=</span> <span class="n">RBF</span><span class="p">(</span><span class="n">length_scale</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span><span class="n">length_scale_bounds</span><span class="o">=</span><span class="s2">&quot;fixed&quot;</span><span class="p">)</span>
 <span class="n">the_model</span>  <span class="o">=</span> <span class="n">GaussianProcessRegressor</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="n">the_kernel</span><span class="p">,</span><span class="n">normalize_y</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">the_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">yscaled</span><span class="p">)</span>
 <span class="n">fmeanscaled</span><span class="p">,</span><span class="n">fstdscaled</span> <span class="o">=</span> <span class="n">the_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span><span class="n">return_std</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1">#print(fstdscaled*scaler.scale_)</span>
+<span class="n">fstd</span>        <span class="o">=</span> <span class="n">fstdscaled</span><span class="p">[:,</span><span class="kc">None</span><span class="p">]</span><span class="o">*</span><span class="n">scaler</span><span class="o">.</span><span class="n">scale_</span>
 <span class="n">fmean</span>       <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">fmeanscaled</span><span class="p">)</span>
-<span class="n">mean_plus</span>   <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">fmeanscaled</span><span class="o">+</span> <span class="n">fstdscaled</span><span class="p">[:,</span><span class="kc">None</span><span class="p">])</span>
-<span class="n">mean_minus</span>  <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">fmeanscaled</span><span class="o">-</span> <span class="n">fstdscaled</span><span class="p">[:,</span><span class="kc">None</span><span class="p">])</span>
-
+<span class="c1">#mean_plus   = fmean + fstd</span>
+<span class="c1">#mean_minus  = fmean - fstd</span>
+<span class="n">mean_plus</span>   <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">fmeanscaled</span> <span class="o">+</span> <span class="n">fstdscaled</span><span class="p">[:,</span><span class="kc">None</span><span class="p">])</span>
+<span class="n">mean_minus</span>  <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">fmeanscaled</span><span class="o">-</span><span class="n">fstdscaled</span><span class="p">[:,</span><span class="kc">None</span><span class="p">])</span>
 <span class="c1">#plotting</span>
 <span class="n">fig</span><span class="p">,</span><span class="n">axs</span> <span class="o">=</span> <span class="n">make_plot</span><span class="p">(</span><span class="n">Vs</span><span class="p">,</span><span class="n">Ps</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 <span class="n">make_plot_posterior</span><span class="p">(</span><span class="n">axs</span><span class="p">,</span><span class="n">fmean</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">mean_minus</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">mean_plus</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
@@ -617,7 +406,7 @@ $<span class="math notranslate nohighlight">\(k(x_i,x_j) = \exp \left[-\frac{(x_
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c64c90fa223939a60e3535b4c9b7fc7b138839028d27fa82bb7e1554b96386c7.png" src="../_images/c64c90fa223939a60e3535b4c9b7fc7b138839028d27fa82bb7e1554b96386c7.png" />
+<img alt="../_images/c3860a164661e78119f94678f472c73dbd138a66fea456bf0990d9d5aeda869a.png" src="../_images/c3860a164661e78119f94678f472c73dbd138a66fea456bf0990d9d5aeda869a.png" />
 </div>
 </div>
 <p>That looks better! In the cell above, we show when building the <code class="docutils literal notranslate"><span class="pre">GaussianProcessRegressor</span></code> how you can specify whether your label should be normalized with the <code class="docutils literal notranslate"><span class="pre">normalize_y</span></code> option. Go ahead and add this flag with <code class="docutils literal notranslate"><span class="pre">True</span></code> to the cell where we unintentionally assumed a zero-mean prior and see how this now compares with the result just generated.</p>
@@ -754,7 +543,7 @@ $<span class="math notranslate nohighlight">\(k(x_i,x_j) = \exp \left[-\frac{(x_
 <section id="using-leruli">
 <h2>Using leruli<a class="headerlink" href="#using-leruli" title="Permalink to this headline"></a></h2>
 <p>In active learning, we are typically making measurements iteratively. To mimic taking measurements, we will make calls to <code class="docutils literal notranslate"><span class="pre">leruli</span></code> to grab values of $<span class="math notranslate nohighlight">\(T_b\)</span>$, which we will treat as the “ground truth” label for any given molecule. Examine and run the cell below to understand how to query <code class="docutils literal notranslate"><span class="pre">leruli</span></code> for a physical property using a SMILES representation of the molecular graph. We will use the boiling point as the property; note that the units returned from <code class="docutils literal notranslate"><span class="pre">leruli</span></code> are in Celsius.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">leruli</span>
 
@@ -821,7 +610,7 @@ For molecule [O-]P(=O)([O-])F
 <div class="math notranslate nohighlight">
 \[k(x_i,x_j) = C \exp \left[-\frac{d(x_i,x_j)^2}{2L^2} \right] + N\]</div>
 <p>Otherwise, examine the doc pages to implement a different kind of kernel.</p>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.spatial.distance</span>     <span class="kn">import</span> <span class="n">pdist</span><span class="p">,</span><span class="n">cdist</span>
 <span class="kn">from</span> <span class="nn">sklearn.gaussian_process.kernels</span> <span class="kn">import</span> <span class="n">RBF</span><span class="p">,</span> <span class="n">WhiteKernel</span><span class="p">,</span> <span class="n">ConstantKernel</span>
@@ -849,7 +638,7 @@ For molecule [O-]P(=O)([O-])F
 <section id="acquisition-functions">
 <h2>Acquisition functions<a class="headerlink" href="#acquisition-functions" title="Permalink to this headline"></a></h2>
 <p>In active learning, we define an acquisition function that enables us to identify the next “best” measurement; the notion of best is obviously subject to change based on the choice of acquisition function. In the cell below, we are going to define to write code to compute two different acquisition functions that we discussed, the <strong>upper confidence bound</strong> and <strong>expected improvement</strong> acquisition functions.</p>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#==================================================================</span>
 <span class="c1">#  AUX: eval_UCB</span>
@@ -888,17 +677,16 @@ For molecule [O-]P(=O)([O-])F
 <p>Examine, modify, and run the cells below to prepare for our challenge! Our goal will be to find a molecule that has a boiling temperature close to 250 K.</p>
 <p>Critically, we are loading a .csv that has already measured ~50 boiling temperatures for some randomly selected molecules in the ClinTox dataset. In the .csv, points that are labeled with “-1000” are currently unknown.</p>
 <p>Write some code to extract <em>only the measured data points</em> and examine how they are distributed. Are there any data points that are currently close to our target?</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define our target</span>
 <span class="n">target</span> <span class="o">=</span> <span class="mi">235</span>  <span class="c1"># desired boiling temperature in K</span>
-<span class="n">Xi</span>     <span class="o">=</span> <span class="mf">0.5</span>  <span class="c1"># weighting parameter, if desired, for use in acquisition functions</span>
 
 <span class="c1"># load data</span>
 <span class="n">y</span>  <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path2git</span> <span class="o">+</span> <span class="s2">&quot;curated_clintox_Tb_0.csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">][:,</span><span class="kc">None</span><span class="p">]</span> <span class="c1"># array of Tb</span>
 <span class="n">X</span>  <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path2git</span> <span class="o">+</span> <span class="s2">&quot;curated_clintox_features.csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()[:,:]</span>      <span class="c1"># array of descriptors</span>
-<span class="n">yinit</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">()</span>
-<span class="n">Xinit</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">()</span>
+<span class="n">yinit</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">Xinit</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
 <span class="c1"># get scaler for features, X</span>
 <span class="c1"># because our pool of molecules is known a priori and unchanging</span>
@@ -909,7 +697,9 @@ For molecule [O-]P(=O)([O-])F
 <span class="n">X_sc</span>       <span class="o">=</span> <span class="n">Xscaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 
 <span class="c1"># find indices with unmeasured boiling points</span>
-<span class="n">nodata</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">&lt;</span><span class="mf">0.0</span>
+<span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
+<span class="n">nodata</span> <span class="o">=</span> 
+<span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
 
 <span class="c1"># plot distribution of measured boiling temperatures</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="o">~</span><span class="n">nodata</span><span class="p">,:])</span>
@@ -918,18 +708,7 @@ For molecule [O-]P(=O)([O-])F
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">nj</span><span class="o">/</span><span class="n">dk1gj0wx7js4pk_4d5v_jyyh0000gp</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_77296</span><span class="o">/</span><span class="mf">1588921381.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">y</span>  <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path2git</span> <span class="o">+</span> <span class="s2">&quot;curated_clintox_Tb_0.csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">][:,</span><span class="kc">None</span><span class="p">]</span> <span class="c1"># array of Tb</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">X</span>  <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path2git</span> <span class="o">+</span> <span class="s2">&quot;curated_clintox_features.csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()[:,:]</span>      <span class="c1"># array of descriptors</span>
-<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">yinit</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">Xinit</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> 
-
-<span class="ne">AttributeError</span>: &#39;numpy.ndarray&#39; object has no attribute &#39;deepcopy&#39;
-</pre></div>
-</div>
+<img alt="../_images/4b0f4636868c70147198e8424e239f23ca5be5565378c397916901ecb364b450.png" src="../_images/4b0f4636868c70147198e8424e239f23ca5be5565378c397916901ecb364b450.png" />
 </div>
 </div>
 </section>
@@ -938,24 +717,29 @@ For molecule [O-]P(=O)([O-])F
 <p>In the cell below, we have set up a framework for conducting the active learning exercise.</p>
 <p>Examine and complete the cell below. While testing you may want to replace the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop with a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop that can only execute one or two times.</p>
 <p>Are you able to find a suitable target? What fraction of the pool is explored to find this target?</p>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># best to re-load data in this cell</span>
 <span class="n">y</span>  <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path2git</span> <span class="o">+</span> <span class="s2">&quot;curated_clintox_Tb_0.csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">][:,</span><span class="kc">None</span><span class="p">]</span> <span class="c1"># array of Tb</span>
 <span class="n">X</span>  <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path2git</span> <span class="o">+</span> <span class="s2">&quot;curated_clintox_features.csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()[:,:]</span>      <span class="c1"># array of descriptors</span>
 
 <span class="c1"># find indices with unmeasured boiling points</span>
-<span class="n">nodata</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">&lt;</span><span class="mf">0.0</span>
+<span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
+<span class="n">nodata</span> <span class="o">=</span> 
+<span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
 
 <span class="n">niter</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="n">nodata</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
 <span class="c1">#for jj in range(1):</span>
 
     <span class="c1"># extract the training data from &#39;X&#39; and &#39;y&#39; above</span>
+    <span class="c1"># find the current &quot;incumbent&quot;</span>
+    <span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
     <span class="n">X0</span>     <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="o">~</span><span class="n">nodata</span><span class="p">,:]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">y0</span>     <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="o">~</span><span class="n">nodata</span><span class="p">,:]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    <span class="n">ibest</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">((</span><span class="n">y0</span><span class="o">-</span><span class="n">target</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">ybest</span>  <span class="o">=</span> <span class="n">y0</span><span class="p">[</span><span class="n">ibest</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">ibest</span>  <span class="o">=</span> 
+    <span class="n">ybest</span>  <span class="o">=</span> 
+    <span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There are currently </span><span class="si">{}</span><span class="s2"> labeled samples&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y0</span><span class="p">)))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Current closest value to target is </span><span class="si">{:&gt;5.1f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ybest</span><span class="p">))</span>
     
@@ -965,7 +749,7 @@ For molecule [O-]P(=O)([O-])F
     <span class="k">if</span> <span class="p">(</span><span class="n">conv</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">We have found a molecule!&quot;</span><span class="p">)</span>
         <span class="k">break</span>
-    <span class="k">elif</span> <span class="n">niter</span> <span class="o">&gt;=</span> <span class="mi">50</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="n">niter</span> <span class="o">&gt;=</span> <span class="mi">150</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;We have not found a molecule!&quot;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Consider a different target, acquisition function, or loosening convergence criterion&quot;</span><span class="p">)</span>
         <span class="k">break</span>    
@@ -973,23 +757,31 @@ For molecule [O-]P(=O)([O-])F
     <span class="c1"># perform data transformation and feature scaling on labels</span>
     <span class="c1"># you should only scale the labels with the values in y0</span>
     <span class="n">X0_sc</span>    <span class="o">=</span> <span class="n">Xscaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X0</span><span class="p">)</span>     <span class="c1"># the Xscaler was defined earlier</span>
-    <span class="n">yscaler</span>  <span class="o">=</span> <span class="n">preprocessing</span><span class="o">.</span><span class="n">StandardScaler</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">y0</span><span class="p">)</span>
-    <span class="n">y0_sc</span>    <span class="o">=</span> <span class="n">yscaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">y0</span><span class="p">)</span>
+    <span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
+    <span class="n">yscaler</span>  <span class="o">=</span> 
+    <span class="n">y0_sc</span>    <span class="o">=</span> 
+    <span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
     <span class="n">T_sc</span>     <span class="o">=</span> <span class="n">yscaler</span><span class="o">.</span><span class="n">transform</span><span class="p">([[</span><span class="n">target</span><span class="p">]])[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># this is the transformed value of our target</span>
     
+    <span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
     <span class="c1"># build a GPR surrogate model</span>
-    <span class="n">the_kernel</span> <span class="o">=</span> <span class="n">build_kernel</span><span class="p">({</span><span class="s1">&#39;const&#39;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;length&#39;</span> <span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;noise&#39;</span><span class="p">:</span> <span class="mf">.05</span><span class="p">})</span> 
-    <span class="n">the_model</span>  <span class="o">=</span> <span class="n">GaussianProcessRegressor</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="n">the_kernel</span><span class="p">,</span><span class="n">n_restarts_optimizer</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">the_kernel</span> <span class="o">=</span> <span class="n">build_kernel</span><span class="p">({</span><span class="s1">&#39;const&#39;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;length&#39;</span> <span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;noise&#39;</span><span class="p">:</span> <span class="mf">.05</span><span class="p">})</span>
+    <span class="n">the_model</span>  <span class="o">=</span> 
+    <span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
     
+    <span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
     <span class="c1"># train the model with our known data</span>
-    <span class="n">the_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X0_sc</span><span class="p">,</span><span class="n">y0_sc</span><span class="p">)</span>
-
+    
+    <span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
+    
+    <span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
     <span class="c1"># make predictions (we can just do over the whole dataset for simplicity)</span>
     <span class="n">yhat_sc_mean</span><span class="p">,</span><span class="n">yhat_sc_std</span> <span class="o">=</span> <span class="n">the_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xscaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">),</span><span class="n">return_std</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">yhat_mean</span>   <span class="o">=</span> <span class="n">yscaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">yhat_sc_mean</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
-    <span class="n">mean_plus</span>   <span class="o">=</span> <span class="n">yscaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">yhat_sc_mean</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span> <span class="n">yhat_sc_std</span><span class="p">)</span>
-    <span class="n">mean_minus</span>  <span class="o">=</span> <span class="n">yscaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">yhat_sc_mean</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span> <span class="n">yhat_sc_std</span><span class="p">)</span>
-
+    <span class="n">mean_plus</span>   <span class="o">=</span> <span class="n">yscaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">yhat_sc_mean</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span> <span class="n">yhat_sc_std</span><span class="p">[:,</span><span class="kc">None</span><span class="p">])</span>
+    <span class="n">mean_minus</span>  <span class="o">=</span> <span class="n">yscaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">yhat_sc_mean</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span> <span class="n">yhat_sc_std</span><span class="p">[:,</span><span class="kc">None</span><span class="p">])</span>
+    <span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
+    
     <span class="c1"># compute acquisition function for all unlabeled data points</span>
     <span class="n">acq</span>  <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
     <span class="n">T</span>    <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="p">(</span><span class="n">yscaler</span><span class="o">.</span><span class="n">transform</span><span class="p">([[</span><span class="n">ybest</span><span class="p">]])[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">T_sc</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
@@ -1000,13 +792,18 @@ For molecule [O-]P(=O)([O-])F
             <span class="n">acq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">eval_EI</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">M</span><span class="p">,</span><span class="n">S</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>
             <span class="c1">#acq[i] = eval_UCB(T,M,S,1.0)</span>
             
+    <span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
     <span class="c1"># select new point for measurement/query</span>
     <span class="n">inew</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">acq</span><span class="p">)</span>
     <span class="n">nodata</span><span class="p">[</span><span class="n">inew</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
     
+    <span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
     <span class="c1"># get value with leruli</span>
     <span class="n">smi</span> <span class="o">=</span> <span class="n">curtox</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">inew</span><span class="p">,</span><span class="s1">&#39;smiles&#39;</span><span class="p">]</span>
     <span class="n">y</span><span class="p">[</span><span class="n">inew</span><span class="p">]</span> <span class="o">=</span> <span class="n">leruli</span><span class="o">.</span><span class="n">graph_to_boiling_point</span><span class="p">(</span><span class="n">smi</span><span class="p">)[</span><span class="s1">&#39;bp&#39;</span><span class="p">]</span><span class="o">+</span><span class="mf">273.15</span>
+    <span class="c1">#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
+    
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For molecule </span><span class="si">{}</span><span class="se">\n</span><span class="s2">  Tb = </span><span class="si">{:&gt;5.1f}</span><span class="s2"> K</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">smi</span><span class="p">,</span><span class="n">y</span><span class="p">[</span><span class="n">inew</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
     
 <span class="n">ibest</span>    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">((</span><span class="n">y</span><span class="o">-</span><span class="n">ybest</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
@@ -1016,73 +813,6 @@ For molecule [O-]P(=O)([O-])F
 <span class="n">the_best</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are currently 50 labeled samples
-Current closest value to target is 331.2
-For molecule C(C(CS)S)O
-  Tb = 443.9 K
-
-There are currently 51 labeled samples
-Current closest value to target is 331.2
-For molecule CS(=O)C
-  Tb = 462.2 K
-
-There are currently 52 labeled samples
-Current closest value to target is 331.2
-For molecule C([C@@H](C(=O)[O-])[NH3+])S
-  Tb = 407.4 K
-
-There are currently 53 labeled samples
-Current closest value to target is 331.2
-For molecule [N]=O
-  Tb = 298.2 K
-
-There are currently 54 labeled samples
-Current closest value to target is 298.2
-For molecule [Se]
-  Tb = 321.1 K
-
-There are currently 55 labeled samples
-Current closest value to target is 298.2
-For molecule N(=O)[O-]
-  Tb = 311.2 K
-
-There are currently 56 labeled samples
-Current closest value to target is 298.2
-For molecule Cl[Cu]Cl
-  Tb = 392.0 K
-
-There are currently 57 labeled samples
-Current closest value to target is 298.2
-For molecule C#N
-  Tb = 298.8 K
-
-There are currently 58 labeled samples
-Current closest value to target is 298.2
-For molecule [N+](=O)([O-])[O-]
-  Tb = 351.3 K
-
-There are currently 59 labeled samples
-Current closest value to target is 298.2
-For molecule C(=C(F)F)(F)F
-  Tb = 197.4 K
-
-There are currently 60 labeled samples
-Current closest value to target is 197.4
-For molecule C(C(F)(F)F)(C(F)(F)F)(F)F
-  Tb = 236.6 K
-
-There are currently 61 labeled samples
-Current closest value to target is 236.6
-
-
-We have found a molecule!
-The boiling point of the best found match is 236.6
-Here we have it:
-</pre></div>
-</div>
-<img alt="../_images/5ffb5c8c5cd149cabc788d8b6ce1e7ad8cfff47fd683944536a2bb8bd22299ed.png" src="../_images/5ffb5c8c5cd149cabc788d8b6ce1e7ad8cfff47fd683944536a2bb8bd22299ed.png" />
 </div>
 </div>
 </section>
