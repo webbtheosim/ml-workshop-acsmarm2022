@@ -1,4 +1,4 @@
-# Agenda for Day 3 
+# Day 3 
 The following summarizes the content coverage and progression for the Day 3 Machine Learning workshop at ACS MARM 2022.
 
 ## Overview & Environment Setup (10 min.)

@@ -1,4 +1,4 @@
-# Agenda for Day 2
+# Day 2
 
 Day 2 will focus on the concepts needed to understand
 modern deep learning in chemistry. We will cover the types
