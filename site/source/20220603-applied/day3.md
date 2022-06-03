@@ -45,10 +45,11 @@ The following summarizes the content coverage and progression for the Day 3 Mach
 ### Roadmap
 + General concepts: what is an explanation?
 + Feature importance
++ Shapley Values
 + Counterfactuals and `exmol`
++ Surrogate models
 
-
-## Activity 3: XXX
+## Activity 3: Explaining Black-box models
 ### Roadmap
 + Discussion on exercise goals/objectives
 + Exercise time
