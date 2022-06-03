@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Explaining A Black Box Model &mdash; acsmarm  documentation</title>
+  <title>Tutorial &mdash; acsmarm  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
@@ -60,10 +60,9 @@
 <li class="toctree-l1"><a class="reference internal" href="notebook-a.html#setup-of-python-environment">Setup of Python Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebook-a.html#activity-1-understanding-gaussian-process-regression">Activity 1: Understanding Gaussian Process Regression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebook-a.html#team-activity-active-learning-challenge">Team Activity: Active Learning Challenge</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Explaining A Black Box Model</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#counterfacutal-explanations">Counterfacutal explanations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#explain-using-substructures">Explain using substructures</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#explaining-using-classical-descriptors">Explaining using classical descriptors</a></li>
 </ul>
 </li>
 </ul>
@@ -82,7 +81,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../toc.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Explaining A Black Box Model</li>
+      <li>Tutorial</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/webbtheosim/ml-workshop-acsmarm2022/blob/main/site/source/20220603-applied/notebook-b.ipynb" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -92,9 +91,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="explaining-a-black-box-model">
-<h1>Explaining A Black Box Model<a class="headerlink" href="#explaining-a-black-box-model" title="Permalink to this headline"></a></h1>
-<p>We’ll show here how to explain molecular property prediction tasks without access to the gradients or any properties of a molecule. To set-up this activity, we need a black box model. We’ll use something simple here – the model is classifier that says if a molecule as an alcohol (1) or not (0). Let’ simplement that first</p>
+  <section id="tutorial">
+<h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline"></a></h1>
+<p>We’ll show here how to explain molecular property prediction tasks without access to the gradients or any properties of a molecule. To set-up this activity, we need a black box model. We’ll use something simple here – the model is classifier that says if a molecule as an alcohol (1) or not (0). Let’s implement this model first</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
@@ -324,31 +323,75 @@ width='450px' height='150px' viewBox='0 0 450 150'>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## How can we find counterfactuals?</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cfs</span> <span class="o">=</span> <span class="n">exmol</span><span class="o">.</span><span class="n">cf_explain</span><span class="p">(</span><span class="n">space</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">exmol</span><span class="o">.</span><span class="n">plot_cf</span><span class="p">(</span><span class="n">cfs</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/395cc6725e68fee3191d2fda5ffc98a0612b81cdd366859f21307491ef91e4a3.png" src="../_images/395cc6725e68fee3191d2fda5ffc98a0612b81cdd366859f21307491ef91e4a3.png" />
+</div>
+</div>
+<p>We can see that removing the alcohol is the smallest change to affect the prediction of this molecule. Let’s see the space and look at where these counterfactuals are.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exmol</span><span class="o">.</span><span class="n">plot_space</span><span class="p">(</span><span class="n">space</span><span class="p">,</span> <span class="n">cfs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/57ea76bc24946f3866462b22155767afee719d7705acd65797b5f87cc14afc38.png" src="../_images/57ea76bc24946f3866462b22155767afee719d7705acd65797b5f87cc14afc38.png" />
 </div>
 </div>
 </section>
 <section id="explain-using-substructures">
 <h2>Explain using substructures<a class="headerlink" href="#explain-using-substructures" title="Permalink to this headline"></a></h2>
+<p>Now we’ll try to explain our model using substructures.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## How can we explain with substructures?</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exmol</span><span class="o">.</span><span class="n">lime_explain</span><span class="p">(</span><span class="n">space</span><span class="p">)</span>
+<span class="n">exmol</span><span class="o">.</span><span class="n">plot_descriptors</span><span class="p">(</span><span class="n">space</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/128cff0cf3739ffa7ec8acdf05ee8032c901fd4287ba98bef061f81f121a34f6.png" src="../_images/128cff0cf3739ffa7ec8acdf05ee8032c901fd4287ba98bef061f81f121a34f6.png" />
 </div>
-</section>
-<section id="explaining-using-classical-descriptors">
-<h2>Explaining using classical descriptors<a class="headerlink" href="#explaining-using-classical-descriptors" title="Permalink to this headline"></a></h2>
+</div>
+<p>This seems like a pretty clear explanation. Let’s take a look at using substructures that are present in the molecule</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## How can we explain with classical descriptors?</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">skunk</span>
+<span class="n">exmol</span><span class="o">.</span><span class="n">lime_explain</span><span class="p">(</span><span class="n">space</span><span class="p">,</span> <span class="n">descriptor_type</span><span class="o">=</span><span class="s1">&#39;ECFP&#39;</span><span class="p">)</span>
+<span class="n">svg</span> <span class="o">=</span> <span class="n">exmol</span><span class="o">.</span><span class="n">plot_descriptors</span><span class="p">(</span><span class="n">space</span><span class="p">,</span> <span class="n">return_svg</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">skunk</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="n">svg</span><span class="p">)</span>
+<span class="n">exmol</span><span class="o">.</span><span class="n">plot_utils</span><span class="o">.</span><span class="n">similarity_map_using_tstats</span><span class="p">(</span><span class="n">space</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="nn">Input In [9],</span> in <span class="ni">&lt;cell line: 4&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">exmol</span><span class="o">.</span><span class="n">lime_explain</span><span class="p">(</span><span class="n">space</span><span class="p">,</span> <span class="n">descriptor_type</span><span class="o">=</span><span class="s1">&#39;ECFP&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">svg</span> <span class="o">=</span> <span class="n">exmol</span><span class="o">.</span><span class="n">plot_descriptors</span><span class="p">(</span><span class="n">space</span><span class="p">,</span> <span class="n">return_svg</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">skunk</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="n">svg</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">exmol</span><span class="o">.</span><span class="n">plot_utils</span><span class="o">.</span><span class="n">similarity_map_using_tstats</span><span class="p">(</span><span class="n">space</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/skunk/__init__.py:64,</span> in <span class="ni">display</span><span class="nt">(svg)</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span> <span class="kn">import</span> <span class="nn">IPython.display</span> <span class="k">as</span> <span class="nn">display</span>
+<span class="g g-Whitespace">     </span><span class="mi">63</span> <span class="kn">import</span> <span class="nn">base64</span>
+<span class="ne">---&gt; </span><span class="mi">64</span> <span class="n">data</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">svg</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">65</span> <span class="n">display</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="n">display</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">66</span>     <span class="s1">&#39;&lt;img src=data:image/svg+xml;base64,&#39;</span> <span class="o">+</span> <span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;&gt;&#39;</span><span class="p">))</span>
+
+<span class="ne">AttributeError</span>: &#39;NoneType&#39; object has no attribute &#39;encode&#39;
+</pre></div>
 </div>
+<img alt="../_images/751270d7f61e8f113acee095dfcf47d80e276e5a7a92f33a3f700b253c2a6dea.png" src="../_images/751270d7f61e8f113acee095dfcf47d80e276e5a7a92f33a3f700b253c2a6dea.png" />
+</div>
+</div>
+<p>We can see that most of the model is explained from the presence of the alcohol group - as expected</p>
 </section>
 </section>
 
